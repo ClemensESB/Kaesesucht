@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="stylesheets/navBar.css">
+</head>
+
+<body>
+    <header>
+        <div class="Navbar">
+            <nav>
+                <input type="checkbox" id="menucheck">
+                <label for="menucheck" class="menu">
+                    <i>#</i>
+                </label>
+                <label class="logo"><a href="#">käsesucht.de</a></label>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Käsesorten</a></li>
+                </ul>
+                <input type="checkbox" id="logincheck">
+                <label for="logincheck" class="login">
+                    <i>|V|</i>
+                </label>
+                <form method="POST" id="loginform" action="#">
+                    <p>Email:</p>
+                    <input type="text" value="" id="email" name="email" placeholder="Email" class="inputtext">
+                    <p>Passwort:</p>
+                    <input type="password" id="pass" name="pass" placeholder="Passwort" class="inputtext">
+                    <input type="submit" id="loginbutton" value="Log In">
+                </form>
+            </nav>
+        </div>
+    </header>
+</body>
+
+</html>

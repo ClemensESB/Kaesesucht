@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    background: gold;
+    height: 80px;
+    width: 100%;
+}
+
+label.logo a {
+    color: black;
+    font-size: 35px;
+    line-height: 80px;
+    float: left;
+    padding: 0 20px;
+    font-weight: bold;
+}
+
+nav ul {
+    float: left;
+    margin-left: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: gray;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 30px 13px;
+    border-radius: 3px;
+}
+
+nav ul a.active,
+nav ul a:hover {
+    background: yellow;
+    transition: .5s;
+}
+
+nav #loginform {
+    position: fixed;
+    width: 400px;
+    height: 100vh;
+    float: right;
+    background-color: orange;
+    top: 80px;
+    margin-right: 0px;
+    right: 0;
+    text-align: left;
+    transition: all .5s;
+}
+
+#loginform p {
+    color: black;
+    font-size: 17px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#email,
+#pass,
+#loginbutton {
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+form.inputtext {}
+
+.menu,
+.login {
+    font-size: 30px;
+    color: grey;
+    float: left;
+    line-height: 80px;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+    margin-left: 20px;
+}
+
+.login {
+    float: right;
+    margin-right: 20px;
+}
+
+#menucheck,
+#logincheck {
+    display: none;
+}
+
+@media (max-width: 952px) {
+    label.logo a {
+        font-size: 30px;
+        padding-left: 20px;
+    }
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px) {
+    .menu {
+        display: block;
+    }
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: orange;
+        top: 80px;
+        margin-left: 0px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    nav ul a.active,
+    nav ul a:hover {
+        background: none;
+        color: black;
+    }
+    #menucheck:checked~ul {
+        left: 0;
+    }
+}
