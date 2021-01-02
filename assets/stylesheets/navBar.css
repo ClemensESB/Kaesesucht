@@ -183,6 +183,9 @@ form input.inputtext {
     #menucheck:checked~ul {
         left: 0;
     }
+    #loginform p {
+        margin-left: 0;
+    }
     nav #loginform {
         width: 100%;
         right: -100%;
