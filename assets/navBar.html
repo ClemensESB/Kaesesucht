@@ -20,16 +20,16 @@
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Käsesorten</a></li>
                 </ul>
+                <input type="text" value="" id="searchbar" name="searchbar" placeholder="Suche" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Suche' " class="inputtext">
                 <input type="checkbox" id="logincheck">
                 <label for="logincheck" class="login">
                     <i>|V|</i>
                 </label>
                 <form method="POST" id="loginform" action="#">
-                    <p>Email:</p>
-                    <input type="text" value="" id="email" name="email" placeholder="Email" class="inputtext">
-                    <p>Passwort:</p>
-                    <input type="password" id="pass" name="pass" placeholder="Passwort" class="inputtext">
-                    <input type="submit" id="loginbutton" value="Log In">
+                    <p>Login</p>
+                    <input type="text" value="" id="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" class="inputtext">
+                    <input type="password" id="pass" name="pass" placeholder="Passwort" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Passwort'" class="inputtext">
+                    <input type="submit" id="loginbutton" value="Login">
                 </form>
             </nav>
         </div>

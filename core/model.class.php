@@ -50,7 +50,7 @@ abstract class Model
             $this->data[$key] = $value;
             return;
         }
-        throw new \Exception('You can not write to property "'.$key.'" for the class "'.get_called_function().'"')
+        throw new \Exception('You can not write to property "'.$key.'" for the class "'.get_called_function().'"');
 
     }
 
@@ -154,7 +154,7 @@ abstract class Model
         {
             $errors[] = 'Error updating '.get_called_class();
         }
-        return false
+        return false;
     }
 
     public function delete(&$errors = null)
