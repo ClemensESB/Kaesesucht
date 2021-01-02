@@ -2,6 +2,8 @@
 
 //Grundlegende Datenbankzugriffsklasse , von welcher die models erben
 
+namespace kae\core;
+
 abstract class Model 
 {
 	// useful types for schema
