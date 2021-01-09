@@ -11,6 +11,12 @@ require_once COREPATH.'functions.php';
 require_once COREPATH.'controller.class.php';
 require_once COREPATH.'model.class.php';
 
+//lädt alle models
+foreach(glob(MODELSPATH."*.php") as $file)
+{
+	require($file);
+}
+
 
 session_start();
 
@@ -28,3 +34,63 @@ if(isset($_GET['a']))
 {
     $actionName = $_GET['a'];
 }
+
+
+// check controller/class and method exists
+if(file_exists(CONTROLLERSPATH.$controllerName.'Controller.php')) // √
+{
+    // include the controller file
+    require_once CONTROLLERSPATH.$controllerName.'Controller.php'; // √
+
+    // generate the class name of the controller using the name extended by Controller
+    // also add the namespace in front
+    $className = '\\kae\\controller\\'.ucfirst($controllerName).'Controller'; // √
+
+    // generate an instace of the controller using the name, stored in $className
+    // it is the same like calling for example: new \dwp\controller\PagesController()
+    $controller = new $className($controllerName, $actionName); // √
+
+    // checking the method is available in the controller class
+    // the method looks like: actionIndex()
+    $actionMethod = 'action'.ucfirst($actionName); // √
+    if(!method_exists($controller, $actionMethod)) // √
+    {
+        // redirect to error page 404 because not found
+        header('Location: index.php?c=errors&a=error404');
+        exit(0);
+    }
+    else
+    {
+        // call the action method to do the job
+        // so the action cann fill the params for the view which will be used 
+        // in the render process later
+        $controller->{$actionMethod}(); // √
+    }
+}
+else
+{
+    // redirect to error page 404 because not found
+    header('Location: index.php?c=errors&a=error404&error=nocontroller');
+    exit(0);
+}
+
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <title>Käsesucht</title>
+</head>
+<body>
+    <?php
+
+        // this method will render the view of the called action
+        // for this the the file in the views directory will be included
+        $controller->render();
+    ?>
+</body>
+</html>

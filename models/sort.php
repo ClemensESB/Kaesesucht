@@ -3,7 +3,7 @@
 //Datenbankzugriffe auf die Sorten
 namespace kae\model;
 
-class ModelSorts extends kae\core\Model
+class ModelSorts extends \kae\core\Model
 {
 	const TABELNAME = '`sort`';
 	protected $schema = [

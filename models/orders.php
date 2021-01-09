@@ -3,7 +3,7 @@
 //Datenbankzugriffe auf die Bestellungen
 namespace kae\model;
 
-class ModelOrders extends kae\core\Model
+class ModelOrders extends \kae\core\Model
 {
 	const TABLENAME = '`orders`';
 	protected $schema = [

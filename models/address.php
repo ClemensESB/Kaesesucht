@@ -3,7 +3,7 @@
 //Datenbankzugriffe auf die Adressen
 namespace kae\model;
 
-class ModelAddress extends kae\core\Model
+class ModelAddress extends \kae\core\Model
 {
 	const TABLENAME = '`address`';
 

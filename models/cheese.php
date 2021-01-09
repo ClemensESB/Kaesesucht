@@ -3,7 +3,7 @@
 //Datenbankzugriffe auf die Produkte
 namespace kae\model;
 
-class ModelCheese extends kae\core\Model
+class ModelCheese extends \kae\core\Model
 {
 	const TABLENAME = '`cheese`';
 

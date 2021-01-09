@@ -5,7 +5,6 @@
 
 namespace kae\core;
 
-use \kae\model\accounts;
 
 class Controller
 {
@@ -36,9 +35,24 @@ class Controller
 
 	public function render()
 	{
+		// generate the view path
+		$viewPath = VIEWSPATH.$this->controller.DIRECTORY_SEPARATOR.$this->action.'.php';
 
+		// check the file exists
+		if(!file_exists($viewPath))
+		{
+			// redirect to error page 404 because not found
+			redirect('index.php?c=errors&a=error404&error=viewpath');
+			exit(0);
+		}
+
+		// extract the params array to get all needed variables for the view
+		extract($this->params);
+		
+		// just include the view here, it's like putting the code of the php file by copy paste on this position.
+		include $viewPath;
 	}
-	
+
 	/**
 	 * Setter for params, which will be used for the render method
 	 * @param  String $key   Key in the param array
@@ -48,6 +62,13 @@ class Controller
 	{
 		$this->params[$key] = $value;
 	}
+
+	public function redirect($url)
+	{
+		header('Location: '.$url);
+        exit(0);
+	}
+
 	public function __destruct()
 	{
 		$this->controller = null;

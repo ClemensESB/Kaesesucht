@@ -3,7 +3,7 @@
 //Datenbankzugriffe auf bestellte Produkte
 namespace kae\model;
 
-class ModelOrderedItems extends kae\core\Model
+class ModelOrderedItems extends \kae\core\Model
 {
 	const TABLENAME = '`orderedItems`';
 

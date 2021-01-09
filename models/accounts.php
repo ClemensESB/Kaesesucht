@@ -5,11 +5,12 @@
 
 namespace kae\model;
 
-class ModelAccount extends kae\core\Model
+class ModelAccount extends \kae\core\Model
 {
-	const TABLENAME = '`account`';
-	$schema = [
-	'id' 			=>['type' => BaseModel::TYPE_INT] ,
+	const TABLENAME = 'account';
+
+	protected $schema = [
+	  'id' 			    =>['type' => BaseModel::TYPE_INT] ,
   	'createdAt'		=>['type' => BaseModel::TYPE_STRING],
   	'updatetAt'		=>['type' => BaseModel::TYPE_STRING],
   	'firstName'		=>['type' => BaseModel::TYPE_STRING],

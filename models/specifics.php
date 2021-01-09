@@ -3,7 +3,7 @@
 //Datenbankzugriffe auf die Besonderheiten
 namespace kae\model;
 
-class ModelSpecifics extends kae\core\Model
+class ModelSpecifics extends \kae\core\Model
 {
 	const TABLENAME = '`specifics`';
 
