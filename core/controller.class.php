@@ -24,7 +24,6 @@ class Controller
 			// TODO: Load the current user using the session and the account model
 			// 		 write user model object to member variable currentUser
 
-
 		}
 	}
 

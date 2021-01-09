@@ -92,6 +92,19 @@ abstract class Model
         return $result;
     }
 
+    
+    public static function findOne($whereStr = '1')
+    {
+        $results = self::find($whereStr);
+
+        if(count($results) > 0)
+        {
+            return $results[0];
+        }
+
+        return null;
+    }
+
     public function insert(&$errors)
     {
         $db = $GLOBALS['db'];

@@ -105,11 +105,13 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`account` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `createdAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatetAt` TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `email` VARCHAR(25) NULL CHECK (email REGEXP '^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$'),
   `firstName` VARCHAR(45) NOT NULL,
   `lastName` VARCHAR(45) NOT NULL,
   `address_id` INT NOT NULL,
   `payMethod` VARCHAR(1) NULL CHECK (payMethod = 'P' OR 'B' OR 'S'),
   `isAdmin` TINYINT(1) NOT NULL,
+  `passwordHash` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`, `address_id`),
   CONSTRAINT `fk_account_address1`
     FOREIGN KEY (`address_id`)
