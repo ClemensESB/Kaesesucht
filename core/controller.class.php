@@ -21,9 +21,8 @@ class Controller
 
 		if($this->loggedIn())
 		{
-			// TODO: Load the current user using the session and the account model
-			// 		 write user model object to member variable currentUser
-			$currentUser = 
+			// TODO: Im Login Controller muss die email adresse des eingeloggten Users in $_SESSION['email'] geschrieben werden
+			$currentUser = \kae\model\ModelAccount::findOne('email = '.$db->quote($_SESSION['email']));
 		}
 	}
 
@@ -49,6 +48,7 @@ class Controller
 		extract($this->params);
 		
 		// just include the view here, it's like putting the code of the php file by copy paste on this position.
+		include ASSETPATH.'navBar.html';
 		include $viewPath;
 	}
 

@@ -74,7 +74,7 @@ else
     exit(0);
 }
 
-
+//<link rel="stylesheet" href="assets/styles/style.css">
 ?>
 
 <!DOCTYPE html>
@@ -82,10 +82,11 @@ else
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/stylesheets/navBar.css">
     <title>Käsesucht</title>
 </head>
 <body>
+
     <?php
 
         // this method will render the view of the called action

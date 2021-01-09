@@ -14,7 +14,7 @@ class PagesController extends \kae\core\Controller
 
 	public function actionIndex()
 	{
-
+		
 	}
 	public function actionImpressum()
 	{
