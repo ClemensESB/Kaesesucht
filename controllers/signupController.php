@@ -3,7 +3,7 @@
 
 namespace kae\controller;
 
-class LoginController extends \kae\core\Controller
+class SignupController extends \kae\core\Controller
 {
 	protected $controller = null;
 	protected $action = null;
@@ -11,5 +11,8 @@ class LoginController extends \kae\core\Controller
 
 	protected $params = [];
 
-
+	public function actionSignup()
+	{
+		
+	}
 }

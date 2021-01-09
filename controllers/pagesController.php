@@ -26,6 +26,7 @@ class PagesController extends \kae\core\Controller
 	}
 	public function actionShop()
 	{
-	
+		
 	}
+
 }
