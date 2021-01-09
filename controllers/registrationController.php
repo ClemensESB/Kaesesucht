@@ -6,9 +6,9 @@
  * @version 1.0.0
  */
 
-namespace dwp\controller;
+namespace kae\controller;
 
-class RegistrationController extends \dwp\core\Controller
+class RegistrationController extends \kae\core\Controller
 {
 
 	public function actionSignup()
