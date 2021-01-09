@@ -19,4 +19,6 @@ class ModelCheese extends \kae\core\Model
   	'descrip'		=>['type' => BaseModel::TYPE_STRING],
   	'recipe'		=>['type' => BaseModel::TYPE_STRING],
 	];
+
+  
 }

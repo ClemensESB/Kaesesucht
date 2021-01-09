@@ -74,5 +74,4 @@ class Controller
 		$this->action = null;
 		$this->params = null;
 	}
-
 }

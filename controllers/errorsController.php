@@ -20,14 +20,13 @@ class ErrorsController extends \kae\core\Controller
             switch($_GET['error'])
             {
                 case 'nocontroller':
-                    $errorMessage = 'Sorry, aber der Kontroller oder in Englisch Controller, der ist weggerannt.';
+                    $errorMessage = 'no valid controller';
                     break;
                 case 'viewpath':
-                    $errorMessage = 'View konnte nicht gefunden werden.';
+                    $errorMessage = 'no valid view';
                     break;
             }
         }
-
         // though the error message variable to the view, so we can show it to our customers
         $this->setParam('errorMessage', $errorMessage);
 	}
