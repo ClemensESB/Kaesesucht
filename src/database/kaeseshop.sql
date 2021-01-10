@@ -40,20 +40,6 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`price` (
 
 
 -- -----------------------------------------------------
--- Table `kaeseshop`.`specifics`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kaeseshop`.`specifics` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `createdAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatetAt` TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  `taste` VARCHAR(1) NOT NULL CHECK (taste = 'M' OR 'W'),
-  `lactose` TINYINT(1) NOT NULL,
-  `milkType` VARCHAR(1) NULL CHECK (milkType = 'B' OR 'K' OR 'S' OR 'Z'),
-  `rawMilk` TINYINT(1) NOT NULL,
-  PRIMARY KEY (`id`));
-
-
--- -----------------------------------------------------
 -- Table `kaeseshop`.`cheese`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `kaeseshop`.`cheese` (
@@ -63,11 +49,14 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`cheese` (
   `cheeseName` VARCHAR(45) NOT NULL,
   `sort_id` INT NOT NULL,
   `price_id` INT NOT NULL,
-  `specifics_id` INT NOT NULL,
   `qtyInStock` INT NOT NULL,
   `descrip` LONGTEXT NOT NULL,
   `recipe` LONGTEXT NULL,
-  PRIMARY KEY (`id`, `sort_id`, `price_id`, `specifics_id`),
+  `taste` VARCHAR(1) NOT NULL CHECK (taste = 'M' OR 'W'),
+  `lactose` TINYINT(1) NOT NULL,
+  `milkType` VARCHAR(1) NULL CHECK (milkType = 'B' OR 'K' OR 'S' OR 'Z'),
+  `rawMilk` TINYINT(1) NOT NULL,
+  PRIMARY KEY (`id`, `sort_id`, `price_id`),
   CONSTRAINT `fk_cheese_sort`
     FOREIGN KEY (`sort_id`)
     REFERENCES `kaeseshop`.`sort` (`id`)
@@ -76,11 +65,6 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`cheese` (
   CONSTRAINT `fk_cheese_price1`
     FOREIGN KEY (`price_id`)
     REFERENCES `kaeseshop`.`price` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_cheese_specifics1`
-    FOREIGN KEY (`specifics_id`)
-    REFERENCES `kaeseshop`.`specifics` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
