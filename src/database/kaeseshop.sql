@@ -50,12 +50,13 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`cheese` (
   `sort_id` INT NOT NULL,
   `price_id` INT NOT NULL,
   `qtyInStock` INT NOT NULL,
-  `descrip` LONGTEXT NOT NULL,
-  `recipe` LONGTEXT NULL,
+  `descrip` TINYTEXT NOT NULL,
+  `recipe` TEXT NULL,
   `taste` VARCHAR(1) NOT NULL CHECK (taste = 'M' OR 'W'),
   `lactose` TINYINT(1) NOT NULL,
   `milkType` VARCHAR(1) NULL CHECK (milkType = 'B' OR 'K' OR 'S' OR 'Z'),
   `rawMilk` TINYINT(1) NOT NULL,
+  `pictureName` VARCHAR(50) NULL,
   PRIMARY KEY (`id`, `sort_id`, `price_id`),
   CONSTRAINT `fk_cheese_sort`
     FOREIGN KEY (`sort_id`)
