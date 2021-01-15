@@ -4,6 +4,7 @@
 //Datenbankzugriffe auf accounts
 
 namespace kae\model;
+use \kae\core\Model as BaseModel;
 
 class ModelAccount extends \kae\core\Model
 {
@@ -23,3 +24,11 @@ class ModelAccount extends \kae\core\Model
 	];
 
 }
+#####################################
+#Beispielzugriff und Erstellung eines account models mit firstName Clemens
+#und anschließender Ausgabe vardump zeigt alles
+#<pre>
+#$account = new \kae\model\ModelAccount(['firstName' =>  'Clemens']);
+#var_dump($account);
+#echo($account->__get('firstName'));
+#</pre>

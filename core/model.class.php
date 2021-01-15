@@ -18,7 +18,7 @@ abstract class Model
     protected $schema = [
     ];
 
-    private $values = [
+    private $data = [
     ];
 
     public function __construct($params)
@@ -27,7 +27,7 @@ abstract class Model
         {
             if(isset($params[$key]))
             {
-                $this->{$key} = $params[$key];
+                $this->{$key} = $params[$key]; //schreibt bei key von schema
             }
             else
             {
@@ -45,7 +45,7 @@ abstract class Model
         throw new \Exception('You can not access to property "'.$key.'" for the class "'.get_called_function().'"');
     }
 
-    public function __set($keym,$value)
+    public function __set($key,$value)
     {
         if(array_key_exists($key,$this->schema))
         {

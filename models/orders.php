@@ -2,7 +2,7 @@
 
 //Datenbankzugriffe auf die Bestellungen
 namespace kae\model;
-
+use \kae\core\Model as BaseModel;
 class ModelOrders extends \kae\core\Model
 {
 	const TABLENAME = '`orders`';

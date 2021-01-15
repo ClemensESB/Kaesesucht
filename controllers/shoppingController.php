@@ -28,5 +28,10 @@ class ShoppingController extends \kae\core\Controller
 		}
 		
 	}
+	public function actionDeleteArticle(){
+
+
+		actionShoppingCart();
+	}
 
 }

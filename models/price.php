@@ -2,7 +2,7 @@
 
 //Datenbankzugriffe auf die Preise
 namespace kae\model;
-
+use \kae\core\Model as BaseModel;
 class ModelPrice extends \kae\core\Model
 {
 	const TABLENAME = '`price`';

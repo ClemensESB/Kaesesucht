@@ -1,30 +1,28 @@
 <h1>Warenkorb</h1>
 
-<div class="panel">
-	<div class="panel--body">
-		<div class="table--header">
-			<div class="table--th ">
+<div class="panel has--border">
+	<div class="panel--body has--border">
+		<div class="table--header has--border">
+			<div class="column--article">
 				Artikel
 			</div>
-			<div class="table--th ">
+			<div class="column--mng">
 				Menge
 			</div>
-			<div class="table--th ">
+			<div class="column--stp">
 				Stückpreis
 			</div>
-			<div class="table--th ">
+			<div class="column--sum">
 				Summe
 			</div>
-			<div class="table--th ">
-
+			<div class="column--action">
+				
+				<form action="" method="post">
+					<button class="btn"></button>
 			</div>
 		</div>
 
 	</div>
-
-
-
-
 
 </div>
 

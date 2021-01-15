@@ -2,7 +2,7 @@
 
 //Datenbankzugriffe auf die Adressen
 namespace kae\model;
-
+use \kae\core\Model as BaseModel;
 class ModelAddress extends \kae\core\Model
 {
 	const TABLENAME = '`address`';

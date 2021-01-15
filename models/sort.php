@@ -2,6 +2,8 @@
 
 //Datenbankzugriffe auf die Sorten
 namespace kae\model;
+use \kae\core\Model as BaseModel;
+
 
 class ModelSorts extends \kae\core\Model
 {

@@ -1,0 +1,37 @@
+.panel{
+	display: block;
+	background: #fff;
+	padding: 20px;
+}
+.has--border {
+    border: 1px solid #dadae5;
+}
+.panel--body{
+	padding: 20px;
+}
+.table--header{
+	padding: 20px;
+}
+.column--article{
+	width: 60%;
+	float: left;
+}
+.column--mng{
+	width: 10%;
+	float: left;
+}
+.column--stp{
+	width: 10%;
+	float: left;
+}
+.column--sum{
+	width: 10%;
+	float: left;
+}
+.column--action{
+	width: 10%;
+	float: left;
+}
+.btn{
+
+}
