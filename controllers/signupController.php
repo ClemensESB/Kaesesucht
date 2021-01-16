@@ -1,6 +1,7 @@
 <?php
 
 namespace kae\controller;
+use kae\model\ModelAccount;
 
 class SignupController extends \kae\core\Controller
 {
@@ -21,6 +22,11 @@ class SignupController extends \kae\core\Controller
             $city = $_POST['city'] ?? null;
             $email = $_POST['email'] ?? null;
             $password = $_POST['password'] ?? null;
+
+            ##$account = new kae\model\ModelAccount($_POST);
+
+            ##$account->__get('firstName');
+
 
             if($firstName === null || mb_strlen($firstName) < 1)
             {
@@ -66,10 +72,13 @@ class SignupController extends \kae\core\Controller
             if(count($errors) === 0)
             {
                 // TODO: save to database
-                if( true ) // fake true because no db connected yet
-                {
-                    $success = true;
-                }
+                #$account::find('email = '$account->__get('email'));
+
+                #if($account->insert(&$errors)) // fake true because no db connected yet
+                #{
+                #    $success = true;
+                #}
+
             }
         }
 
