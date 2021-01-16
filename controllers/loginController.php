@@ -1,17 +1,11 @@
 <?php
 
-/**
- * @author Kristof Friess <kristof.friess@fh-erfurt.de>
- * @copyright Since 2021 by Kristof Friess
- * @version 1.0.0
- */
-
 namespace kae\controller;
 
-class RegistrationController extends \kae\core\Controller
+class LoginController extends \kae\core\Controller
 {
 
-	public function actionSignup()
+	public function actionlogin()
 	{
         $errors = [];
         $success = false;
@@ -19,14 +13,8 @@ class RegistrationController extends \kae\core\Controller
         // oh my good, we get data
         if(isset($_POST['submit']))
         {
-            $username = $_POST['username'] ?? null;
             $email = $_POST['email'] ?? null;
-            $password = $_POST['email'] ?? null;
-
-            if($username === null || mb_strlen($username) < 2)
-            {
-                $errors['username'] = 'Nutzername ist zu kurz, bitte mehr als 2 Zeichen.';
-            }
+            $password = $_POST['password'] ?? null;
 
             if($email === null || mb_strlen($email) < 2)
             {
@@ -41,10 +29,12 @@ class RegistrationController extends \kae\core\Controller
             // check errors?
             if(count($errors) === 0)
             {
-                // TODO: save to database
-                if( true ) // fake true because no db connected yet
+                
+                if( true )
                 {
+                    //TODO Datenbankanbindung
                     $success = true;
+                    $_SESSION['email'->$email];
                 }
             }
         }
