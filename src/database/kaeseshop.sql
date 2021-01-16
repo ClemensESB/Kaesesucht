@@ -79,7 +79,9 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`address` (
   `updatetAt` TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `zipCode` VARCHAR(5) NOT NULL CHECK (ZIPCode LIKE '[0-9][0-9][0-9][0-9][0-9]'),
   `city` VARCHAR(50) NOT NULL,
-  `strNo` VARCHAR(50) NOT NULL,
+  `street` VARCHAR(100) NOT NULL, 
+  `strNo` VARCHAR(4) NOT NULL,
+  `strAdd` VARCHAR(1) NULL,
   PRIMARY KEY (`id`));
 
 
