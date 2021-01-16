@@ -3,12 +3,13 @@
 //Datenbankzugriffe auf die Produkte
 namespace kae\model;
 use \kae\core\Model as BaseModel;
+
 class ModelCheese extends \kae\core\Model
 {
 	const TABLENAME = '`cheese`';
 
 	protected $schema = [
-	'id'			=>['type' => BaseModel::TYPE_INT],
+	 'id'			=>['type' => BaseModel::TYPE_INT],
   	'createdAt'		  =>['type' => BaseModel::TYPE_STRING],
   	'updatetAt'		  =>['type' => BaseModel::TYPE_STRING],
   	'cheeseName'	  =>['type' => BaseModel::TYPE_STRING],
@@ -22,7 +23,12 @@ class ModelCheese extends \kae\core\Model
     'lactose'   =>['type' => BaseModel::TYPE_INT],
     'milkType'  =>['type' => BaseModel::TYPE_STRING],
     'rawMilk'   =>['type' => BaseModel::TYPE_INT],
+    'pictureName'=>['type' => BaseModel::TYPE_STRING],
 	];
+
+  public $quantity;
+
+
 
   
 }

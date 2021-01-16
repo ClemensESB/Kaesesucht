@@ -9,8 +9,8 @@ class ModelPrice extends \kae\core\Model
 
 	protected $schema = [
 	'id'            =>['type' => BaseModel::TYPE_INT],
-  'createdAt'     =>['type' => BaseModel::TYPE_STRING],
-  'updatetAt'     =>['type' => BaseModel::TYPE_STRING],
-  'pricePerUnit'  =>['type' => BaseModel::TYPE_FLOAT],
+  	'createdAt'     =>['type' => BaseModel::TYPE_STRING],
+  	'updatetAt'     =>['type' => BaseModel::TYPE_STRING],
+  	'pricePerUnit'  =>['type' => BaseModel::TYPE_FLOAT],
 	];
 }

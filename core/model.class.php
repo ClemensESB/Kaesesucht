@@ -42,7 +42,7 @@ abstract class Model
         {
             return $this->data[$key];
         }
-        throw new \Exception('You can not access to property "'.$key.'" for the class "'.get_called_function().'"');
+        throw new \Exception('You can not access to property "'.$key.'" for the class "'.get_called_class().'"');
     }
 
     public function __set($key,$value)
@@ -52,7 +52,7 @@ abstract class Model
             $this->data[$key] = $value;
             return;
         }
-        throw new \Exception('You can not write to property "'.$key.'" for the class "'.get_called_function().'"');
+        throw new \Exception('You can not write to property "'.$key.'" for the class "'.get_called_class().'"');
 
     }
 

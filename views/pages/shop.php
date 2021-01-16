@@ -56,9 +56,7 @@
     </div>
 
 </div>
-<div class="footer">
-    ©2021 Käsesucht.
-</div>
+
 
 
 

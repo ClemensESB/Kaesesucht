@@ -95,4 +95,8 @@ else
         $controller->render();
     ?>
 </body>
+
+<div class="footer">
+    ©2021 Käsesucht.
+</div>
 </html>

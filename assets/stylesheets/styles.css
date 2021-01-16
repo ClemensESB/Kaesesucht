@@ -83,27 +83,42 @@ body{
 .table--header{
 	padding: 20px;
 }
-.column--article{
+.column--prim{
 	width: 60%;
 	float: left;
 }
-.column--mng{
+.column--sub{
 	width: 10%;
 	float: left;
+	text-align: right;
 }
-.column--stp{
-	width: 10%;
+.column--image{
+	width: 14%;
 	float: left;
 }
-.column--sum{
-	width: 10%;
-	float: left;
+.img--item{
+	width:60px;
+	height:40px;
 }
-.column--action{
-	width: 10%;
-	float: left;
+.panel--td{
+	background-color: whitesmoke;
 }
+.table--object{
+	height:50px;
+}
+.select-field{
+    max-width: 290px;
+    max-width: 18.125rem;
+    height: 42px;
+    height: 2.625rem;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #000000;
 
+}
 .btn a {
 	width : 50%;
 	margin-right: auto;
