@@ -11,7 +11,7 @@ class LoginController extends \kae\core\Controller
         $success = false;
 
         // oh my good, we get data
-        if(isset($_POST['submit']))
+        if(isset($_POST['submitLogin']))
         {
             $email = $_POST['email'] ?? null;
             $password = $_POST['password'] ?? null;
@@ -34,7 +34,8 @@ class LoginController extends \kae\core\Controller
                 {
                     //TODO Datenbankanbindung
                     $success = true;
-                    $_SESSION['email'->$email];
+                    //$_SESSION['loggedIn' => true]
+                    //$_SESSION['email'=>$email];
                 }
             }
         }

@@ -11,7 +11,7 @@ class SignupController extends \kae\core\Controller
         $success = false;
 
         // oh my good, we get data
-        if(isset($_POST['submit']))
+        if(isset($_POST['submitSignup']))
         {
             $firstName = $_POST['firstName'] ?? null;
             $lastName = $_POST['lastName'] ?? null;
@@ -21,6 +21,7 @@ class SignupController extends \kae\core\Controller
             $city = $_POST['city'] ?? null;
             $email = $_POST['email'] ?? null;
             $password = $_POST['password'] ?? null;
+            $password1 = $_POST['password1'] ?? null;
 
             if($firstName === null || mb_strlen($firstName) < 1)
             {
@@ -61,6 +62,10 @@ class SignupController extends \kae\core\Controller
             {
                 $errors['password'] = 'Passwort ist zu kurz, bitte mehr als 8 Zeichen.';
             }
+            else if($password === null || $password === $password1)
+            {
+                $errors['password'] = 'Passwort stimmt nicht überein.';
+            }
 
             // check errors?
             if(count($errors) === 0)
@@ -69,6 +74,7 @@ class SignupController extends \kae\core\Controller
                 if( true ) // fake true because no db connected yet
                 {
                     $success = true;
+                    //TODO:Login nach Signup
                 }
             }
         }
