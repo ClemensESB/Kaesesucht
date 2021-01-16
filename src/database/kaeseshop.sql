@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`address` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `createdAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatetAt` TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  `zipCode` VARCHAR(5) NOT NULL CHECK (ZIPCode LIKE '[0-9][0-9][0-9][0-9][0-9]'),
+  `zipCode` VARCHAR(5) NOT NULL CHECK (zipCode REGEXP '[0-9][0-9][0-9][0-9][0-9]'),
   `city` VARCHAR(50) NOT NULL,
   `street` VARCHAR(100) NOT NULL, 
   `strNo` VARCHAR(4) NOT NULL,
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`account` (
   `lastName` VARCHAR(45) NOT NULL,
   `address_id` INT NOT NULL,
   `payMethod` VARCHAR(1) NULL CHECK (payMethod = 'P' OR 'B' OR 'S'),
-  `isAdmin` TINYINT(1) NOT NULL,
+  `isAdmin` TINYINT(1) NULL,
   `passwordHash` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`, `address_id`),
   CONSTRAINT `fk_account_address1`

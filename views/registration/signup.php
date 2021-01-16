@@ -1,4 +1,4 @@
-<form method="POST" id="signupform" action="index.php">
+<form method="POST" id="signupform" action="">
     <p>Signup</p>
     <input type="text" value="" id="firstName" name="firstName" placeholder="Vorname" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Vorname'" class="inputtext">
     <input type="text" value="" id="lastName" name="lastName" placeholder="Nachname" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nachname'" class="inputtext">
@@ -9,5 +9,5 @@
     <input type="text" value="" id="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" class="inputtext">
     <input type="password" id="password" name="password" placeholder="Passwort" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Passwort'" class="inputtext">
     <input type="password" id="password1" name="password1" placeholder="Passwort wiederholen" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Passwort wiederholen'" class="inputtext">
-    <input type="submit" name="submit" id="loginbutton" value="Login">
+    <input type="submit" name="submit" id="loginbutton" value="Signup">
 </form>

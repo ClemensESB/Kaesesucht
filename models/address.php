@@ -14,5 +14,9 @@ class ModelAddress extends \kae\core\Model
   	'zipCode'   =>['type' => BaseModel::TYPE_STRING],
   	'city'      =>['type' => BaseModel::TYPE_STRING],
   	'strNo'     =>['type' => BaseModel::TYPE_STRING],
+  	'street' 	=>['type' => BaseModel::TYPE_STRING], 
+  	'strNo' 	=>['type' => BaseModel::TYPE_STRING],
+  	'strAdd' 	=>['type' => BaseModel::TYPE_STRING],
 	];
+
 }

@@ -20,10 +20,10 @@
 		</div>
 
 		<?
-		#foreach ($_SESSION['cart']  as $key => $product) {
-		#	$this->shoppingProduct($product);
-		#}
-		$this->shoppingProduct($_SESSION['cart'][0]);
+		foreach ($_SESSION['cart']  as $key => $product) {
+			$this->shoppingProduct($product);
+		}
+		#$this->shoppingProduct($_SESSION['cart'][0]);
 		?>
 		</div>
 	</div>

@@ -8,7 +8,7 @@ abstract class Model
 {
 	// useful types for schema
     const TYPE_STRING   = 'string';
-    const TYPE_INT  = 'int';
+    const TYPE_INT  = 'integer';
     const TYPE_FLOAT = 'float';
     const TYPE_UINTEGER = 'uint';
     const TYPE_DECIMAL  = 'dec';
@@ -105,6 +105,59 @@ abstract class Model
         return null;
     }
 
+    public static function countTableEntries(){
+        $db = $GLOBALS['db'];
+        $result = null;
+        try
+        {
+            $sql = 'SELECT count(id) FROM '.self::tablename();
+            $result = $db->query($sql)->fetchAll();
+
+        }
+        catch(\PDOException $e)
+        {
+            die('Select statement failed: '. $e->getMessage());
+        }
+        $result = $result[0]['count(id)'];
+
+        return $result;
+    }
+
+    public function updateModel(){
+
+        $wherestr = '';
+        foreach ($this->data as $key => $value) {
+            if($value != null && gettype($value) ==  self::TYPE_STRING){
+                $wherestr .= ' '.$key.' = "'.$value.'" and';
+                #echo($value.': '.gettype($value));
+            }
+            elseif($value != null && gettype($value) ==  self::TYPE_INT)
+            {
+                $wherestr .= ' '.$key.' = '.$value.' and';
+                #echo($value.': '.gettype($value));
+            }
+        }
+
+        $wherestr = trim($wherestr,' and');
+        #echo($wherestr);
+
+        $erg = $this->findOne($wherestr);
+        #pre_r($erg);
+
+        foreach($this->schema as $key => $value )
+        {
+            if(isset($erg[$key]))
+            {
+                $this->{$key} = $erg[$key]; //schreibt bei key von schema
+            }
+            else
+            {
+                $this->{$key} = null;
+            }
+        }
+
+    }
+
     public function insert(&$errors)
     {
         $db = $GLOBALS['db'];
@@ -132,8 +185,9 @@ abstract class Model
             $sql .= ')'.$valueString.');';
 
             $statement = $db->prepare($sql);
+            echo($valueString);
             $statement->execute();
-
+            $this->updateModel();
             return true;
         }
         catch(\PDOException $e)

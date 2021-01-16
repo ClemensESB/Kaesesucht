@@ -23,6 +23,8 @@ class ModelAccount extends \kae\core\Model
     'passwordHash'=>['type' => BaseModel::TYPE_STRING]
 	];
 
+  
+
 }
 #####################################
 #Beispielzugriff und Erstellung eines account models mit firstName Clemens

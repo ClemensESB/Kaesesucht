@@ -23,7 +23,7 @@ class ShoppingController extends \kae\core\Controller
 	public function actionShoppingCart()
 	{
 
-		pre_r($_POST);
+		#pre_r($_POST);
 
 
 		if(isset($_SESSION['cart']))
@@ -57,6 +57,15 @@ class ShoppingController extends \kae\core\Controller
 		$_SESSION['cart'] [0]->__set('qtyInStock',10);
 		$_SESSION['cart'] [0]->quantity = 2;
 
+		$_SESSION['cart'] [1]->quantity = 4;
+		$_SESSION['cart'] [1]->__set('id',333);
+		$_SESSION['cart'] [1]->__set('price_id',2);
+		$_SESSION['cart'] [1]->__set('qtyInStock',3);
+		$_SESSION['cart'] [2]->quantity = 7;
+		$_SESSION['cart'] [2]->__set('id',412);
+		$_SESSION['cart'] [2]->__set('price_id',3);
+		$_SESSION['cart'] [2]->__set('qtyInStock',41);
+		#pre_r($_SESSION['cart']);
 	}
 	public function actionDeleteArticle(){
 
@@ -67,6 +76,7 @@ class ShoppingController extends \kae\core\Controller
 	public function shoppingProduct($product){
 		$price = new Price(Price::findOne('id = '.$product->__get('price_id')));
 		#var_dump($price->__get('pricePerUnit'));
+		echo($product->quantity);
 
 		echo('<div class="table--object has--border panel--td">
 			<div class="column--prim panel--td has--border">
