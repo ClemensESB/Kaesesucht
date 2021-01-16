@@ -1,3 +1,74 @@
+body{
+	background-color: rgb(255, 252, 237);
+}
+.title {
+	text-align: center;
+	margin-top:80px;
+	margin-bottom:80px;
+	font-size: 20px;
+	color : rgb(77, 77, 77);
+}
+.element-center {
+	width : 100% ;
+	margin: auto auto ;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+	color : rgb(77, 77, 77);
+}
+.text{
+	text-align: center;
+	margin-top:60px;
+	font-size: 17px;
+	color : black;
+}
+.descrip{
+	text-align: center;
+	margin-top:60px;
+	font-size: 15px;
+	color : black;
+	width : 70%;
+	margin-right: auto;
+	margin-left: auto;
+}
+.img{
+	width: 70%;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 50px;
+	justify-content: center;
+	align-content: center;
+	width:350px;
+	height:220px;
+
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: rgb(223, 214, 191);
+	color: black;
+	text-align: center;
+	padding: 10px;
+}
+
+/*.column {
+	margin-top:100px;
+	text-align: center;
+	width: 30%;
+	color : rgb(77, 77, 77);
+}*/
+
+@media screen and (max-width: 600px) {
+	.column {
+		width: 100%;
+	}
+}
+
 .panel{
 	display: block;
 	background: #fff;
@@ -32,6 +103,18 @@
 	width: 10%;
 	float: left;
 }
-.btn{
 
+.btn a {
+	width : 50%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: whitesmoke;
+	color: black;
+	padding: 14px 25px;
+	border: 1px solid green;
+}
+
+.btn a:hover {
+	background-color: darkslategrey;
+	color: antiquewhite;
 }
