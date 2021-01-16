@@ -19,12 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="profil logout pages">
-      <change beforePath="$PROJECT_DIR$/assets/navBar.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/navBar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/stylesheets/navBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/stylesheets/navBar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/stylesheets/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/stylesheets/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/shop.php" afterDir="false" />
+    <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="shop page without filter">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +55,7 @@
       <workItem from="1610576601021" duration="1940000" />
       <workItem from="1610637258926" duration="14815000" />
       <workItem from="1610699298932" duration="23688000" />
-      <workItem from="1610753872215" duration="7727000" />
+      <workItem from="1610753872215" duration="8336000" />
     </task>
     <task id="LOCAL-00001" summary="profil logout pages">
       <created>1610640841456</created>
@@ -68,7 +64,21 @@
       <option name="project" value="LOCAL" />
       <updated>1610640841456</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="shop page without filter">
+      <created>1610762312484</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1610762312484</updated>
+    </task>
+    <task id="LOCAL-00003" summary="shop page without filter">
+      <created>1610762326377</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1610762326377</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,21 +98,26 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="profil logout pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="profil logout pages" />
+    <MESSAGE value="shop page without filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="shop page without filter" />
   </component>
   <component name="WindowStateProjectService">
     <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1610637613760">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1610637613760" />
-    <state x="794" y="448" key="NewPhpFileDialog" timestamp="1610640243628">
+    <state x="781" y="248" key="NewPhpClassDialog" timestamp="1610762237114">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="794" y="448" key="NewPhpFileDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1610640243628" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1610640845516">
+    <state x="781" y="248" key="NewPhpClassDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1610762237114" />
+    <state x="794" y="448" key="NewPhpFileDialog" timestamp="1610762249379">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1610640845516" />
+    <state x="794" y="448" key="NewPhpFileDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1610762249379" />
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1610762332487">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1610762332487" />
     <state x="777" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610699499994">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
