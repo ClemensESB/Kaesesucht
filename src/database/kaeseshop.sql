@@ -146,17 +146,6 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`orderedItems` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
-
--- -----------------------------------------------------
--- Table `kaeseshop`.`base`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kaeseshop`.`base` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `createdAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatetAt` TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`));
-
-
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
