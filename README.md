@@ -12,6 +12,7 @@ Shopseite
 Beispiel Bilder
 	->Produktseite
 	Filter für den Shop
+	array_push($_SESSION['cart'],$product);
 Impressum
 Checkout:
 Warenkorb
