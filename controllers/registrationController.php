@@ -2,21 +2,68 @@
 
 namespace kae\controller;
 
-class SignupController extends \kae\core\Controller
+class RegistrationController extends \kae\core\Controller
 {
 
-	public function actionSignup()
+	public function actionlogin()
 	{
         $errors = [];
         $success = false;
 
         // oh my good, we get data
-        if(isset($_POST['submitSignup']))
+        if(isset($_POST['submit']))
+        {
+            
+            $email = $_POST['email'] ?? null;
+            $password = $_POST['password'] ?? null;
+
+            if($email === null || mb_strlen($email) < 2)
+            {
+                $errors['email'] = 'E-Mail ist zu kurz, bitte mehr als 2 Zeichen.';
+            }
+
+            if($password === null || mb_strlen($password) < 8)
+            {
+                $errors['password'] = 'Passwort ist zu kurz, bitte mehr als 8 Zeichen.';
+            }
+
+            // check errors?
+            if(count($errors) === 0)
+            {
+                
+                if( true )
+                {
+                    //TODO Datenbankanbindung
+                    
+                    $success = true;
+                    session_start();
+                    $_SESSION['email'] = $email;
+
+        // push to view ;)
+        $this->setParam('errors', $errors);
+        $this->setParam('success', $success);
+                }
+            }
+        }
+    }
+    
+    public function actionlogout()
+    {
+        \session_destroy();
+    }
+
+    public function actionSignup()
+	{
+        $errors = [];
+        $success = false;
+
+        // oh my good, we get data
+        if(isset($_POST['submit']))
         {
             $firstName = $_POST['firstName'] ?? null;
             $lastName = $_POST['lastName'] ?? null;
             $street = $_POST['street'] ?? null;
-            $streetNo = $_POST['streetNo'] ?? null;
+            $streetNo = $_POST['strNo'] ?? null;
             $zipCode = $_POST['zipCode'] ?? null;
             $city = $_POST['city'] ?? null;
             $email = $_POST['email'] ?? null;
