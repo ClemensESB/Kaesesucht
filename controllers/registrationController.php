@@ -18,40 +18,51 @@ class RegistrationController extends \kae\core\Controller
             
             $email = $_POST['email'] ?? null;
             $password = $_POST['password'] ?? null;
+            $_POST['password'] = hash( 'md5' , $password , false );
 
-            if($email === null || mb_strlen($email) < 2)
+            $account = new Account($_POST);
+
+            if($email == null)
             {
-                $errors['email'] = 'E-Mail ist zu kurz, bitte mehr als 2 Zeichen.';
+                $errors['email'] = 'Bitte geben sie eine Email ein.';
             }
 
-            if($password === null || mb_strlen($password) < 8)
+            if($password == null)
             {
-                $errors['password'] = 'Passwort ist zu kurz, bitte mehr als 8 Zeichen.';
+                $errors['password'] = 'Bitte geben sie eine Passwort ein.';
             }
+
+            else if($account->findone('email = "'.$email.'" and passwordHash = "'.$_POST['password'].'"') == null)
+            {
+                $errors['account'] = 'Anmelde Daten ungültig.';
+            }
+
 
             // check errors?
-            if(count($errors) === 0)
+            if(count($errors) == 0)
             {
                 
-                if( true )
-                {
+                
                     //TODO Datenbankanbindung
-                    
                     $success = true;
+                    session_destroy();
                     session_start();
                     $_SESSION['email'] = $email;
+            }
 
         // push to view ;)
         $this->setParam('errors', $errors);
         $this->setParam('success', $success);
-                }
-            }
+        //pre_r($errors);
+        //echo($_SESSION['email']);
+                
+            
         }
     }
     
     public function actionlogout()
     {
-        \session_destroy();
+        session_destroy();
     }
 
     public function actionSignup()
@@ -134,14 +145,13 @@ class RegistrationController extends \kae\core\Controller
                 $address = new Address($_POST);
                 $account = new Account($_POST);
 
-                
                 $address->insert($errors);
-                #pre_r($address);
                 $account->__set('address_id',$address->__get('id'));
+                pre_r($account);
                 $account->insert($errors);
             }
         }
-        #pre_r($errors);
+        pre_r($errors);
 
         // push to view ;)
         $this->setParam('errors', $errors);
