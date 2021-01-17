@@ -1,67 +1,117 @@
-body{
+body {
 	background-color: rgb(255, 252, 237);
+	width: 100%;
+	height: 100%;
+	display: table;
 }
-.title {
+html, body {
+	overflow: auto;
+}
+body::-webkit-scrollbar {
+	display: none;
+}
+.shop_title {
 	text-align: center;
-	margin-top:80px;
-	margin-bottom:80px;
+	margin: 30px 10px 10px 10px;
 	font-size: 20px;
-	color : rgb(77, 77, 77);
+	color: rgb(77, 77, 77);
 }
-.element-center {
-	width : 100% ;
-	margin: auto auto ;
-	display: flex;
-	justify-content: center;
-	align-content: center;
+.shop_text {
 	text-align: center;
-	color : rgb(77, 77, 77);
-}
-.text{
-	text-align: center;
-	margin-top:60px;
+	margin-top: 40px;
 	font-size: 17px;
-	color : black;
+	color: black;
 }
-.descrip{
+
+
+.page_container {
+	/*width: 90%;
+    height : 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    clear: both;*/
+
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+	grid-gap: 5px;
+	margin-bottom: 20px;
+}
+
+.product_container {
+	width: 100%;
+	/*width: 33.33%;*/
+	height: auto;
+	float: left;
+	margin-top: 5%;
+
+}
+
+.product_title {
 	text-align: center;
-	margin-top:60px;
-	font-size: 15px;
-	color : black;
-	width : 70%;
-	margin-right: auto;
-	margin-left: auto;
+	margin: 10px;
+	font-size: 20px;
+	color: rgb(77, 77, 77);
 }
-.img{
+
+.product_descrip {
+	text-align: center;
+	margin: 30px auto;
+	font-size: 15px;
+	color: black;
 	width: 70%;
+}
+
+.product_image {
+	width: 70%;
+	height : auto;
+	margin : 30px auto;
 	display: block;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 50px;
 	justify-content: center;
 	align-content: center;
-	width:350px;
-	height:220px;
+}
 
+.product_btn {
+	width: 50%;
+	margin-left: 25%;
+	margin-top: 10px;
+	text-align: center;
+
+}
+.product_btn a {
+	width: 100%;
+	background-color: whitesmoke;
+	color: black;
+	border: 1px solid green;
+	padding: 14px 20px;
+}
+
+.product_btn a:hover {
+	background-color: darkslategrey;
+	color: antiquewhite;
 }
 
 .footer {
-	position: fixed;
-	left: 0;
-	bottom: 0;
 	width: 100%;
+	height: 0.1rem;
 	background-color: rgb(223, 214, 191);
-	color: black;
+	margin: 20px 0px 0px 0px;
+	overflow: hidden;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	position: relative;
+	bottom: 0;
+	clear: both;
 	text-align: center;
-	padding: 10px;
+
 }
 
-/*.column {
-	margin-top:100px;
-	text-align: center;
-	width: 30%;
-	color : rgb(77, 77, 77);
-}*/
+@media screen and (max-width: 600px) {
+	.column {
+		width: 100%;
+	}
+}
+
+
 
 @media screen and (max-width: 600px) {
 	.column {
@@ -71,17 +121,21 @@ body{
 
 .panel{
 	display: block;
-	background: #fff;
+	background-color: rgb(255, 252, 237);
 	padding: 20px;
+
 }
 .has--border {
     border: 1px solid #dadae5;
 }
 .panel--body{
 	padding: 20px;
+	background-color: rgb(255, 252, 237);
+	border:1px solid whitesmoke;
 }
 .table--header{
 	padding: 20px;
+	background-color: rgb(255, 252, 237);
 }
 .column--prim{
 	width: 60%;
@@ -91,6 +145,7 @@ body{
 	width: 10%;
 	float: left;
 	text-align: right;
+	height: 100%;
 }
 .column--image{
 	width: 14%;
@@ -104,21 +159,35 @@ body{
 	background-color: whitesmoke;
 }
 .table--object{
-	height:50px;
+	height:40px;
+}
+.table--object{
+	height:40px;
+}
+.form{
+	height:100%
 }
 .select-field{
-    max-width: 290px;
-    max-width: 18.125rem;
-    height: 42px;
-    height: 2.625rem;
-    width: 100%;
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    border: 1px solid #000000;
+	height: 100%;
+	width: 50%;
+	float:left;
+	appearance:none;
+	border:none;
+	font-size: 1.5vw;
+	text-align: center;
 
 }
+.select-field:hover{
+	height: 100%;
+	width: 50%;
+	float:left;
+	appearance:none;
+	border:1px solid black;
+	font-size: 1.5vw;
+	text-align: center;
+	background-color:whitesmoke;
+}
+
 .btn a {
 	width : 50%;
 	margin-right: auto;
@@ -127,6 +196,17 @@ body{
 	color: black;
 	padding: 14px 25px;
 	border: 1px solid green;
+}
+.btn{
+	background-color: whitesmoke;
+	color: red;
+	border: 1px solid black;
+	width : 50%;
+	height : 100%;
+
+}
+.btn:hover{
+	background-color: antiquewhite;
 }
 
 .btn a:hover {
