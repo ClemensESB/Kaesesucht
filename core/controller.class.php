@@ -57,7 +57,7 @@ class Controller
 		
 		// just include the view here, it's like putting the code of the php file by copy paste on this position.
 		include ASSETPATH.'navBar.html';
-		echo('<div class="side-wrapper">');
+		echo('<div id="wrapper">');
 		include $viewPath;
 		echo('</div>');
 		include ASSETPATH.'footer.html';

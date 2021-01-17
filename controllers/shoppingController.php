@@ -9,7 +9,12 @@ use kae\model\ModelPrice as Price;
 
 class ShoppingController extends \kae\core\Controller
 {
-	public $cart =array();
+	private $sum = 0.0;
+
+	public function getSum()
+	{
+		return $this->sum;
+	}
 
 	public function actionCheckout()
 	{
@@ -50,6 +55,13 @@ class ShoppingController extends \kae\core\Controller
 				}
 			}
 		}
+		foreach ($_SESSION['cart'] as $key => $product) 
+		{
+			$price = $this::productPrice($product);
+			$this->sum += $price->__get('pricePerUnit')*$product->getQuantity();
+		}
+
+
 	}
 
 	public function productPrice($product){

@@ -3,6 +3,7 @@ body {
 	width: 100%;
 	height: 100%;
 	display: table;
+
 }
 html, body {
 	overflow: auto;
@@ -10,6 +11,10 @@ html, body {
 body::-webkit-scrollbar {
 	display: none;
 }
+#wrapper {
+	min-height: calc(100vh - 8em - 12px);
+}
+
 .shop_title {
 	text-align: center;
 	margin: 30px 10px 10px 10px;
@@ -91,18 +96,15 @@ body::-webkit-scrollbar {
 }
 
 .footer {
-	width: 100%;
-	height: 0.1rem;
+	width: 100vw;
+	height: 40px;
 	background-color: rgb(223, 214, 191);
 	margin: 20px 0px 0px 0px;
 	overflow: hidden;
-	padding-top: 5%;
-	padding-bottom: 5%;
 	position: relative;
+	padding-top: 10px;
 	bottom: 0;
-	clear: both;
 	text-align: center;
-
 }
 
 @media screen and (max-width: 600px) {
@@ -117,75 +119,22 @@ body::-webkit-scrollbar {
 	.column {
 		width: 100%;
 	}
-}
-
-.panel{
-	display: block;
-	background-color: rgb(255, 252, 237);
-	padding: 20px;
-
-}
-.has--border {
-    border: 1px solid #dadae5;
-}
-.panel--body{
-	padding: 20px;
-	background-color: rgb(255, 252, 237);
-	border:1px solid whitesmoke;
-}
-.table--header{
-	padding: 20px;
-	background-color: rgb(255, 252, 237);
-}
-.column--prim{
-	width: 60%;
-	float: left;
-}
-.column--sub{
-	width: 10%;
-	float: left;
-	text-align: right;
-	height: 100%;
-}
-.column--image{
-	width: 14%;
-	float: left;
-}
-.img--item{
-	width:60px;
-	height:40px;
-}
-.panel--td{
-	background-color: whitesmoke;
-}
-.table--object{
-	height:40px;
-}
-.table--object{
-	height:40px;
-}
-.form{
-	height:100%
 }
 .select-field{
 	height: 100%;
-	width: 50%;
-	float:left;
+	width: 70px;
 	appearance:none;
-	border:none;
-	font-size: 1.5vw;
+	border:1px solid #888888;
+	font-size: 20px;
 	text-align: center;
+	background-color: whitesmoke;
 
 }
 .select-field:hover{
-	height: 100%;
-	width: 50%;
-	float:left;
 	appearance:none;
 	border:1px solid black;
-	font-size: 1.5vw;
 	text-align: center;
-	background-color:whitesmoke;
+	background-color: antiquewhite;
 }
 
 .btn a {
@@ -199,11 +148,7 @@ body::-webkit-scrollbar {
 }
 .btn{
 	background-color: whitesmoke;
-	color: red;
 	border: 1px solid black;
-	width : 50%;
-	height : 100%;
-
 }
 .btn:hover{
 	background-color: antiquewhite;
@@ -213,3 +158,105 @@ body::-webkit-scrollbar {
 	background-color: darkslategrey;
 	color: antiquewhite;
 }
+.head--container h1{
+	text-align: center;
+}
+.product--btn{
+	width: 100%;
+	height: 50px;
+	text-align: center;
+
+}
+.product--btn a{
+	background-clip: padding-box;
+	border: 1px solid black;
+	display: inline-block;
+	position: relative;
+	background-color: whitesmoke;
+	color: black;
+	padding:14px;
+	width: 100%;
+	border-radius: 10px;
+}
+.product--btn a:hover {
+	background-color: darkslategrey;
+	color: antiquewhite;
+}
+.panel{
+	width:100%;
+	padding: 10px 10px;
+	margin-bottom: 10px;
+}
+.table--object {
+	position: relative;
+	margin-bottom: 5px;
+}
+.column--prim{
+	width: 60%;
+	height: 80px;
+}
+.table--content{
+	width: 100%;
+	height: 100%;
+}
+
+.column--image{
+	width: 80px;
+	height:45px;
+	float: left;
+}
+.column--image img{
+	width: 100%;
+	height:100%;
+}
+.column--sub{
+	height:30px;
+	text-align: right;
+}
+.column--sub form{
+	
+	height:100%;
+	text-align: right;
+}
+
+.del--action {
+    width: 20%;
+    text-align: right;
+    float:right;
+    position:absolute;
+    top: 10px;
+    right: 5px;
+    height: 40px;
+    width: 40px;
+}
+.del--action form{
+	width:100%;
+	height:100%;
+	display: inline-block;
+}
+.del--btn{
+	font-size: 30px;
+	color:red;
+	border-radius: 5px;
+	width : 100%;
+	height : 100%;
+}
+.btn--submit{
+	width:50px;
+	height:100%;
+	text-align: center;
+	float: right;
+}
+.duoBox{
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+.price{
+	font-size: 24px;
+}
+
+
+
+
+

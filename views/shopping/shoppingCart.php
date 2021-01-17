@@ -1,33 +1,19 @@
-<h1>Warenkorb</h1>
+<div class="head--container">
+	<h1>Warenkorb</h1>
+	<div class ="product--btn">
+		<a href="index.php?c=shopping&a=checkout"><?echo('Zur Kasse Summe: '.$this->getSum().' €');?></a>
+	</div>
+</div>
+
 
 <div class="panel">
-	<div class="panel--body">
-		<div class="table--header">
-			<div class="column--prim panel--th">
-				Artikel
-			</div>
-			<div class="column--sub panel--th is--align-right">
-				Menge
-			</div>
-			<div class="column--sub panel--th is--align-right">
-				Stückpreis
-			</div>
-			<div class="column--sub panel--th is--align-right">
-				Summe
-			</div>
-			<div class="column--sub panel--th is--align-right">
-			</div>
-		</div>
-
-
 <?
-$sum = 0.0 ;
+
 foreach ($_SESSION['cart']  as $key => $product) {
 	$price = $this::productPrice($product);
-	$sum += $price->__get('pricePerUnit')*$product->getQuantity();
 
-	echo('<div class="table--object panel--td">
-			<div class="column--prim panel--td">
+	echo('<div class="table--object">
+			<div class="column--prim">
 				<div class="column--image">
 					<img src="'.ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product->__get('pictureName').'" class="img--item">
 				</div>
@@ -37,7 +23,7 @@ foreach ($_SESSION['cart']  as $key => $product) {
 				</div>
 			</div>');
 
-	echo('	<div class="column--sub panel--td">');
+	echo('	<div class="column--sub">');
 	echo('		<form method="POST" class="form" name="chQuantity">');
 	echo('			<select name="chQuantity" class="select-field">');
 					for ($i=1; $i <= $product->__get('qtyInStock'); $i++) {
@@ -51,37 +37,40 @@ foreach ($_SESSION['cart']  as $key => $product) {
 						}
 					}
 	echo('			</select>');
-	echo('		<button type="submit" class="btn" name="submit">-></button>
+	echo('		<button type="submit" class="btn btn--submit" name="submit">-></button>
 				<input type="hidden" name="idProduct" value="'.$product->__get('id').'">');
 	echo('		</form>
 			</div>');
 
 	echo('
-			<div class="column--sub panel--td is--align-right">'.$price->__get('pricePerUnit').' €
+			<div class="column--sub duoBox">
+				<div class="price">
+					Stückpreis:
+				</div>
+				<div class="price">
+					'.$price->__get('pricePerUnit').' €
+				</div>
 			</div>
-			<div class="column--sub panel--td is--align-right">'.$price->__get('pricePerUnit')*$product->getQuantity().' €
+			<div class="column--sub duoBox">
+				<div class="price">
+					gesamter Preis:
+				</div>
+				<div class="price">
+					'.$price->__get('pricePerUnit')*$product->getQuantity().' €
+				</div>
 			</div>
-			<div class="column--sub panel--td is--align-right">
-				<form method="POST" class="form" action="">
-				<button type="submit" class="btn" name="deleteProduct">X</button>
+			<div class="column--sub del--action">
+				<form method="POST" action="">
+				<button type="submit" class="btn  del--btn" name="deleteProduct">X</button>
 				<input type="hidden" name="delID" value="'.$product->__get('id').'">
 				</form>
 			</div>
 		</div>');
 }
-
-
 ?>
-		<div class="table--object panel--td">
-			
-			<?echo('Summe: '.$sum.' €');?>
-
-		</div>
-
-
-
-	</div>
 </div>
 
 
-<a href="index.php?c=shopping&a=checkout">Kasse</a>
+	<div class ="product--btn">
+		<a href="index.php?c=shopping&a=checkout"><?echo('Zur Kasse Summe: '.$this->getSum().' €');?></a>
+	</div>
