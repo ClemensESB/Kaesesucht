@@ -24,7 +24,7 @@
 $sum = 0.0 ;
 foreach ($_SESSION['cart']  as $key => $product) {
 	$price = $this::productPrice($product);
-	$sum += $price->__get('pricePerUnit')*$product->quantity;
+	$sum += $price->__get('pricePerUnit')*$product->getQuantity();
 
 	echo('<div class="table--object panel--td">
 			<div class="column--prim panel--td">
@@ -41,7 +41,7 @@ foreach ($_SESSION['cart']  as $key => $product) {
 	echo('		<form method="POST" class="form" name="chQuantity">');
 	echo('			<select name="chQuantity" class="select-field">');
 					for ($i=1; $i <= $product->__get('qtyInStock'); $i++) {
-						if($product->quantity == $i)
+						if($product->getQuantity() == $i)
 						{
 							echo(		'<option selected="selected" value="'.$i.'">'.$i.'</option>');
 						}
@@ -59,7 +59,7 @@ foreach ($_SESSION['cart']  as $key => $product) {
 	echo('
 			<div class="column--sub panel--td is--align-right">'.$price->__get('pricePerUnit').' €
 			</div>
-			<div class="column--sub panel--td is--align-right">'.$price->__get('pricePerUnit')*$product->quantity.' €
+			<div class="column--sub panel--td is--align-right">'.$price->__get('pricePerUnit')*$product->getQuantity().' €
 			</div>
 			<div class="column--sub panel--td is--align-right">
 				<form method="POST" class="form" action="">

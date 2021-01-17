@@ -9,12 +9,7 @@ use kae\model\ModelPrice as Price;
 
 class ShoppingController extends \kae\core\Controller
 {
-	protected $controller = null;
-	protected $action = null;
-	protected $currentUser = null;
-
-	protected $params = [];
-
+	public $cart =array();
 
 	public function actionCheckout()
 	{
@@ -24,7 +19,7 @@ class ShoppingController extends \kae\core\Controller
 	{	
 		$this->killmeTestData();
 
-		#pre_r($_POST);
+		#pre_r($_GET);
 		if(isset($_SESSION['cart']))
 		{
 			if(isset($_POST['deleteProduct'])){
@@ -34,15 +29,14 @@ class ShoppingController extends \kae\core\Controller
 					if($_SESSION['cart'][$key]->__get('id') == $_POST['delID'])
 					{
 						unset($_SESSION['cart'][$key]);
+
 					}
 				}
 			}
-			$cart = $_SESSION['cart']; //TODO: wie werden die Items gespeichert cookie? session?
-			
 		}
 		else
 		{
-			$cart = null;
+			$_SESSION['cart'] = null;
 		}
 
 		if(isset($_POST['submit']))
@@ -52,24 +46,10 @@ class ShoppingController extends \kae\core\Controller
 			foreach ($_SESSION['cart'] as $key => $value) {
 				if($_SESSION['cart'][$key]->__get('id') == $_POST['idProduct'])
 				{
-					$_SESSION['cart'][$key]->quantity = $_POST['chQuantity'];
+					$_SESSION['cart'][$key]->setQuantity($_POST['chQuantity']);
 				}
 			}
 		}
-
-
-
-		
-		#pre_r($_SESSION['cart']);
-
-
-
-
-	}
-	public function actionDeleteArticle(){
-
-
-		actionShoppingCart();
 	}
 
 	public function productPrice($product){
@@ -91,22 +71,25 @@ class ShoppingController extends \kae\core\Controller
 		#echo('<pre>');
 		#echo($_SESSION['cart'] [0]->__get('cheeseName'));
 		#echo('</pre>');
-		$_SESSION['cart'] [0]->__set('pictureName','Gouda.jpg');
+		
 
 		#$_SESSION['cart'] [0]->__set('id',123);
 		#$_SESSION['cart'] [0]->__set('price_id',1);	
 		#$_SESSION['cart'] [0]->__set('qtyInStock',10);
-		$_SESSION['cart'] [0]->quantity = 2;
+		$_SESSION['cart'] [0]->__set('pictureName','Gouda.jpg');
+		$_SESSION['cart'] [0]->setQuantity(2);
 
 		#$_SESSION['cart'] [1]->__set('id',333);
 		#$_SESSION['cart'] [1]->__set('price_id',2);
 		#$_SESSION['cart'] [1]->__set('qtyInStock',3);
-		$_SESSION['cart'] [1]->quantity = 4;
+		$_SESSION['cart'] [1]->__set('pictureName','parmesan.jpg');
+		$_SESSION['cart'] [1]->setQuantity(3);
 
 		#$_SESSION['cart'] [2]->__set('id',412);
 		#$_SESSION['cart'] [2]->__set('price_id',3);
 		#$_SESSION['cart'] [2]->__set('qtyInStock',41);
-		$_SESSION['cart'] [2]->quantity = 7;
+		$_SESSION['cart'] [2]->__set('pictureName','pecorino.jpg');
+		$_SESSION['cart'] [2]->setQuantity(7);
 
 	}
 

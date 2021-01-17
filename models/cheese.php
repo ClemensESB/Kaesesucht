@@ -26,9 +26,12 @@ class ModelCheese extends \kae\core\Model
     'pictureName'=>['type' => BaseModel::TYPE_STRING],
 	];
 
-  public $quantity;
-
-
-
+  private $quantity = 1;
+  public function getQuantity(){
+    return $this->quantity;
+  }
+  public function setQuantity($qty){
+    $this->quantity= $qty;
+  }
   
 }
