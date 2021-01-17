@@ -71,17 +71,21 @@ body{
 
 .panel{
 	display: block;
-	background: #fff;
+	background-color: rgb(255, 252, 237);
 	padding: 20px;
+
 }
 .has--border {
     border: 1px solid #dadae5;
 }
 .panel--body{
 	padding: 20px;
+	background-color: rgb(255, 252, 237);
+	border:1px solid whitesmoke;
 }
 .table--header{
 	padding: 20px;
+	background-color: rgb(255, 252, 237);
 }
 .column--prim{
 	width: 60%;
@@ -91,6 +95,7 @@ body{
 	width: 10%;
 	float: left;
 	text-align: right;
+	height: 100%;
 }
 .column--image{
 	width: 14%;
@@ -104,21 +109,35 @@ body{
 	background-color: whitesmoke;
 }
 .table--object{
-	height:50px;
+	height:40px;
+}
+.table--object{
+	height:40px;
+}
+.form{
+	height:100%
 }
 .select-field{
-    max-width: 290px;
-    max-width: 18.125rem;
-    height: 42px;
-    height: 2.625rem;
-    width: 100%;
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    border: 1px solid #000000;
+	height: 100%;
+	width: 50%;
+	float:left;
+	appearance:none;
+	border:none;
+	font-size: 1.5vw;
+	text-align: center;
 
 }
+.select-field:hover{
+	height: 100%;
+	width: 50%;
+	float:left;
+	appearance:none;
+	border:1px solid black;
+	font-size: 1.5vw;
+	text-align: center;
+	background-color:whitesmoke;
+}
+
 .btn a {
 	width : 50%;
 	margin-right: auto;
@@ -127,6 +146,17 @@ body{
 	color: black;
 	padding: 14px 25px;
 	border: 1px solid green;
+}
+.btn{
+	background-color: whitesmoke;
+	color: red;
+	border: 1px solid black;
+	width : 50%;
+	height : 100%;
+
+}
+.btn:hover{
+	background-color: antiquewhite;
 }
 
 .btn a:hover {
