@@ -185,7 +185,6 @@ abstract class Model
             $sql .= ')'.$valueString.');';
 
             $statement = $db->prepare($sql);
-            echo($valueString);
             $statement->execute();
             $this->updateModel();
             return true;
