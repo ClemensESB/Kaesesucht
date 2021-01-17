@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`sort` (
   `createdAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatetAt` TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `sortName` VARCHAR(45) NOT NULL,
+  CONSTRAINT UC_sort UNIQUE (id),
   PRIMARY KEY (`id`));
 
 
@@ -36,6 +37,7 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`price` (
   `createdAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatetAt` TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `pricePerUnit` DECIMAL(7,2) NOT NULL,
+  CONSTRAINT UC_price UNIQUE (id),
   PRIMARY KEY (`id`));
 
 
@@ -57,6 +59,7 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`cheese` (
   `milkType` VARCHAR(1) NULL CHECK (milkType = 'B' OR milkType = 'K' OR milkType ='S' OR milkType = 'Z'),
   `rawMilk` TINYINT(1) NOT NULL,
   `pictureName` VARCHAR(50) NULL,
+  CONSTRAINT UC_cheese UNIQUE (id),
   PRIMARY KEY (`id`, `sort_id`, `price_id`),
   CONSTRAINT `fk_cheese_sort`
     FOREIGN KEY (`sort_id`)
@@ -82,6 +85,7 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`address` (
   `street` VARCHAR(100) NOT NULL, 
   `strNo` VARCHAR(4) NOT NULL,
   `strAdd` VARCHAR(1) NULL,
+  CONSTRAINT UC_address UNIQUE (id),
   PRIMARY KEY (`id`));
 
 
@@ -92,13 +96,14 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`account` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `createdAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatetAt` TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  `email` VARCHAR(25) NULL CHECK (email REGEXP '^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$'),
+  `email` VARCHAR(100) NOT NULL CHECK (email REGEXP '^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$'),
   `firstName` VARCHAR(45) NOT NULL,
   `lastName` VARCHAR(45) NOT NULL,
   `address_id` INT NOT NULL,
   `payMethod` VARCHAR(1) NULL CHECK (payMethod = 'P' OR payMethod ='B' OR payMethod = 'S'),
   `isAdmin` TINYINT(1) NULL,
   `passwordHash` VARCHAR(255) NOT NULL,
+  CONSTRAINT UC_account UNIQUE (id,email),
   PRIMARY KEY (`id`, `address_id`),
   CONSTRAINT `fk_account_address1`
     FOREIGN KEY (`address_id`)
@@ -115,6 +120,7 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`orders` (
   `createdAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatetAt` TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `account_id` INT NOT NULL,
+  CONSTRAINT UC_orders UNIQUE (id),
   PRIMARY KEY (`id`, `account_id`),
   CONSTRAINT `fk_orders_account1`
     FOREIGN KEY (`account_id`)
@@ -134,6 +140,7 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`orderedItems` (
   `quantity` INT NOT NULL,
   `actualPrice` DECIMAL(7,2) NOT NULL,
   `orders_id` INT NOT NULL,
+  CONSTRAINT UC_orderedItems UNIQUE (id),
   PRIMARY KEY (`id`, `cheese_id`, `orders_id`),
   CONSTRAINT `fk_orderedItems_cheese1`
     FOREIGN KEY (`cheese_id`)
