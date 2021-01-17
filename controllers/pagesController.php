@@ -51,6 +51,7 @@ class PagesController extends \kae\core\Controller
 		        <img class = "product_image" src="'.$path.'" alt="'.$product->__get('cheeseName').'">
 		        <p class ="product_descrip" >
 		            Ab '.$price->__get('pricePerUnit').' € <br><br>
+		            '.$product->__get('descrip').'<br><br>
 		            Bei unseren Kunden immer beliebt und sehr gerne von unseren Mitarbeitern empfohlen.<br> Kosten Sie selbst und schmecken Sie,
 		            warum wir nicht aufhören können, über unsere feine Auswahl an '.$product->__get('cheeseName').' zu sprechen.<br><br> <br><br>Verfügbarkeit : '.$product->__get('qtyInStock').'
 		        </p>

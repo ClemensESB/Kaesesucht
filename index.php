@@ -82,8 +82,9 @@ else
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/stylesheets/navBar.css">
     <link rel="stylesheet" href="assets/stylesheets/styles.css">
+    <link rel="stylesheet" href="assets/stylesheets/navBar.css">
+    
     <title>Käsesucht</title>
 </head>
 <body>
@@ -95,8 +96,4 @@ else
         $controller->render();
     ?>
 </body>
-
-<div class="footer">
-    ©2021 Käsesucht.
-</div>
 </html>
