@@ -19,12 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="shop page without filter">
+    <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="shop page dynamic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/stylesheets/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/stylesheets/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/pagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/pagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/shop.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +68,7 @@
       <workItem from="1610818442721" duration="9907000" />
       <workItem from="1610881198516" duration="3364000" />
       <workItem from="1610884824228" duration="1613000" />
-      <workItem from="1610886662617" duration="2155000" />
+      <workItem from="1610886662617" duration="2852000" />
     </task>
     <task id="LOCAL-00001" summary="profil logout pages">
       <created>1610640841456</created>
@@ -94,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610762326377</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="shop page dynamic">
+      <created>1610897628552</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1610897628553</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,7 +120,8 @@
     <MESSAGE value="profil logout pages" />
     <MESSAGE value="shop page without filter" />
     <MESSAGE value="filter shop" />
-    <option name="LAST_COMMIT_MESSAGE" value="filter shop" />
+    <MESSAGE value="shop page dynamic" />
+    <option name="LAST_COMMIT_MESSAGE" value="shop page dynamic" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610897488858">
@@ -143,10 +148,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="816" y="227" key="RollbackChangesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1610896708014" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1610818164978">
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1610897632730">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1610818164978" />
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1610897632730" />
     <state x="777" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610897580841">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
