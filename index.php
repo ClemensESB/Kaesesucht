@@ -73,7 +73,6 @@ else
     header('Location: index.php?c=errors&a=error404&error=nocontroller');
     exit(0);
 }
-
 //<link rel="stylesheet" href="assets/styles/style.css">
 ?>
 

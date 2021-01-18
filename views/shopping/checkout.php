@@ -43,8 +43,8 @@
 			<p>
 				Vorname:<?echo($this->currentUser['firstName']);?><br>
 				Nachname:<?echo($this->currentUser['lastName']);?><br>
-				Ort:<?echo($this->address['city'].' '.$this->address['zipCode']);?><br>
-				Straße:<?echo($this->address['street'].' '.$this->address['strNo'].$this->address['strAdd']);?><br>
+				Ort:<?echo($this->currentUser['city'].' '.$this->currentUser['zipCode']);?><br>
+				Straße:<?echo($this->currentUser['street'].' '.$this->currentUser['strNo'].$this->currentUser['strAdd']);?><br>
 				Zahlungsmethode:<?echo($this->currentUser['payMethod']);?><br>
 			</p>
 		</div>
@@ -53,7 +53,7 @@
 				<?
 				foreach ($_SESSION['cart'] as $key => $value)
 				{
-					echo('Artikel: '.$value->__get('cheeseName').' '.$this->productPrice($value)->__get('pricePerUnit')*$value->getQuantity().' €<br>');
+					echo('Artikel: '.$value->__get('cheeseName').' '.$value->__get('pricePerUnit')*$value->getQuantity().' €<br>');
 				}
 				?>
 				Summe: <?echo($_SESSION['summe']);?>€

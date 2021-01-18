@@ -18,12 +18,16 @@ class Controller
 	{
 		$this->controller = $controller;
 		$this->action = $action;
+		if(empty($_SESSION['cart']))
+		{
+			$_SESSION['cart'] = array();
+		}
 
 		if($this->loggedIn())
 		{
 			$db = $GLOBALS['db'];
 			// TODO: Im Login Controller muss die email adresse des eingeloggten Users in $_SESSION['email'] geschrieben werden
-			$this->currentUser = \kae\model\ModelAccount::findOne('email = '.$db->quote($_SESSION['email']));
+			$this->currentUser = \kae\model\ModelAccountFull::findOne('email = '.$db->quote($_SESSION['email']));
 		}
 	}
 
@@ -46,7 +50,6 @@ class Controller
 			#pre_r($this->currentUser);
 		}
 			// check the file exists
-
 		if(!file_exists($viewPath))
 		{
 			// redirect to error page 404 because not found

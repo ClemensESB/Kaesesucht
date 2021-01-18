@@ -15,7 +15,6 @@ class ModelCheese extends \kae\core\Model
   	'cheeseName'	   =>['type' => BaseModel::TYPE_STRING],
   	'sort_id'		     =>['type' => BaseModel::TYPE_INT],
   	'price_id'		   =>['type' => BaseModel::TYPE_INT],
-  	'specifics_id'	 =>['type' => BaseModel::TYPE_INT],
   	'qtyInStock'	=>['type' => BaseModel::TYPE_INT],
   	'descrip'		=>['type' => BaseModel::TYPE_STRING],
   	'recipe'		=>['type' => BaseModel::TYPE_STRING],
@@ -33,5 +32,4 @@ class ModelCheese extends \kae\core\Model
   public function setQuantity($qty){
     $this->quantity= $qty;
   }
-  
 }

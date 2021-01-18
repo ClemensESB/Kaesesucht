@@ -23,6 +23,11 @@ abstract class Model
 
     public function __construct($params)
     {
+        $this->fill($params);
+    }
+
+    protected function fill($params)
+    {
         foreach($this->schema as $key => $value )
         {
             if(isset($params[$key]))
@@ -33,6 +38,7 @@ abstract class Model
             {
                 $this->{$key} = null;
             }
+
         }
     }
 
@@ -120,7 +126,6 @@ abstract class Model
 
         return $result;
     }
-
 
     public function updateModel(){
 
@@ -286,6 +291,8 @@ abstract class Model
         }
         return count($errors) > 0 ? $errors : true;
     }
+
+    
 
 }
 
