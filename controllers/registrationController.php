@@ -44,10 +44,9 @@ class RegistrationController extends \kae\core\Controller
                 
                 
                     //TODO Datenbankanbindung
-                    $success = true;
-                    session_destroy();
-                    session_start();
+                    $_SESSION['loggedIn'] = true;
                     $_SESSION['email'] = $email;
+
             }
 
         // push to view ;)

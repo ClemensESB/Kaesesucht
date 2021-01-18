@@ -25,7 +25,7 @@ foreach ($_SESSION['cart']  as $key => $product) {
 
 	echo('	<div class="column--sub">');
 	echo('		<form method="POST" class="form" name="chQuantity">');
-	echo('			<select name="chQuantity" class="select-field">');
+	echo('			<select name="chQuantity" class="select-field selection--qty">');
 					for ($i=1; $i <= $product->__get('qtyInStock'); $i++) {
 						if($product->getQuantity() == $i)
 						{
@@ -70,7 +70,8 @@ foreach ($_SESSION['cart']  as $key => $product) {
 ?>
 </div>
 
-
+<div class="panel">
 	<div class ="product--btn">
 		<a href="index.php?c=shopping&a=checkout"><?echo('Zur Kasse Summe: '.$this->getSum().' €');?></a>
 	</div>
+</div>

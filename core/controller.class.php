@@ -21,8 +21,9 @@ class Controller
 
 		if($this->loggedIn())
 		{
+			$db = $GLOBALS['db'];
 			// TODO: Im Login Controller muss die email adresse des eingeloggten Users in $_SESSION['email'] geschrieben werden
-			$currentUser = \kae\model\ModelAccount::findOne('email = '.$db->quote($_SESSION['email']));
+			$this->currentUser = \kae\model\ModelAccount::findOne('email = '.$db->quote($_SESSION['email']));
 		}
 	}
 
@@ -41,7 +42,9 @@ class Controller
 
 		if(isset($_SESSION['email'])!= false)
 		{
-			echo($_SESSION['email']);
+			#echo($_SESSION['email']);
+			#pre_r($this->currentUser);
+
 		}
 			// check the file exists
 
