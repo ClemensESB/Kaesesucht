@@ -37,9 +37,14 @@ class PagesController extends \kae\core\Controller
 	}
 
 	public function LoadProducts(){
+		$filterStmt = '';
+
+        $array = Cheese::find($filterStmt);
+
         echo('<div class="page_container">');
-        for ($i=1; $i < Cheese::countTableEntries() + 1 ; $i++) {
-            $product = new Cheese(Cheese::findOne('id ='.$i));
+        foreach ($array as $key => $value) {
+
+            $product = new Cheese($array[$key]);
             $price = new Price(Price::findOne('id ='.$product->__get('price_id')));
             $path = ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product->__get('pictureName');
 

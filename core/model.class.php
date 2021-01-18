@@ -82,7 +82,6 @@ abstract class Model
                 $sql .= ' WHERE '.$where.';'; 
             }
             $result = $db->query($sql)->fetchAll();
-
         }
         catch(\PDOException $e)
         {
@@ -91,7 +90,6 @@ abstract class Model
 
         return $result;
     }
-
     
     public static function findOne($whereStr = '1')
     {
@@ -122,6 +120,7 @@ abstract class Model
 
         return $result;
     }
+
 
     public function updateModel(){
 

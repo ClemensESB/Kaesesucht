@@ -44,7 +44,6 @@ class Controller
 		{
 			#echo($_SESSION['email']);
 			#pre_r($this->currentUser);
-
 		}
 			// check the file exists
 
