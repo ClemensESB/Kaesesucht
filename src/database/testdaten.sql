@@ -22,7 +22,7 @@ INSERT INTO `price`(`id`, `createdAt`, `updatetAt`, `pricePerUnit`) VALUES (NULL
 INSERT INTO `price`(`id`, `createdAt`, `updatetAt`, `pricePerUnit`) VALUES (NULL,NULL,NULL,18.99);
 INSERT INTO `price`(`id`, `createdAt`, `updatetAt`, `pricePerUnit`) VALUES (NULL,NULL,NULL,23.99);
 ###ACCOUNT
-INSERT INTO `account`(`id`, `createdAt`, `updatetAt`, `email`, `firstName`, `lastName`, `address_id`, `payMethod`, `isAdmin`, `passwordHash`) VALUES (NULL,NULL,NULL,'admin@testmail.de','firstAdmin','lastAdmin',1,NULL,1,'25d55ad283aa400af464c76d713c07ad');
+INSERT INTO `account`(`id`, `createdAt`, `updatetAt`, `email`, `firstName`, `lastName`, `address_id`, `isAdmin`, `passwordHash`) VALUES (NULL,NULL,NULL,'admin@testmail.de','firstAdmin','lastAdmin',1,1,'25d55ad283aa400af464c76d713c07ad');
 ##das passwort ist ultrasicher: 12345678
 ###CHEESE
 INSERT INTO `cheese`(`id`, `createdAt`, `updatetAt`, `cheeseName`, `sort_id`, `price_id`, `qtyInStock`, `descrip`, `recipe`, `taste`, `lactose`, `milkType`, `rawMilk`, `pictureName`) VALUES (NULL,NULL,NULL,'Gouda',4,1,133,'Der goto der Käsesorten.','Schneiden und aufs Brot legen.','M',0,'K',0,'Gouda.jpg');

@@ -3,13 +3,25 @@
 
 namespace kae\controller;
 use kae\model\ModelCheeseFull as Full;
+use kae\model\ModelOrders as Order;
+use kae\model\ModelAccountFull as Account;
 
 class ShoppingController extends \kae\core\Controller
 {
 
+
 	public function actionCheckout()
 	{
-	
+
+		$this->setParam('payMethod',['Bitcoin','Paypal','Sofort']);
+		if(!(isset($_SESSION['order'])))
+		{
+			$_SESSION['order'] = new Order(['account_id' => $this->currentUser['id']]);
+		}
+		if(isset($_POST['submit']))
+		{
+			$_SESSION['order']->__set('payMethod',$_POST['payMethod']);
+		}
 	}
 	public function actionShoppingCart()
 	{	
@@ -25,7 +37,6 @@ class ShoppingController extends \kae\core\Controller
 					if($_SESSION['cart'][$key]->__get('id') == $_POST['delID'])
 					{
 						unset($_SESSION['cart'][$key]);
-
 					}
 				}
 			}
@@ -44,12 +55,6 @@ class ShoppingController extends \kae\core\Controller
 			{
 				$_SESSION['summe'] += $product->__get('pricePerUnit')*$product->getQuantity();
 			}
-
-		}
-		else
-		{
-			$_SESSION['cart'] = null;
-			#$this->killmeTestData();
 		}
 	}
 }

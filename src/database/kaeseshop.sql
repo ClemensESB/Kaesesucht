@@ -100,7 +100,6 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`account` (
   `firstName` VARCHAR(45) NOT NULL,
   `lastName` VARCHAR(45) NOT NULL,
   `address_id` INT NOT NULL,
-  `payMethod` VARCHAR(1) NULL CHECK (payMethod = 'P' OR payMethod ='B' OR payMethod = 'S'),
   `isAdmin` TINYINT(1) NULL,
   `passwordHash` VARCHAR(255) NOT NULL,
   CONSTRAINT UC_account UNIQUE (id,email),
@@ -120,6 +119,7 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`orders` (
   `createdAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatetAt` TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `account_id` INT NOT NULL,
+  `payMethod` VARCHAR(10) NULL CHECK (payMethod = 'Paypal' OR payMethod ='Bitcoin' OR payMethod = 'Sofort'),
   CONSTRAINT UC_orders UNIQUE (id),
   PRIMARY KEY (`id`, `account_id`),
   CONSTRAINT `fk_orders_account1`

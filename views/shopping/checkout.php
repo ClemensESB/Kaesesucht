@@ -11,7 +11,7 @@
 ?>
 <div class ="panel">
 
-
+		
 
 </div>
 
@@ -19,9 +19,20 @@
 	<div class ="panel">
 		<form method="POST" class="form" name="payMethod">
 			<select name="payMethod" class="select-field selection--method">
-				<option value="B">Bitcoin</option>
-				<option value="P">Paypal</option>
-				<option value="S">Sofortüberweisung</option>
+				<?
+				foreach ($this->params['payMethod'] as $key => $method) 
+				{
+					if($method == $_SESSION['order']->__get('payMethod'))
+					{
+						echo('<option value="'.$method.'" selected="selected">'.$method.'</option>');
+					}
+					else
+					{
+						echo('<option value="'.$method.'">'.$method.'</option>');
+					}
+				}
+				?>
+
 			</select>
 				<button type="submit" class="btn btn--submit2" name="submit">Eingabe Bestätigen</button>
 			
@@ -41,11 +52,11 @@
 	<div class ="panel has--border duoBox">
 		<div>
 			<p>
-				Vorname:<?echo($this->currentUser['firstName']);?><br>
-				Nachname:<?echo($this->currentUser['lastName']);?><br>
-				Ort:<?echo($this->currentUser['city'].' '.$this->currentUser['zipCode']);?><br>
-				Straße:<?echo($this->currentUser['street'].' '.$this->currentUser['strNo'].$this->currentUser['strAdd']);?><br>
-				Zahlungsmethode:<?echo($this->currentUser['payMethod']);?><br>
+				Vorname: <?echo($this->currentUser['firstName']);?><br>
+				Nachname: <?echo($this->currentUser['lastName']);?><br>
+				Ort: <?echo($this->currentUser['city'].' '.$this->currentUser['zipCode']);?><br>
+				Straße: <?echo($this->currentUser['street'].' '.$this->currentUser['strNo'].$this->currentUser['strAdd']);?><br>
+				Zahlungsmethode: <?echo($_SESSION['order']->__get('payMethod'));?><br>
 			</p>
 		</div>
 		<div>
