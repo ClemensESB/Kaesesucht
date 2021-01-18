@@ -4,25 +4,23 @@
 namespace kae\controller;
 use kae\model\ModelCheese as Cheese;
 use kae\model\ModelPrice as Price;
-
-
+use kae\model\ModelAccount as Account;
+use kae\model\ModelAddress as Address;
 
 class ShoppingController extends \kae\core\Controller
 {
-	private $sum = 0.0;
+	protected $address;
 
-	public function getSum()
-	{
-		return $this->sum;
-	}
 
 	public function actionCheckout()
 	{
-
+		$this->address = Address::findOne('id = '.$this->currentUser['address_id']);
 	}
 	public function actionShoppingCart()
 	{	
-		$this->killmeTestData();
+		$_SESSION['summe'] = 0;
+
+		
 
 		#pre_r($_GET);
 		if(isset($_SESSION['cart']))
@@ -42,6 +40,7 @@ class ShoppingController extends \kae\core\Controller
 		else
 		{
 			$_SESSION['cart'] = null;
+			$this->killmeTestData();
 		}
 
 		if(isset($_POST['submit']))
@@ -58,10 +57,8 @@ class ShoppingController extends \kae\core\Controller
 		foreach ($_SESSION['cart'] as $key => $product) 
 		{
 			$price = $this::productPrice($product);
-			$this->sum += $price->__get('pricePerUnit')*$product->getQuantity();
+			$_SESSION['summe'] += $price->__get('pricePerUnit')*$product->getQuantity();
 		}
-
-
 	}
 
 	public function productPrice($product){

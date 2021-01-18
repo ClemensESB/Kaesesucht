@@ -283,6 +283,9 @@ body::-webkit-scrollbar {
 	height: 30px;
 	font-size: 18px;
 }
+.has--border{
+	border:1px solid grey;
+}
 
 
 

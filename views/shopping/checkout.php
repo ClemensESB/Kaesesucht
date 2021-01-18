@@ -37,9 +37,28 @@
 			</div>
 		</form>
 	</div>
-	<div class ="panel">
 
-
+	<div class ="panel has--border duoBox">
+		<div>
+			<p>
+				Vorname:<?echo($this->currentUser['firstName']);?><br>
+				Nachname:<?echo($this->currentUser['lastName']);?><br>
+				Ort:<?echo($this->address['city'].' '.$this->address['zipCode']);?><br>
+				Straße:<?echo($this->address['street'].' '.$this->address['strNo'].$this->address['strAdd']);?><br>
+				Zahlungsmethode:<?echo($this->currentUser['payMethod']);?><br>
+			</p>
+		</div>
+		<div>
+			<p>
+				<?
+				foreach ($_SESSION['cart'] as $key => $value)
+				{
+					echo('Artikel: '.$value->__get('cheeseName').' '.$this->productPrice($value)->__get('pricePerUnit')*$value->getQuantity().' €<br>');
+				}
+				?>
+				Summe: <?echo($_SESSION['summe']);?>€
+			</p>
+		</div>
 
 	</div>
 </div>

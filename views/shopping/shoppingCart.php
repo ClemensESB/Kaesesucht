@@ -1,7 +1,7 @@
 <div class="head--container">
 	<h1>Warenkorb</h1>
 	<div class ="product--btn">
-		<a href="index.php?c=shopping&a=checkout"><?echo('Zur Kasse Summe: '.$this->getSum().' €');?></a>
+		<a href="index.php?c=shopping&a=checkout"><?echo('Zur Kasse Summe: '.$_SESSION['summe'].' €');?></a>
 	</div>
 </div>
 
@@ -72,6 +72,6 @@ foreach ($_SESSION['cart']  as $key => $product) {
 
 <div class="panel">
 	<div class ="product--btn">
-		<a href="index.php?c=shopping&a=checkout"><?echo('Zur Kasse Summe: '.$this->getSum().' €');?></a>
+		<a href="index.php?c=shopping&a=checkout"><?echo('Zur Kasse Summe: '.$_SESSION['summe'].' €');?></a>
 	</div>
 </div>
