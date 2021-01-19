@@ -18,7 +18,6 @@ class ModelAccountFull extends \kae\core\Model
   	'firstName'		=>['type' => BaseModel::TYPE_STRING],
   	'lastName'		=>['type' => BaseModel::TYPE_STRING],
   	'address_id'	=>['type' => BaseModel::TYPE_INT],
-  	'payMethod'		=>['type' => BaseModel::TYPE_STRING],
   	'isAdmin'		  =>['type' => BaseModel::TYPE_INT],
     'passwordHash'=>['type' => BaseModel::TYPE_STRING],
     'zipCode'   =>['type' => BaseModel::TYPE_STRING],
@@ -32,7 +31,7 @@ class ModelAccountFull extends \kae\core\Model
     {
       $db = $GLOBALS['db'];
       $result = null;
-      $sql = 'SELECT * FROM account JOIN address ON account.address_id = address.id';
+      $sql = 'SELECT account.id,account.createdAt.account.updatetAt,email,firstName,lastName,address_id,isAdmin,passwordHash,zipCode,city,street,strNo,strAdd FROM '.self::tablename().' JOIN address ON account.address_id = address.id';
 
       $result = $db->query($sql)->fetchAll();
       return $result;
@@ -50,7 +49,7 @@ class ModelAccountFull extends \kae\core\Model
 
         try
         {
-            $sql = 'SELECT * FROM '.self::tablename().' JOIN address ON account.address_id = address.id';
+            $sql = 'SELECT account.id, account.createdAt,account.updatetAt,email,firstName,lastName,address_id,isAdmin,passwordHash,zipCode,city,street,strNo,strAdd FROM '.self::tablename().' JOIN address ON account.address_id = address.id';
 
             if(!empty($where))
             {

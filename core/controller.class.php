@@ -28,6 +28,7 @@ class Controller
 			$db = $GLOBALS['db'];
 			// TODO: Im Login Controller muss die email adresse des eingeloggten Users in $_SESSION['email'] geschrieben werden
 			$this->currentUser = \kae\model\ModelAccountFull::findOne('email = '.$db->quote($_SESSION['email']));
+			pre_r($this->currentUser);
 		}
 	}
 
@@ -60,7 +61,6 @@ class Controller
 
 		// extract the params array to get all needed variables for the view
 		extract($this->params);
-		
 		// just include the view here, it's like putting the code of the php file by copy paste on this position.
 		include ASSETPATH.'navBar.html';
 		echo('<div id="wrapper">');
