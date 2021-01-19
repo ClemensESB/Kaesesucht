@@ -18,7 +18,6 @@ class ModelAccount extends \kae\core\Model
   	'firstName'		=>['type' => BaseModel::TYPE_STRING],
   	'lastName'		=>['type' => BaseModel::TYPE_STRING],
   	'address_id'	=>['type' => BaseModel::TYPE_INT],
-  	'payMethod'		=>['type' => BaseModel::TYPE_STRING],
   	'isAdmin'		  =>['type' => BaseModel::TYPE_INT],
     'passwordHash'=>['type' => BaseModel::TYPE_STRING]
 	];
