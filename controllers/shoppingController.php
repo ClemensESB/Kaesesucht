@@ -16,7 +16,6 @@ class ShoppingController extends \kae\core\Controller
 		$this->setParam('payMethod',['Bitcoin','Paypal','Sofort']);
 		if($this->currentUser !== null && !(isset($_SESSION['order'])))
 		{
-			pre_r($this->currentUser);
 			$_SESSION['order'] = new Order(['account_id' => $this->currentUser['id']]);
 		}
 		if(isset($_POST['submit']))
@@ -34,7 +33,6 @@ class ShoppingController extends \kae\core\Controller
 			$_SESSION['order']->__set('account_id',$this->currentUser['id']);
 			$currentDateTime = date('Y-m-d H:i:s');
 			$_SESSION['order']->__set('createdAt',$currentDateTime);
-			pre_r($_SESSION['order']);
 			$_SESSION['order']->insert($errors);
 				foreach ($_SESSION['cart'] as $key => $product) 
 				{

@@ -28,7 +28,6 @@ class Controller
 			$db = $GLOBALS['db'];
 			// TODO: Im Login Controller muss die email adresse des eingeloggten Users in $_SESSION['email'] geschrieben werden
 			$this->currentUser = \kae\model\ModelAccountFull::findOne('email = '.$db->quote($_SESSION['email']));
-			pre_r($this->currentUser);
 		}
 	}
 
