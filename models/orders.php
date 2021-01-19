@@ -11,7 +11,6 @@ class ModelOrders extends \kae\core\Model
   	'createdAt'		=>['type' => BaseModel::TYPE_STRING],
   	'updatetAt'		=>['type' => BaseModel::TYPE_STRING],
   	'account_id'	=>['type' => BaseModel::TYPE_INT],
-  	'shipingDate'	=>['type' => BaseModel::TYPE_STRING],
   	'payMethod' =>['type' => BaseModel::TYPE_STRING],
 	];
 

@@ -28,10 +28,6 @@ class PagesController extends \kae\core\Controller
 	{
 		
 	}
-	public function actionProduct()
-	{
-		
-	}
 	public function actionShop()
 	{
 		
@@ -53,15 +49,18 @@ class PagesController extends \kae\core\Controller
 
 			<div class="product_container">
 		        <h2 class="product_title">'.$product->__get('cheeseName').'</h2>
-		        <img class = "product_image" src="'.$path.'" alt="'.$product->__get('cheeseName').'">
-		        <p class ="product_descrip" >
+		        <div class="product_descrip">
+		        	<img class = "product_image" src="'.$path.'" alt="'.$product->__get('cheeseName').'">
+		        </div><p class ="product_descrip" >
 		            Ab '.$product->__get('pricePerUnit').' € <br><br>
 		            '.$product->__get('descrip').'<br><br>
 		            Bei unseren Kunden immer beliebt und sehr gerne von unseren Mitarbeitern empfohlen.<br> Kosten Sie selbst und schmecken Sie,
 		            warum wir nicht aufhören können, über unsere feine Auswahl an '.$product->__get('cheeseName').' zu sprechen.<br><br> <br><br>Verfügbarkeit : '.$product->__get('qtyInStock').'
 		        </p>
 		        <div class ="product_btn">
-		            <a href="index.php?c=pages&a=product">Mehr erfahren</a>
+		        	<form method="GET" name="id">
+		            <a href="index.php?c=shopping&a=product&id='.$product->__get('id').'">Mehr erfahren</a>
+		            </form>
 		        </div>
 		    </div>
 		    
@@ -69,21 +68,5 @@ class PagesController extends \kae\core\Controller
         }
         echo('</div>');
         
-	}
-
-	public function putInCart($fullProduct)
-	{
-		$bool = false;
-		foreach ($_SESSION['cart'] as $key => $value) 
-		{
-			if($value->__get('id') == $fullProduct->__get('id'))
-			{
-				$bool = true;
-			}
-		}
-		if(!$bool)
-		{
-			array_push($_SESSION['cart'],$fullProduct);
-		}
 	}
 }

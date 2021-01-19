@@ -40,6 +40,7 @@ class Controller
 	{
 		// generate the view path
 		$viewPath = VIEWSPATH.$this->controller.DIRECTORY_SEPARATOR.$this->action.'.php';
+		#pre_r($viewPath);
 
 		#echo($_SESSION['email']);
 		// check the file exists

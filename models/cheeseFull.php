@@ -36,25 +36,6 @@ class ModelCheeseFull extends \kae\core\Model
   }
 
 
-
-  public static function fullTable()
-    {
-        $db = $GLOBALS['db'];
-        $result = null;
-
-        $sql = 'SELECT * FROM cheese JOIN sort ON cheese.sort_id = sort.id 
-        JOIN price ON cheese.price_id = price.id';
-
-        $result = $db->query($sql)->fetchAll();
-        return $result;
-
-    }
-  public function fullProduct($id)
-  {
-        $result = $this::fullTable();
-        return $result[0];
-  }
-
   public static function find($where = '')
     {
         $db = $GLOBALS['db'];
@@ -62,11 +43,11 @@ class ModelCheeseFull extends \kae\core\Model
 
         try
         {
-            $sql = 'SELECT * FROM '.self::tablename().' JOIN sort ON cheese.sort_id = sort.id JOIN price ON cheese.price_id = price.id';
+            $sql = 'SELECT cheese.id, cheese.createdAt, cheese.updatetAt, cheeseName, sort_id, price_id, qtyInStock, descrip, recipe, taste, lactose, milkType, rawMilk, pictureName, sortName, pricePerUnit FROM '.self::tablename().' JOIN sort ON cheese.sort_id = sort.id JOIN price ON cheese.price_id = price.id';
 
             if(!empty($where))
             {
-                $sql .= ' WHERE '.$where.';'; 
+                $sql .= ' WHERE cheese.'.$where.';'; 
             }
             $result = $db->query($sql)->fetchAll();
         }
@@ -74,7 +55,21 @@ class ModelCheeseFull extends \kae\core\Model
         {
             die('Select statement failed: '. $e->getMessage());
         }
-
+        #pre_r($result);
         return $result;
     }
+
+    public static function findOne($whereStr = '1')
+    {
+        $results = self::find($whereStr);
+
+        if(count($results) > 0)
+        {
+            return $results[0];
+        }
+
+        return null;
+    }
+
+
 }

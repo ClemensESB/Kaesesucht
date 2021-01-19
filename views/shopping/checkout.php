@@ -35,21 +35,10 @@
 
 			</select>
 				<button type="submit" class="btn btn--submit2" name="submit">Eingabe Bestätigen</button>
-			
-			<div class="duoBox">
-				<div>
-					<input type="text" class="pay--field" name="dummy1" placeholder="dummy1">
-					<input type="text"  class="pay--field" name="dummy2" placeholder="dummy2">
-				</div>
-				<div>
-					<input type="text"  class="pay--field" name="dummy3" placeholder="dummy3">
-					<input type="tetx"  class="pay--field" name="dummy4" placeholder="dummy4">
-				</div>
-			</div>
 		</form>
 	</div>
 
-	<div class ="panel has--border duoBox">
+	<div class ="panel duoBox">
 		<div>
 			<p>
 				Vorname: <?echo($this->currentUser['firstName']);?><br>
@@ -72,6 +61,13 @@
 		</div>
 
 	</div>
+	<div class ="panel">
+		<form method="POST" name="buy">
+			<button type="submit" class="btn btn--submit2" name="buy">Bestellen</button>
+		</form>
+	</div>
+
+
 </div>
 	
 

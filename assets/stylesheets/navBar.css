@@ -156,6 +156,7 @@ form input.inputtext {
 @media (max-width: 858px) {
     .menu {
         display: block;
+        width: 50px;
     }
     nav ul {
         position: fixed;

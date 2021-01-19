@@ -10,7 +10,8 @@ echo ('
 	</div>	
 <div class="panel">'
 );
-	foreach ($_SESSION['cart']  as $key => $product) {
+	foreach ($_SESSION['cart']  as $key => $product) 
+	{
 
 	echo('<div class="table--object">
 			<div class="column--prim">
@@ -23,24 +24,7 @@ echo ('
 				</div>
 			</div>');
 
-	echo('	<div class="column--sub">');
-	echo('		<form method="POST" class="form" name="chQuantity">');
-	echo('			<select name="chQuantity" class="select-field selection--qty">');
-					for ($i=1; $i <= $product->__get('qtyInStock'); $i++) {
-						if($product->getQuantity() == $i)
-						{
-							echo(		'<option selected="selected" value="'.$i.'">'.$i.'</option>');
-						}
-						else
-						{
-							echo(		'<option value="'.$i.'">'.$i.'</option>');
-						}
-					}
-	echo('			</select>');
-	echo('		<button type="submit" class="btn btn--submit" name="submit">-></button>
-				<input type="hidden" name="idProduct" value="'.$product->__get('id').'">');
-	echo('		</form>
-			</div>');
+	$this->qtySelection($product);
 
 	echo('
 			<div class="column--sub duoBox">

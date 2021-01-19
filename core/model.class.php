@@ -128,10 +128,11 @@ abstract class Model
     }
 
     public function updateModel(){
-
         $wherestr = '';
-        foreach ($this->data as $key => $value) {
-            if($value != null && gettype($value) ==  self::TYPE_STRING){
+        foreach ($this->data as $key => $value) 
+        {
+            if($value != null && gettype($value) ==  self::TYPE_STRING)
+            {
                 $wherestr .= ' '.$key.' = "'.$value.'" and';
                 #echo($value.': '.gettype($value));
             }
@@ -142,7 +143,7 @@ abstract class Model
             }
         }
 
-        $wherestr = trim($wherestr,' and');
+        $wherestr = rtrim($wherestr,' and');
         #echo($wherestr);
 
         $erg = $this->findOne($wherestr);
@@ -187,7 +188,6 @@ abstract class Model
             $sql = trim($sql,',');
             $valueString = trim($valueString,',');
             $sql .= ')'.$valueString.');';
-
             $statement = $db->prepare($sql);
             $statement->execute();
             $this->updateModel();

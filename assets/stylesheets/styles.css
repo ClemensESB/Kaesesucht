@@ -67,7 +67,7 @@ body::-webkit-scrollbar {
 }
 
 .product_image {
-	width: 70%;
+	width: 100%;
 	height : auto;
 	margin : 30px auto;
 	display: block;
@@ -285,4 +285,9 @@ body::-webkit-scrollbar {
 }
 .has--border{
 	border:1px solid grey;
+}
+.text-box{
+}
+.text-box p{
+	margin-bottom: 20px;
 }
