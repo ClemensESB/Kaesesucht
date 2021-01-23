@@ -1,0 +1,8 @@
+ 
+Text        #CAC7BF
+Background  #575142
+
+Text        #35291E
+Background  #EEC94C
+
+Fill        #9B998F

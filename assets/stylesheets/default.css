@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+:root {
+    --first-prim-color: #575142;
+    --first-sec-color: #CAC7BF;
+    --second-prim-color: #EEC94C;
+    --second-sec-color: #35291E;
+    --fill-color: #9B998F;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    background-color: var(--first-prim-color);
+    color: var(--first-sec-color)
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--first-sec-color);
+}
+
+p {
+    color: var(--first-sec-color);
+}
+
+a {
+    color: var(--first-sec-color);
+}
+
+a:hover,
+a:active {
+    color: var(--second-prim-color);
+}
+
+.inputtext,
+.button {
+    display: block;
+    margin: 20px;
+    padding: 2px;
+    background: var(--second-prim-color);
+    border: 2px solid var(--second-prim-color);
+    color: var(--second-sec-color);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button:hover,
+.button.active {
+    background: var(--second-sec-color);
+    color: var(--second-prim-color);
+    transition: .5s;
+}
+
+nav {
+    background: var(--second-prim-color);
+}
+
+.logo a {
+    color: var(--second-sec-color);
+}
+
+nav ul li a {
+    color: var(--second-sec-color);
+}
+
+nav ul a.active,
+nav ul a:hover {
+    background: var(--second-sec-color);
+    color: var(--second-prim-color);
+    transition: .5s;
+}
+
+.menu {
+    color: var(--second-sec-color);
+}
+
+.footer {
+    background: var(--second-prim-color);
+    color: var(--second-sec-color);
+}
+
+@media (max-width: 858px) {
+    nav ul {
+        background-color: var(--second-sec-color);
+    }
+    nav ul li a {
+        color: var(--second-prim-color)
+    }
+    nav ul a.active,
+    nav ul a:hover {
+        background: var(--second-prim-color);
+        color: var(--second-sec-color);
+    }
+}
