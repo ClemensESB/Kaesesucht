@@ -45,23 +45,23 @@ class PagesController extends \kae\core\Controller
             $path = ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product->__get('pictureName');
             echo('
 
-			<div class="product_container">
-		        <h2 class="product_title">'.$product->__get('cheeseName').'</h2>
-		        <div class="product_descrip">
-		        	<img class = "product_image" src="'.$path.'" alt="'.$product->__get('cheeseName').'">
-		        </div><p class ="product_descrip" >
-		            Ab '.$product->__get('pricePerUnit').' € <br><br>
-		            '.$product->__get('descrip').'<br><br>
-		            Bei unseren Kunden immer beliebt und sehr gerne von unseren Mitarbeitern empfohlen.<br> Kosten Sie selbst und schmecken Sie,
-		            warum wir nicht aufhören können, über unsere feine Auswahl an '.$product->__get('cheeseName').' zu sprechen.<br><br> <br><br>Verfügbarkeit : '.$product->__get('qtyInStock').'
-		        </p>
-		        <div class ="product_btn">
-		        	<form method="GET" name="id">
-		            <a href="index.php?c=shopping&a=product&id='.$product->__get('id').'">Mehr erfahren</a>
-		            </form>
-		        </div>
-		    </div>
-		    
+			<a href="index.php?c=shopping&a=product&id='.$product->__get('id').'">	
+				<div class="product_container">
+					<p class="product_title">'.$product->__get('cheeseName').'<p>
+					<div class="product_descrip">
+						<img class = "product_image" src="'.$path.'" alt="'.$product->__get('cheeseName').'">
+					</div><p class ="product_descrip" >
+						Ab '.$product->__get('pricePerUnit').' € <br><br>
+						'.$product->__get('descrip').'<br>
+						<br>Verfügbarkeit : '.$product->__get('qtyInStock').'
+					</p>
+					<div class ="product_btn">
+						<form method="GET" name="id">
+						
+						</form>
+					</div>
+				</div>
+			</a>
 		    ');
         }
         echo('</div>');

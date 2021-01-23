@@ -74,7 +74,7 @@ nav ul li a {
     color: var(--second-sec-color);
 }
 
-nav ul a.active,
+nav ul a:active,
 nav ul a:hover {
     background: var(--second-sec-color);
     color: var(--second-prim-color);
@@ -88,6 +88,21 @@ nav ul a:hover {
 .footer {
     background: var(--second-prim-color);
     color: var(--second-sec-color);
+}
+
+.product_container {
+    background: var(--fill-color);
+}
+
+.product_container a,
+.product_container p {
+    color: var(--second-sec-color);
+}
+
+.product_container:hover,
+.product_container:active {
+    background: var(--second-prim-color);
+    transition: .5s;
 }
 
 @media (max-width: 858px) {
