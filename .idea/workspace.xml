@@ -20,8 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="shop page dynamic">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_01_2021_09_31_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_01_2021_09_31__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/stylesheets/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/stylesheets/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/pagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/pagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/model.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/model.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/cheeseFull.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/cheeseFull.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/shop.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +47,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="ProjectId" id="1n27zmwWlBGBINEfsAXJDQec93V" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -49,7 +64,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Second_Chance" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -69,6 +84,11 @@
       <workItem from="1610881198516" duration="3364000" />
       <workItem from="1610884824228" duration="1613000" />
       <workItem from="1610886662617" duration="2852000" />
+      <workItem from="1611071017437" duration="23893000" />
+      <workItem from="1611135810647" duration="12564000" />
+      <workItem from="1611239810109" duration="22954000" />
+      <workItem from="1611329634075" duration="21009000" />
+      <workItem from="1611400988134" duration="235000" />
     </task>
     <task id="LOCAL-00001" summary="profil logout pages">
       <created>1610640841456</created>
@@ -122,39 +142,5 @@
     <MESSAGE value="filter shop" />
     <MESSAGE value="shop page dynamic" />
     <option name="LAST_COMMIT_MESSAGE" value="shop page dynamic" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610897488858">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1610897488858" />
-    <state x="92" y="92" width="1736" height="866" key="DiffContextDialog" timestamp="1610818148894">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="92" y="92" width="1736" height="866" key="DiffContextDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1610818148894" />
-    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1610882814848">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1610882814848" />
-    <state x="781" y="248" key="NewPhpClassDialog" timestamp="1610762237114">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="781" y="248" key="NewPhpClassDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1610762237114" />
-    <state x="794" y="448" key="NewPhpFileDialog" timestamp="1610762249379">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="794" y="448" key="NewPhpFileDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1610762249379" />
-    <state x="816" y="227" key="RollbackChangesDialog" timestamp="1610896708014">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="816" y="227" key="RollbackChangesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1610896708014" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1610897632730">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1610897632730" />
-    <state x="777" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610897580841">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="777" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1610897580841" />
   </component>
 </project>

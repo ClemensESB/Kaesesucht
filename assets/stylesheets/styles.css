@@ -27,6 +27,22 @@ body::-webkit-scrollbar {
 	font-size: 17px;
 	color: black;
 }
+.filter_container{
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.filter_container select, input {
+	background-color: whitesmoke;
+	color: black;
+	border: 1px solid green;
+	padding: 5px 5px;
+}
+
+.filter_container select:hover, input:hover {
+	background-color: lightyellow ;
+	color: black;
+}
 
 
 .page_container {
