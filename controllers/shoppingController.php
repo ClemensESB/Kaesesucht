@@ -84,6 +84,7 @@ class ShoppingController extends \kae\core\Controller
 	}
 	public function actionProduct()
 	{
+		#pre_r($_GET['id']);
 		if(Full::findOne('id = '.$_GET['id']) != null){
 			$this->fullProduct = new Full(Full::findOne('id = '.$_GET['id']));
 

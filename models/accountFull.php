@@ -53,7 +53,7 @@ class ModelAccountFull extends \kae\core\Model
 
             if(!empty($where))
             {
-                $sql .= ' WHERE '.$where.';'; 
+                $sql .= ' WHERE cheese.'.$where.';'; 
             }
             $result = $db->query($sql)->fetchAll();
         }
