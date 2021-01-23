@@ -30,6 +30,7 @@ abstract class Model
     {
         foreach($this->schema as $key => $value )
         {
+
             if(isset($params[$key]))
             {
                 $this->{$key} = $params[$key]; //schreibt bei key von schema
@@ -40,6 +41,7 @@ abstract class Model
             }
 
         }
+
     }
 
     public function __get($key)

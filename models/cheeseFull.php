@@ -47,15 +47,17 @@ class ModelCheeseFull extends \kae\core\Model
 
             if(!empty($where))
             {
-                $sql .= ' WHERE cheese.'.$where.';'; 
+                $sql .= ' WHERE '.$where.';';
             }
+
             $result = $db->query($sql)->fetchAll();
         }
         catch(\PDOException $e)
         {
             die('Select statement failed: '. $e->getMessage());
         }
-        #pre_r($result);
+       // echo($sql);
+        //pre_r($result);
         return $result;
     }
 

@@ -33,18 +33,16 @@ class PagesController extends \kae\core\Controller
 		
 	}
 
+
+
 	public function LoadProducts($filterStmt = '')
 	{
-
         $array = FullProduct::find($filterStmt);
 
         echo('<div class="page_container">');
         foreach ($array as $key => $value) {
-
             $product = new FullProduct($array[$key]);
             $path = ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product->__get('pictureName');
-
-
             echo('
 
 			<div class="product_container">
@@ -69,4 +67,5 @@ class PagesController extends \kae\core\Controller
         echo('</div>');
         
 	}
+
 }
