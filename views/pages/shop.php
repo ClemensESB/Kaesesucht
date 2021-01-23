@@ -42,12 +42,9 @@
 
 <?php
 
-$Products=$this->LoadProducts();
-
-
 if (isset($_POST['SubmitFilter'])){
     $filterStmt = '';
-
+    unset($Products);
     if (isset($_POST['taste'])&& !empty($_POST['taste'])){
         $taste= $_POST['taste'];
         $filterStmt .= ' taste = "'.$taste.'" AND';
@@ -67,6 +64,9 @@ if (isset($_POST['SubmitFilter'])){
 
     $Stmt= preg_replace('/\W\w+\s*(\W*)$/', '$1', $filterStmt);
     $this->LoadProducts($Stmt);
+}
+else{
+    $Products=$this->LoadProducts();
 }
 
 ?>
