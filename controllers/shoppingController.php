@@ -104,15 +104,17 @@ class ShoppingController extends \kae\core\Controller
 
 	public function putInCart($fullProduct)
 	{
-		$bool = false;
+		$bool = true;
 		foreach ($_SESSION['cart'] as $key => $value) 
 		{
 			if($value->__get('id') == $fullProduct->__get('id'))
 			{
-				$bool = true;
+				
+				$_SESSION['cart'][$key] = $fullProduct;
+				$bool = false;
 			}
 		}
-		if(!$bool)
+		if($bool)
 		{
 			array_push($_SESSION['cart'],$fullProduct);
 		}

@@ -1,6 +1,6 @@
 
 <div class="head--container">
-	<h1>Produkt</h1>
+	<h1><?echo($this->fullProduct->__get('cheeseName'))?></h1>
 </div>	
 
 <div class="panel">

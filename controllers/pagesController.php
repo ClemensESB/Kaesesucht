@@ -11,11 +11,7 @@ use \kae\model\ModelCheeseFull as FullProduct;
 
 class PagesController extends \kae\core\Controller
 {
-	protected $controller = null;
-	protected $action = null;
-	protected $currentUser = null;
 
-	protected $params = [];
 
 	public function actionIndex()
 	{
@@ -30,7 +26,30 @@ class PagesController extends \kae\core\Controller
 	}
 	public function actionShop()
 	{
-		
+		if (isset($_POST['SubmitFilter'])){
+		    $filterStmt = '';
+		    unset($Products);
+		    if (isset($_POST['taste'])&& !empty($_POST['taste'])){
+		        $taste= $_POST['taste'];
+		        $filterStmt .= 'taste = "'.$taste.'" AND ';
+		    }
+		    if (isset($_POST['lactose'])&& !empty($_POST['lactose'])){
+		        $lactose= $_POST['lactose'];
+		        $filterStmt .= 'lactose = '.$lactose.' AND ';
+		    }
+		    if (isset($_POST['milkType'])&& !empty($_POST['milkType'])){
+		        $milkType= $_POST['milkType'];
+		        $filterStmt .= 'milkType = "'.$milkType.'" AND ';
+		    }
+		    if (isset($_POST['rawMilk'])&& !empty($_POST['rawMilk'])){
+		      $rawMilk= $_POST['rawMilk'];
+		      $filterStmt .= 'rawMilk = '.$rawMilk.' AND ';
+		    }
+		    $this->params['stmt'] = preg_replace('/\W\w+\s*(\W*)$/', '$1', $filterStmt);
+		}
+		else{
+		    $this->params['stmt'] = '';
+		}	
 	}
 
 
@@ -44,7 +63,6 @@ class PagesController extends \kae\core\Controller
             $product = new FullProduct($array[$key]);
             $path = ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product->__get('pictureName');
             echo('
-
 			<a href="index.php?c=shopping&a=product&id='.$product->__get('id').'">	
 				<div class="product_container">
 					<p class="product_title">'.$product->__get('cheeseName').'<p>
@@ -57,7 +75,6 @@ class PagesController extends \kae\core\Controller
 					</p>
 					<div class ="product_btn">
 						<form method="GET" name="id">
-						
 						</form>
 					</div>
 				</div>
@@ -65,7 +82,5 @@ class PagesController extends \kae\core\Controller
 		    ');
         }
         echo('</div>');
-        
 	}
-
 }

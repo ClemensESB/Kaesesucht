@@ -14,7 +14,7 @@ body::-webkit-scrollbar {
 }
 
 #wrapper {
-    min-height: calc(100vh - 8em - 12px);
+    min-height: calc(100vh - 7em - 15px);
 }
 
 .shop_title {
