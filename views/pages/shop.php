@@ -39,44 +39,6 @@
         <input type="submit" name="SubmitFilter" value="Anwenden" >
     </form>
 </div>
-
-<?php
-
-if (isset($_POST['SubmitFilter'])){
-    $filterStmt = '';
-    unset($Products);
-    if (isset($_POST['taste'])&& !empty($_POST['taste'])){
-        $taste= $_POST['taste'];
-        $filterStmt .= ' taste = "'.$taste.'" AND';
-    }
-    if (isset($_POST['lactose'])&& !empty($_POST['lactose'])){
-        $lactose= $_POST['lactose'];
-        $filterStmt .= ' lactose = '.$lactose.' AND';
-    }
-    if (isset($_POST['milkType'])&& !empty($_POST['milkType'])){
-        $milkType= $_POST['milkType'];
-        $filterStmt .= ' milkType = "'.$milkType.'" AND';
-    }
-    if (isset($_POST['rawMilk'])&& !empty($_POST['rawMilk'])){
-      $rawMilk= $_POST['rawMilk'];
-      $filterStmt .= ' rawMilk = '.$rawMilk.' AND';
-    }
-
-    $Stmt= preg_replace('/\W\w+\s*(\W*)$/', '$1', $filterStmt);
-    $this->LoadProducts($Stmt);
-}
-else{
-    $Products=$this->LoadProducts();
-}
-
+<?
+$this->LoadProducts($this->params['stmt']);
 ?>
-
-
-
-
-
-
-
-
-
-

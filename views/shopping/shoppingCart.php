@@ -58,9 +58,15 @@ else{
 
 ?>
 </div>
-
+<?
+if(!empty($_SESSION['cart']))
+{
+?>
 <div class="panel">
 	<div class ="product--btn">
 		<a href="index.php?c=shopping&a=checkout"><?echo('Zur Kasse Summe: '.$_SESSION['summe'].' €');?></a>
 	</div>
 </div>
+<?
+}
+?>
