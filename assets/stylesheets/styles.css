@@ -1,3 +1,9 @@
+@import "default.css";
+@import "navBar.css";
+@import "footer.css";
+@import "login.css";
+@import "registration.css";
+@import "logout.css";
 body {
     height: 100%;
     display: table;
@@ -28,21 +34,25 @@ body::-webkit-scrollbar {
     margin-top: 40px;
     font-size: 17px;
 }
-.filter_container{
-	text-align: center;
-	margin-top: 40px;
-	margin-bottom: 40px;
-}
-.filter_container select, input {
-	background-color: whitesmoke;
-	color: black;
-	border: 1px solid green;
-	padding: 5px 5px;
+
+.filter_container {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-.filter_container select:hover, input:hover {
-	background-color: lightyellow ;
-	color: black;
+.filter_container select,
+input {
+    background-color: whitesmoke;
+    color: black;
+    border: 1px solid green;
+    padding: 5px 5px;
+}
+
+.filter_container select:hover,
+input:hover {
+    background-color: lightyellow;
+    color: black;
 }
 
 .page_container {
