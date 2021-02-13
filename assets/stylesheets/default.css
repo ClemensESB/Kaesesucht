@@ -44,10 +44,20 @@ a:active {
 }
 
 .inputtext,
-.button,
-button {
+.button{
     display: block;
     margin: 20px;
+    padding: 2px;
+    background: var(--second-prim-color);
+    border: 2px solid var(--second-prim-color);
+    color: var(--second-sec-color);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+button {
+    display: block;
     padding: 2px;
     background: var(--second-prim-color);
     border: 2px solid var(--second-prim-color);

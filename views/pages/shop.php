@@ -40,5 +40,5 @@
     </form>
 </div>
 <?
-$this->LoadProducts($this->params['stmt']);
+$this->loadProducts($this->params['stmt']);
 ?>

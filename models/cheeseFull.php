@@ -68,10 +68,10 @@ class ModelCheeseFull extends \kae\core\Model
         try
         {
             $sql = 'SELECT cheese.id, cheese.createdAt, cheese.updatetAt, cheeseName, sort_id, price_id, qtyInStock, descrip, recipe,
-       taste, lactose, milkType, rawMilk, pictureName, sortName, pricePerUnit FROM '.self::tablename().' 
-       JOIN sort ON cheese.sort_id = sort.id JOIN price ON cheese.price_id = price.id
-       ORDER BY cheese.createdAt DESC
-       ';
+             taste, lactose, milkType, rawMilk, pictureName, sortName, pricePerUnit FROM '.self::tablename().' 
+             JOIN sort ON cheese.sort_id = sort.id JOIN price ON cheese.price_id = price.id
+             ORDER BY cheese.createdAt DESC LIMIT 3
+             ';
 
 
             $result = $db->query($sql)->fetchAll();
