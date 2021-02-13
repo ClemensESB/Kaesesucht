@@ -116,7 +116,7 @@ class PagesController extends \kae\core\Controller
 
 	public function actionProfil(){
 		if(!$this->loggedIn()){
-			redirect('index.php?c=registration&a=login');
+			$this->redirect('index.php?c=registration&a=login');
 		}
 
 	}
