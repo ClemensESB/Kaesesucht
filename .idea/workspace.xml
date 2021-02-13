@@ -19,15 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="shop page dynamic">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_01_2021_09_31_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_01_2021_09_31__Default_Changelist_.xml" beforeDir="false" />
+    <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="filter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/stylesheets/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/stylesheets/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/stylesheets/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/stylesheets/default.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/pagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/pagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/model.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/model.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/cheeseFull.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/cheeseFull.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/shop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

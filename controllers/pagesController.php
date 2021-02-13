@@ -83,6 +83,36 @@ class PagesController extends \kae\core\Controller
         }
         echo('</div>');
 	}
+    public function actionHome()
+    {
+        $array = FullProduct::findNewProducts();
+        echo('<div class="page_container">');
+
+            for ($x=0; $x<3 ;$x++) {
+            $product = new FullProduct($array[$x]);
+            $path = ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product->__get('pictureName');
+            echo('
+			<a href="index.php?c=shopping&a=product&id='.$product->__get('id').'">	
+				<div class="product_container">
+					<p class="product_title">'.$product->__get('cheeseName').'<p>
+					<div class="product_descrip">
+						<img class = "product_image" src="'.$path.'" alt="'.$product->__get('cheeseName').'">
+					</div><p class ="product_descrip" >
+						Ab '.$product->__get('pricePerUnit').' € <br><br>
+						'.$product->__get('descrip').'<br>
+						<br>Verfügbarkeit : '.$product->__get('qtyInStock').'
+					</p>
+					<div class ="product_btn">
+						<form method="GET" name="id">
+						</form>
+					</div>
+				</div>
+			</a>
+			
+		    ');
+        }
+        echo('</div>');
+    }
 
 	public function actionProfil(){
 		if(!$this->loggedIn()){

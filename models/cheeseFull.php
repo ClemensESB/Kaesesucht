@@ -60,7 +60,30 @@ class ModelCheeseFull extends \kae\core\Model
         //pre_r($result);
         return $result;
     }
+    public static function findNewProducts()
+    {
+        $db = $GLOBALS['db'];
+        $result = null;
 
+        try
+        {
+            $sql = 'SELECT cheese.id, cheese.createdAt, cheese.updatetAt, cheeseName, sort_id, price_id, qtyInStock, descrip, recipe,
+       taste, lactose, milkType, rawMilk, pictureName, sortName, pricePerUnit FROM '.self::tablename().' 
+       JOIN sort ON cheese.sort_id = sort.id JOIN price ON cheese.price_id = price.id
+       ORDER BY cheese.createdAt DESC
+       ';
+
+
+            $result = $db->query($sql)->fetchAll();
+        }
+        catch(\PDOException $e)
+        {
+            die('Select statement failed: '. $e->getMessage());
+        }
+        // echo($sql);
+        //pre_r($result);
+        return $result;
+    }
     public static function findOne($whereStr = '1')
     {
         $results = self::find($whereStr);

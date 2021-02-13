@@ -55,7 +55,28 @@ button {
     border-radius: 5px;
     font-size: 16px;
 }
+.home_top {
+    background-image: url("../images/homeImage.jpg")  ;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 
+}
+.home_text {
+    font-size: 40px;
+    text-align: center;
+    padding-top: 5%;
+    color: white;
+}
+.home_linkbutton{
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    border: 2px solid ;
+}
 .button:hover,
 .button.active,
 button {
