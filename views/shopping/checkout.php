@@ -18,23 +18,19 @@
 <div>
 	<div class ="panel">
 		<form method="POST" class="form" name="payMethod">
-			<select name="payMethod" class="select-field selection--method">
-				<?
-				foreach ($this->params['payMethod'] as $key => $method) 
-				{
-					if($method == $_SESSION['order']->__get('payMethod'))
-					{
-						echo('<option value="'.$method.'" selected="selected">'.$method.'</option>');
-					}
-					else
-					{
-						echo('<option value="'.$method.'">'.$method.'</option>');
-					}
-				}
-				?>
+			<select name="payMethod" class="select-field selection--method" onchange='this.form.submit();'>
+				
+				<?foreach ($this->params['payMethod'] as $key => $method):?>
+				
+					<?if($method == $_SESSION['order']->payMethod):?>
+						<option value="<?echo($method);?>" selected="selected"><?echo($method);?></option>
+					<?else:?>
+						<option value="<?echo($method);?>"><?echo($method);?></option>
+					<?endif;?>
+				<?endforeach;?>
 
 			</select>
-				<button type="submit" class="btn btn--submit2" name="submit">Eingabe Bestätigen</button>
+				<noscript><button type="submit" class="btn btn--submit2" name="submit">Eingabe Bestätigen</button></noscript>
 		</form>
 	</div>
 
@@ -50,12 +46,9 @@
 		</div>
 		<div>
 			<p>
-				<?
-				foreach ($_SESSION['cart'] as $key => $value)
-				{
-					echo('Artikel: '.$value->__get('cheeseName').' '.$value->__get('pricePerUnit')*$value->getQuantity().' €<br>');
-				}
-				?>
+			<?foreach ($_SESSION['cart'] as $key => $value):?>
+				Artikel: <?echo($value->__get('cheeseName').' '.$value->__get('pricePerUnit')*$value->getQuantity());?> €<br>
+			<?endforeach;?>
 				Summe: <?echo($_SESSION['summe']);?>€
 			</p>
 		</div>

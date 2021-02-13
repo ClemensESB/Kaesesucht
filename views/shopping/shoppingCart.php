@@ -1,38 +1,34 @@
-<?
-if(!empty($_SESSION['cart']))
-{
-echo ('
+
+<?if(!empty($_SESSION['cart'])):?>
 	<div class="head--container">
 	<h1>Warenkorb</h1>
 		<div class ="product--btn">
-			<a href="index.php?c=shopping&a=checkout">Zur Kasse Summe: '.$_SESSION['summe'].' €</a>
+			<a href="index.php?c=shopping&a=checkout">Zur Kasse Summe: <?echo($_SESSION['summe']);?> €</a>
 		</div>
-	</div>	
-<div class="panel">'
-);
-	foreach ($_SESSION['cart']  as $key => $product) 
-	{
+	</div>
+<div class="panel">
 
-	echo('<div class="table--object">
+
+	<?foreach ($_SESSION['cart']  as $key => $product):?>
+	<div class="table--object">
 			<div class="column--prim">
 				<div class="column--image">
-					<img src="'.ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product->__get('pictureName').'" class="img--item">
+					<img src="<?echo(ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product->pictureName)?>" class="img--item">
 				</div>
 				<div class="table--content">
-					<p>'.$product->__get('cheeseName').'</p>
-					<p>'.$product->__get('id').'</p>
+					<p><?echo($product->cheeseName);?></p>
+					<p><?echo($product->id);?></p>
 				</div>
-			</div>');
+			</div>
 
-	$this->qtySelection($product);
+			<?$this->qtySelection($product,false);?>
 
-	echo('
 			<div class="column--sub duoBox">
 				<div class="price">
 					Stückpreis:
 				</div>
 				<div class="price">
-					'.$product->__get('pricePerUnit').' €
+					<?echo($product->pricePerUnit);?> €
 				</div>
 			</div>
 			<div class="column--sub duoBox">
@@ -40,33 +36,25 @@ echo ('
 					gesamter Preis:
 				</div>
 				<div class="price">
-					'.$product->__get('pricePerUnit')*$product->getQuantity().' €
+					<?echo($product->pricePerUnit*$product->getQuantity());?> €
 				</div>
 			</div>
 			<div class="column--sub del--action">
 				<form method="POST" action="">
 				<button type="submit" class="btn  del--btn" name="deleteProduct">X</button>
-				<input type="hidden" name="delID" value="'.$product->__get('id').'">
+				<input type="hidden" name="delID" value="<?echo($product->id)?>">
 				</form>
 			</div>
-		</div>');
-	}
-}
-else{
-	echo('Sie haben keine Produkte ausgewählt');
-}
-
-?>
+		</div>
+		<?endforeach;?>
+<?else:?>
+	Sie haben keine Produkte ausgewählt
+<?endif?>
 </div>
-<?
-if(!empty($_SESSION['cart']))
-{
-?>
+<?if(!empty($_SESSION['cart'])):?>
 <div class="panel">
 	<div class ="product--btn">
 		<a href="index.php?c=shopping&a=checkout"><?echo('Zur Kasse Summe: '.$_SESSION['summe'].' €');?></a>
 	</div>
 </div>
-<?
-}
-?>
+<?endif;?>

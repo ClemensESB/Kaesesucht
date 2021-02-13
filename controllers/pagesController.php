@@ -49,7 +49,7 @@ class PagesController extends \kae\core\Controller
 		}
 		else{
 		    $this->params['stmt'] = '';
-		}	
+		}
 	}
 
 
@@ -82,5 +82,12 @@ class PagesController extends \kae\core\Controller
 		    ');
         }
         echo('</div>');
+	}
+
+	public function actionProfil(){
+		if(!$this->loggedIn()){
+			redirect('index.php?c=registration&a=login');
+		}
+
 	}
 }

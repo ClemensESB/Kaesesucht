@@ -73,7 +73,4 @@ class ModelAccountFull extends \kae\core\Model
         }
         return null;
     }
-
-  
-
 }

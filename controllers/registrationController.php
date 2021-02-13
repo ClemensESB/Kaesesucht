@@ -15,7 +15,7 @@ class RegistrationController extends \kae\core\Controller
         // oh my good, we get data
         if(isset($_POST['submit']))
         {
-            
+
             $email = $_POST['email'] ?? null;
             $password = $_POST['password'] ?? null;
             $_POST['password'] = hash( 'md5' , $password , false );
@@ -41,8 +41,8 @@ class RegistrationController extends \kae\core\Controller
             // check errors?
             if(count($errors) == 0)
             {
-                
-                
+
+
                     //TODO Datenbankanbindung
                     $_SESSION['loggedIn'] = true;
                     $_SESSION['email'] = $email;
@@ -54,11 +54,11 @@ class RegistrationController extends \kae\core\Controller
         $this->setParam('success', $success);
         //pre_r($errors);
         //echo($_SESSION['email']);
-                
-            
+
+
         }
     }
-    
+
     public function actionlogout()
     {
         session_destroy();
@@ -77,7 +77,7 @@ class RegistrationController extends \kae\core\Controller
             #$_POST['password'] = password_hash(, PASSWORD_BCRYPT);
             #$_POST['password1'] = password_hash($_POST['password1'], PASSWORD_BCRYPT);
 
-           
+
             /*
             $firstName = $_POST['firstName'] ?? null;
             $lastName = $_POST['lastName'] ?? null;
@@ -105,12 +105,12 @@ class RegistrationController extends \kae\core\Controller
             {
                 $errors['street'] = 'Bitte geben sie ihre Straße an';
             }
-            
+
             if($_POST['strNo'] == null)
             {
                 $errors['streetNo'] = 'Bitte geben sie ihre Straßennummer an';
             }
-            
+
             if($_POST['zipCode'] == null)
             {
                 $errors['zipCode'] = 'Bitte geben sie ihre PLZ an';
@@ -150,7 +150,7 @@ class RegistrationController extends \kae\core\Controller
                 $account->insert($errors);
             }
         }
-        pre_r($errors);
+        #pre_r($errors);
 
         // push to view ;)
         $this->setParam('errors', $errors);

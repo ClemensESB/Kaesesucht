@@ -84,10 +84,12 @@ else
     <link rel="stylesheet" href="assets/stylesheets/styles.css">
     <link rel="stylesheet" href="assets/stylesheets/navBar.css">
     <link rel="stylesheet" href="assets/stylesheets/default.css">
+
     
     <title>Käsesucht</title>
 </head>
 <body>
+
         <?php
         // this method will render the view of the called action
         // for this the the file in the views directory will be included

@@ -12,13 +12,13 @@ class ShoppingController extends \kae\core\Controller
 
 	public function actionCheckout()
 	{
-
+		#pre_r($_POST);
 		$this->setParam('payMethod',['Bitcoin','Paypal','Sofort']);
 		if($this->currentUser !== null && !(isset($_SESSION['order'])))
 		{
 			$_SESSION['order'] = new Order(['account_id' => $this->currentUser['id']]);
 		}
-		if(isset($_POST['submit']))
+		if(isset($_POST['payMethod']))
 		{
 			$_SESSION['order']->__set('payMethod',$_POST['payMethod']);
 		}
@@ -27,7 +27,7 @@ class ShoppingController extends \kae\core\Controller
 		{	
 			#pre_r($_SESSION['order']);
 			#pre_r($this->params['payMethod']);
-			if(in_array($_SESSION['order']->__get('payMethod'), $this->params['payMethod']))
+			if(in_array($_SESSION['order']->payMethod, $this->params['payMethod']))
 			{
 			#pre_r($_POST);
 			$_SESSION['order']->__set('account_id',$this->currentUser['id']);
@@ -36,9 +36,9 @@ class ShoppingController extends \kae\core\Controller
 			$_SESSION['order']->insert($errors);
 				foreach ($_SESSION['cart'] as $key => $product) 
 				{
-					$price = $product->__get('pricePerUnit')*$product->getQuantity();
+					$price = $product->pricePerUnit*$product->getQuantity();
 
-					$orderItem = new OrderItem(['cheese_id'=>$product->__get('id'),'quantity'=>$product->getQuantity(),'actualPrice'=>$price,'orders_id'=>$_SESSION['order']->__get('id')]);
+					$orderItem = new OrderItem(['cheese_id'=>$product->id,'quantity'=>$product->getQuantity(),'actualPrice'=>$price,'orders_id'=>$_SESSION['order']->id]);
 					$orderItem->insert($errors);
 				}
 				unset($_SESSION['order']);
@@ -50,6 +50,8 @@ class ShoppingController extends \kae\core\Controller
 	}
 	public function actionShoppingCart()
 	{	
+
+		#pre_r($_POST);
 		$_SESSION['summe'] = 0;
 		#pre_r($_GET);
 		if(!empty($_SESSION['cart']))
@@ -59,18 +61,18 @@ class ShoppingController extends \kae\core\Controller
 				#pre_r($_POST);
 				foreach ($_SESSION['cart'] as $key => $value) 
 				{
-					if($_SESSION['cart'][$key]->__get('id') == $_POST['delID'])
+					if($_SESSION['cart'][$key]->id == $_POST['delID'])
 					{
 						unset($_SESSION['cart'][$key]);
 					}
 				}
 			}
-			if(isset($_POST['submit']))
+			if(isset($_POST['chQuantity']))
 			{
 			#pre_r($_POST);
 				foreach ($_SESSION['cart'] as $key => $value) 
 				{
-					if($_SESSION['cart'][$key]->__get('id') == $_POST['idProduct'])
+					if($_SESSION['cart'][$key]->id == $_POST['idProduct'])
 					{
 						$_SESSION['cart'][$key]->setQuantity($_POST['chQuantity']);
 					}
@@ -78,7 +80,7 @@ class ShoppingController extends \kae\core\Controller
 			}
 			foreach ($_SESSION['cart'] as $key => $product) 
 			{
-				$_SESSION['summe'] += $product->__get('pricePerUnit')*$product->getQuantity();
+				$_SESSION['summe'] += $product->pricePerUnit*$product->getQuantity();
 			}
 		}
 	}
@@ -107,7 +109,7 @@ class ShoppingController extends \kae\core\Controller
 		$bool = true;
 		foreach ($_SESSION['cart'] as $key => $value) 
 		{
-			if($value->__get('id') == $fullProduct->__get('id'))
+			if($value->id == $fullProduct->id)
 			{
 				
 				$_SESSION['cart'][$key] = $fullProduct;
@@ -120,28 +122,34 @@ class ShoppingController extends \kae\core\Controller
 		}
 	}
 
-	public function qtySelection($product,$label = '->')
+	public function qtySelection($product,$btn = false,$icon = '->')
 	{
-	echo('	<div class="column--sub">');
-	echo('		<form method="POST" class="form" name="chQuantity">
-					<select name="chQuantity" class="select-field selection--qty">');
-					for ($i=1; $i <= $product->__get('qtyInStock'); $i++) {
-						if($product->getQuantity() == $i)
-						{
-							echo('<option selected="selected" value="'.$i.'">'.$i.'</option>');
-						}
-						else
-						{
-							echo('<option value="'.$i.'">'.$i.'</option>');
-						}
-					}
-	echo('			</select>');
 
-	echo('		<button type="submit" class="btn btn--submit" name="submit">'.$label.'</button>
-				<input type="hidden" name="idProduct" value="'.$product->__get('id').'">');
-	echo('		</form>
+		echo'<div class="column--sub">';
+		echo'<form method="POST" action="" class="form" name="chQuantity">';
+		?><select name="chQuantity" class="select-field selection--qty" onchange='this.form.submit();'><?
+
+			for ($i=1; $i <= $product->qtyInStock; $i++)
+			{
+				if($product->getQuantity() == $i)
+				{
+					echo('<option selected="selected" value="'.$i.'">'.$i.'</option>');
+				}	
+				else
+				{
+					echo('<option value="'.$i.'">'.$i.'</option>');
+				}
+			}	
+		echo'</select>';
+		echo('<noscript><button type="submit" class="btn btn--submit" name="submit">'.$icon.'</button></noscript>');
+		if($btn){
+			echo('<button type="submit" class="btn btn--submit" name="submit">'.$icon.'</button>');
+		}
+		echo('<input type="hidden" name="idProduct" value="'.$product->id.'">
+			</form>
 			</div>');
 	}
 
+				
 
 }

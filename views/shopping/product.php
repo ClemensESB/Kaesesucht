@@ -24,7 +24,7 @@
 	</div>
 </div>
 <div class="panel">
-	<?$this->qtySelection($this->fullProduct,'in den Warenkorb legen');?>
+	<?$this->qtySelection($this->fullProduct,true,'in den Warenkorb legen');?>
 
 </div>
 <div class="panel">
