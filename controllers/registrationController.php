@@ -121,14 +121,17 @@ class RegistrationController extends \kae\core\Controller
                 $errors['city'] = 'Bitte geben sie ihren Ort an';
             }
 
-            if($_POST['email'] == null || mb_strlen($_POST['email']) < 2)
+            if($_POST['email'] == null || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) 
             {
-                $errors['email'] = 'E-Mail ist zu kurz, bitte mehr als 2 Zeichen.';
-            }
+                 $errors['email'] = 'E-Mail ist nicht valide';
+            } 
 
-            if($_POST['password'] == null || mb_strlen($_POST['password']) < 8)
+            $passRegex = "/^(?=.*?[A-Z].*?)(?=.*?[a-z].*?)(?=.*[0-9].*?).{4,}$/m";
+
+
+            if($_POST['password'] == null || !preg_match($passRegex, $_POST['password']))
             {
-                $errors['password'] = 'Passwort ist zu kurz, bitte mehr als 8 Zeichen.';
+                $errors['password'] = 'Passwort ist bullshit, min.4 Zeichen 1 Großbuchstabe, 1 Zahl.';
             }
             else if($_POST['password1'] == null || $_POST['password'] != $_POST['password1'])
             {
@@ -137,6 +140,7 @@ class RegistrationController extends \kae\core\Controller
 
             $_POST['passwordHash'] = hash( 'md5' , $_POST['password1'] , false );
             #pre_r($_POST);
+            #pre_r($errors);
             // check errors?
             if(count($errors) == 0)
             {
