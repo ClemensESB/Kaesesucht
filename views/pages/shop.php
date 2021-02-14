@@ -9,7 +9,7 @@
     </div>
 </div>
 <div class = "filter_container">
-    <form method="post">
+    <form method="get">
         <label for="taste">Geschmack</label>
         <select id="taste" name="taste">
             <option value="" selected>Keine Präferenz</option>

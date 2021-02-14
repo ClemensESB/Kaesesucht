@@ -15,7 +15,10 @@ class PagesController extends \kae\core\Controller
 
 	public function actionIndex()
 	{
-		$this->products = FullProduct::findNewProducts();
+
+
+		
+		
 	}
 	public function actionImpressum()
 	{
@@ -23,24 +26,23 @@ class PagesController extends \kae\core\Controller
 	}
 	public function actionShop()
 	{
-		#pre_r($_POST);
-		if (isset($_POST['SubmitFilter'])){
+		if (isset($_GET['SubmitFilter'])){
 		    $filterStmt = '';
 		    unset($Products);
-		    if (isset($_POST['taste'])&& !empty($_POST['taste'])){
-		        $taste= $_POST['taste'];
+		    if (isset($_GET['taste'])&& !empty($_GET['taste'])){
+		        $taste= $_GET['taste'];
 		        $filterStmt .= 'taste = "'.$taste.'" AND ';
 		    }
-		    if (isset($_POST['lactose'])&& !empty($_POST['lactose'])){
-		        $lactose= $_POST['lactose'];
+		    if (isset($_GET['lactose'])&& !empty($_GET['lactose'])){
+		        $lactose= $_GET['lactose'];
 		        $filterStmt .= 'lactose = '.$lactose.' AND ';
 		    }
-		    if (isset($_POST['milkType'])&& !empty($_POST['milkType'])){
-		        $milkType= $_POST['milkType'];
+		    if (isset($_GET['milkType'])&& !empty($_GET['milkType'])){
+		        $milkType= $_GET['milkType'];
 		        $filterStmt .= 'milkType = "'.$milkType.'" AND ';
 		    }
-		    if (isset($_POST['rawMilk'])&& !empty($_POST['rawMilk'])){
-		      $rawMilk= $_POST['rawMilk'];
+		    if (isset($_GET['rawMilk'])&& !empty($_GET['rawMilk'])){
+		      $rawMilk= $_GET['rawMilk'];
 		      $filterStmt .= 'rawMilk = '.$rawMilk.' AND ';
 		    }
 		    $this->params['stmt'] = preg_replace('/\W\w+\s*(\W*)$/', '$1', $filterStmt);
@@ -52,7 +54,7 @@ class PagesController extends \kae\core\Controller
 
 
 
-	public function loadProducts($filterStmt = '')
+	public function LoadProducts($filterStmt = '')
 	{
         $array = FullProduct::find($filterStmt);
 
@@ -81,11 +83,41 @@ class PagesController extends \kae\core\Controller
         }
         echo('</div>');
 	}
-	public function actionProfil()
-	{
-		if(!$this->loggedIn())
-		{
+    public function actionHome()
+    {
+        $array = FullProduct::findNewProducts();
+        echo('<div class="page_container">');
+
+            for ($x=0; $x<3 ;$x++) {
+            $product = new FullProduct($array[$x]);
+            $path = ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product->__get('pictureName');
+            echo('
+			<a href="index.php?c=shopping&a=product&id='.$product->__get('id').'">	
+				<div class="product_container">
+					<p class="product_title">'.$product->__get('cheeseName').'<p>
+					<div class="product_descrip">
+						<img class = "product_image" src="'.$path.'" alt="'.$product->__get('cheeseName').'">
+					</div><p class ="product_descrip" >
+						Ab '.$product->__get('pricePerUnit').' € <br><br>
+						'.$product->__get('descrip').'<br>
+						<br>Verfügbarkeit : '.$product->__get('qtyInStock').'
+					</p>
+					<div class ="product_btn">
+						<form method="GET" name="id">
+						</form>
+					</div>
+				</div>
+			</a>
+			
+		    ');
+        }
+        echo('</div>');
+    }
+
+	public function actionProfil(){
+		if(!$this->loggedIn()){
 			$this->redirect('index.php?c=registration&a=login');
 		}
+
 	}
 }

@@ -19,12 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="filter">
+    <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="home Page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/stylesheets/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/stylesheets/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/navBar.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/navBar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/pagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/pagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/cheeseFull.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/cheeseFull.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/shop.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +85,7 @@
       <workItem from="1611239810109" duration="22954000" />
       <workItem from="1611329634075" duration="21009000" />
       <workItem from="1611400988134" duration="235000" />
+      <workItem from="1613316283467" duration="1550000" />
     </task>
     <task id="LOCAL-00001" summary="profil logout pages">
       <created>1610640841456</created>
@@ -115,7 +115,21 @@
       <option name="project" value="LOCAL" />
       <updated>1610897628553</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="home Page">
+      <created>1613231045412</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1613231045412</updated>
+    </task>
+    <task id="LOCAL-00006" summary="home Page">
+      <created>1613231119097</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1613231119097</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +152,7 @@
     <MESSAGE value="shop page without filter" />
     <MESSAGE value="filter shop" />
     <MESSAGE value="shop page dynamic" />
-    <option name="LAST_COMMIT_MESSAGE" value="shop page dynamic" />
+    <MESSAGE value="home Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="home Page" />
   </component>
 </project>
