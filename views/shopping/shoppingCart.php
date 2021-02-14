@@ -48,7 +48,10 @@
 		</div>
 		<?endforeach;?>
 <?else:?>
-	Sie haben keine Produkte ausgewählt
+	<div class="head--container">
+		Sie haben keine Produkte ausgewählt
+	</div>
+	
 <?endif?>
 </div>
 <?if(!empty($_SESSION['cart'])):?>

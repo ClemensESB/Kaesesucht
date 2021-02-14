@@ -4,10 +4,10 @@
 
 
 ###ADRESS
-INSERT INTO `address`(`id`, `createdAt`, `updatetAt`, `zipCode`, `city`, `street`, `strNo`, `strAdd`) VALUES (NULL,NULL,NULL,'99045','Erfurt','Teststr.','5','a');
-INSERT INTO `address`(`id`, `createdAt`, `updatetAt`, `zipCode`, `city`, `street`, `strNo`, `strAdd`) VALUES (NULL,NULL,NULL,'12384','Wunderland','Warmstr.','24',null);
-INSERT INTO `address`(`id`, `createdAt`, `updatetAt`, `zipCode`, `city`, `street`, `strNo`, `strAdd`) VALUES (NULL,NULL,NULL,'12612','Elisendorf','Burgstr.','44',null);
-INSERT INTO `address`(`id`, `createdAt`, `updatetAt`, `zipCode`, `city`, `street`, `strNo`, `strAdd`) VALUES (NULL,NULL,NULL,'99540','Testcity','Teststr.','12','b');
+INSERT INTO `address`(`id`, `createdAt`, `updatetAt`, `zipCode`, `city`, `street`, `strNo`) VALUES (NULL,NULL,NULL,'99045','Erfurt','Teststr.','5');
+INSERT INTO `address`(`id`, `createdAt`, `updatetAt`, `zipCode`, `city`, `street`, `strNo`) VALUES (NULL,NULL,NULL,'12384','Wunderland','Warmstr.','24');
+INSERT INTO `address`(`id`, `createdAt`, `updatetAt`, `zipCode`, `city`, `street`, `strNo`) VALUES (NULL,NULL,NULL,'12612','Elisendorf','Burgstr.','44');
+INSERT INTO `address`(`id`, `createdAt`, `updatetAt`, `zipCode`, `city`, `street`, `strNo`) VALUES (NULL,NULL,NULL,'99540','Testcity','Teststr.','12');
 ###SORT
 INSERT INTO `sort`(`id`, `createdAt`, `updatetAt`, `sortName`) VALUES (NULL,NULL,NULL,'Hartkäse');
 INSERT INTO `sort`(`id`, `createdAt`, `updatetAt`, `sortName`) VALUES (NULL,NULL,NULL,'Sauermilchkäse');

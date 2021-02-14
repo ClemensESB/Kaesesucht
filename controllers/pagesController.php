@@ -90,4 +90,5 @@ class PagesController extends \kae\core\Controller
 		}
 
 	}
+
 }

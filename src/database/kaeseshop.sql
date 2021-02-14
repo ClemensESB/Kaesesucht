@@ -83,8 +83,7 @@ CREATE TABLE IF NOT EXISTS `kaeseshop`.`address` (
   `zipCode` VARCHAR(5) NOT NULL CHECK (zipCode REGEXP '[0-9][0-9][0-9][0-9][0-9]'),
   `city` VARCHAR(50) NOT NULL,
   `street` VARCHAR(100) NOT NULL, 
-  `strNo` VARCHAR(4) NOT NULL,
-  `strAdd` VARCHAR(1) NULL,
+  `strNo` VARCHAR(5) NOT NULL,
   CONSTRAINT UC_address UNIQUE (id),
   PRIMARY KEY (`id`));
 

@@ -1,8 +1,10 @@
- 
-Text        #CAC7BF
-Background  #575142
+Background --first-prim-color #575142  #E1BD81
+Text       --first-sec-color  #CAC7BF
 
-Text        #35291E
-Background  #EEC94C
 
-Fill        #9B998F
+Background --second-prim-color #EEC94C
+Text       --second-sec-color #35291E
+
+
+Fill       --fill-color #9B998F #6A4D4F
+

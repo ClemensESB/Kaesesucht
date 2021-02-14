@@ -263,7 +263,7 @@ abstract class Model
 
             }
         }
-        return count($errors) === 0 ? true : false;
+        return count($errors) === 0 ? true : $errors;
     }
 
 
@@ -274,19 +274,27 @@ abstract class Model
 
         switch($type)
         {
-            case BaseModel::TYPE_INT:
+            case Model::TYPE_INT:
             break;
-            case BaseModel::TYPE_FLOAT:
+            case Model::TYPE_FLOAT:
             break;
-            case BaseModel::TYPE_STRING:
+            case Model::TYPE_STRING:
             {
-                if(isset($schemaOptions['min']) && mb_strlen($value) < $schemaOptions['min'])
+                if(isset($schemaOptions['validate']['min']) && mb_strlen($value) < $schemaOptions['validate']['min'])
                 {
-                    $errors[] = $attribute.': String needs min. '.$schemaOptions['min'].' characters!';
+                    $errors[] = $attribute.': String needs min. '.$schemaOptions['validate']['min'].' characters!';
                 }
-                if(isset($schemaOptions['max']) && mb_strlen($value) > $schemaOptions['max'])
+                if(isset($schemaOptions['validate']['max']) && mb_strlen($value) > $schemaOptions['validate']['max'])
                 {
-                    $errors[] = $attribute.': String can have max. '.$schemaOptions['max'].' characters!';
+                    $errors[] = $attribute.': String can have max. '.$schemaOptions['validate']['max'].' characters!';
+                }
+                if(isset($schemaOptions['validate']['email']) && !filter_var($value, FILTER_VALIDATE_EMAIL))
+                {
+                    $errors[] = $attribute.': Email string not valid';
+                }
+                if(isset($schemaOptions['validate']['zip']) && mb_strlen($value) != $schemaOptions['validate']['zip'])
+                {
+                    $errors[] = $attribute.': PLZ zu lang oder kurz';
                 }
             }
             break;
