@@ -59,7 +59,8 @@ class PagesController extends \kae\core\Controller
         $array = FullProduct::find($filterStmt);
 
         echo('<div class="page_container">');
-        foreach ($array as $key => $value) {
+        foreach ($array as $key => $value) 
+        {
             $product = new FullProduct($array[$key]);
             $path = ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product->pictureName;
             echo('
