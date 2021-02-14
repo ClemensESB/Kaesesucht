@@ -87,5 +87,9 @@ class PagesController extends \kae\core\Controller
 		{
 			$this->redirect('index.php?c=registration&a=login');
 		}
+
+		
+		
 	}
+
 }
