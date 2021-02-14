@@ -36,6 +36,8 @@
             <option value="1">Ja</option>
             <option value="2">Nein</option>
         </select>
+        <input type="hidden" name="c" value="pages">
+        <input type="hidden" name="a" value="shop">
         <input type="submit" name="SubmitFilter" value="Anwenden" >
     </form>
 </div>

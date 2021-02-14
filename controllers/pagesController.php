@@ -25,9 +25,10 @@ class PagesController extends \kae\core\Controller
 	}
 	public function actionShop()
 	{
+
+		#pre_r($_GET);
 		if (isset($_GET['SubmitFilter'])){
 		    $filterStmt = '';
-		    unset($Products);
 		    if (isset($_GET['taste'])&& !empty($_GET['taste'])){
 		        $taste= $_GET['taste'];
 		        $filterStmt .= 'taste = "'.$taste.'" AND ';
@@ -60,17 +61,17 @@ class PagesController extends \kae\core\Controller
         echo('<div class="page_container">');
         foreach ($array as $key => $value) {
             $product = new FullProduct($array[$key]);
-            $path = ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product->__get('pictureName');
+            $path = ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product->pictureName;
             echo('
-			<a href="index.php?c=shopping&a=product&id='.$product->__get('id').'">	
+			<a href="index.php?c=shopping&a=product&id='.$product->id.'">	
 				<div class="product_container">
-					<p class="product_title">'.$product->__get('cheeseName').'<p>
+					<p class="product_title">'.$product->cheeseName.'<p>
 					<div class="product_descrip">
-						<img class = "product_image" src="'.$path.'" alt="'.$product->__get('cheeseName').'">
+						<img class = "product_image" src="'.$path.'" alt="'.$product->cheeseName.'">
 					</div><p class ="product_descrip" >
-						Ab '.$product->__get('pricePerUnit').' € <br><br>
-						'.$product->__get('descrip').'<br>
-						<br>Verfügbarkeit : '.$product->__get('qtyInStock').'
+						Ab '.$product->pricePerUnit.' € <br><br>
+						'.$product->descrip.'<br>
+						<br>Verfügbarkeit : '.$product->qtyInStock.'
 					</p>
 					<div class ="product_btn">
 						<form method="GET" name="id">
