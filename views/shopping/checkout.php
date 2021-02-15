@@ -40,7 +40,7 @@
 				Vorname: <?echo($this->currentUser['firstName']);?><br>
 				Nachname: <?echo($this->currentUser['lastName']);?><br>
 				Ort: <?echo($this->currentUser['city'].' '.$this->currentUser['zipCode']);?><br>
-				Straße: <?echo($this->currentUser['street'].' '.$this->currentUser['strNo'].$this->currentUser['strAdd']);?><br>
+				Straße: <?echo($this->currentUser['street'].' '.$this->currentUser['strNo']);?><br>
 				Zahlungsmethode: <?echo($_SESSION['order']->__get('payMethod'));?><br>
 			</p>
 		</div>

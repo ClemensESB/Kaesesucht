@@ -3,6 +3,8 @@
 namespace kae\controller;
 use kae\model\ModelAddress as Address;
 use kae\model\ModelAccount as Account;
+use kae\model\ModelOrders as Orders;
+use kae\model\ModelOrdersFull as OrdersFull;
 
 class RegistrationController extends \kae\core\Controller
 {
@@ -41,12 +43,9 @@ class RegistrationController extends \kae\core\Controller
             // check errors?
             if(count($errors) == 0)
             {
-
-
-                    //TODO Datenbankanbindung
-                    $_SESSION['loggedIn'] = true;
-                    $_SESSION['email'] = $email;
-
+                //TODO Datenbankanbindung
+                $_SESSION['loggedIn'] = true;
+                $_SESSION['email'] = $email;
             }
 
         // push to view ;)
@@ -100,7 +99,7 @@ class RegistrationController extends \kae\core\Controller
             pre_r($errors);
 
 
-            if(count($errors) == 0 && false)
+            if(count($errors) == 0)
             {
                 // TODO: save to database
                 $sql = ' zipCode = "'.$address->zipCode.'" and city = "'.$address->city.'" and street = "'.$address->street.'" and strNo = "'.$address->strNo.'"';
@@ -122,4 +121,88 @@ class RegistrationController extends \kae\core\Controller
         $this->setParam('errors', $errors);
         $this->setParam('success', $success);
 	}
+
+    public function actionProfil()
+    {
+        if(!$this->loggedIn())
+        {
+            $this->redirect('index.php?c=registration&a=login');
+        }
+
+        $orders = Orders::find('account_id = "'.$this->currentUser['id'].'"');
+        foreach($orders as $key => $value)
+        {
+            $orders[$key] = OrdersFull::find('orders.id = "'.$value['id'].'"');
+        }
+        $this->setParam('orders',$orders);
+
+
+        if(isset($_POST['submit']))
+        {
+            $errors = array();
+            $address = new Address($this->currentUser);
+            $account = new Account($this->currentUser);
+            #pre_r($address);
+            #pre_r($account);
+            if($_POST['email'] != $this->currentUser['email'])
+            {
+                $exists = Account::findOne('email = "'.$_POST['email'].'"');
+
+                if(!empty($exists))
+                {
+                    $errors['emailExists'] = 'E-Mail wird bereits verwendet';
+                }
+                else
+                {
+
+                    $account->email = $_POST['email'];
+                    $account->validate($errors);
+                    #pre_r($account);
+                    if(count($errors) == 0)
+                    {
+                        $account = new Account($_POST);
+                        $account->id = $this->currentUser['id'];
+                        #pre_r($account);
+                        $account->update($errors);
+                    }
+                    else
+                    {
+
+                        #pre_r($errors);
+                    }
+                }
+            }
+            if($_POST['city'] != $address->city || $_POST['street'] != $address->street || $_POST['strNo'] != $address->strNo || $_POST['zipCode'] != $address->zipCode)
+            {
+                $sql = ' zipCode = "'.$_POST['zipCode'].'" and city = "'.$_POST['city'].'" and street = "'.$_POST['street'].'" and strNo = "'.$_POST['strNo'].'"';
+                $temp = Address::findone($sql);
+                #pre_r($temp);
+                if(!empty($temp))
+                {
+                    $address = new Address($temp);
+                }
+                else
+                {
+                    $address = new Address($_POST);
+                    $address->validate($errors);
+                    if(count($errors) == 0)
+                    {
+                        $address->insert($errors);
+                    }
+                }
+
+                    $account->address_id = $address->id;
+                    #pre_r($account);
+                    $account->update($errors);
+            }
+            if(count($errors) == 0)
+            {
+                $_SESSION['loggedIn'] = true;
+                $_SESSION['email'] = $account->email;
+
+            }
+
+            $this->setParam('errors', $errors);
+        }
+    }
 }

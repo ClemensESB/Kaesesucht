@@ -136,20 +136,15 @@ abstract class Model
             if($value != null && gettype($value) ==  self::TYPE_STRING)
             {
                 $wherestr .= ' '.$key.' = "'.$value.'" and';
-                #echo($value.': '.gettype($value));
             }
             elseif($value != null && gettype($value) ==  self::TYPE_INT)
             {
                 $wherestr .= ' '.$key.' = '.$value.' and';
-                #echo($value.': '.gettype($value));
             }
         }
 
         $wherestr = rtrim($wherestr,' and');
-        #echo($wherestr);
-
         $erg = $this->findOne($wherestr);
-        #pre_r($erg);
 
         foreach($this->schema as $key => $value )
         {
@@ -215,8 +210,9 @@ abstract class Model
                 {
                     $sql .= $key.' = '.$db->quote($this->data[$key]).',';
                 }
+
             }
-        $sql .= trim($sql, ',');
+        $sql = trim($sql, ',');
         $sql .= ' WHERE id = '.$this->data['id'];
 
         $statement = $db->prepare($sql);
