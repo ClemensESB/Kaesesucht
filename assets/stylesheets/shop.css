@@ -63,15 +63,18 @@ body::-webkit-scrollbar {
     text-align: center;
     margin: 10px;
     font-size: 20px;
+
 }
 
 .product_image {
-    width: 100%;
-    height: auto;
-    margin: 30px auto;
-    display: block;
+    width: auto;
+    max-height: 144px;
+    margin: auto;
     justify-content: center;
     align-content: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .product_btn {

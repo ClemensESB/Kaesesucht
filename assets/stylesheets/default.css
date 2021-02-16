@@ -19,12 +19,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     background-color: var(--fill-color);
-    color: var(--first-sec-color)
+    color: var(--first-sec-color);
 }
 
 .wrapper {
-    position: relative;
-    top: 80px;
     min-height: calc(100vh - 7em - 15px);
 }
 

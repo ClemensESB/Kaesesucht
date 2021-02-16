@@ -82,17 +82,16 @@ else
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/stylesheets/styles.css">
-
-    
     <title>Käsesucht</title>
 </head>
 <body>
-
+        <?include ASSETPATH.'navBar.html';?>
+        <div class="wrapper">
         <?php
         // this method will render the view of the called action
         // for this the the file in the views directory will be included
-        $controller->render();
-        ?>
-    
+        $controller->render();?>
+        </div>
+        <?include ASSETPATH.'footer.html';?>
 </body>
 </html>
