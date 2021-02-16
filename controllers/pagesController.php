@@ -83,13 +83,4 @@ class PagesController extends \kae\core\Controller
         }
         echo('</div>');
 	}
-
-
-	public function actionProfil(){
-		if(!$this->loggedIn()){
-			$this->redirect('index.php?c=registration&a=login');
-		}
-
-	}
-
 }

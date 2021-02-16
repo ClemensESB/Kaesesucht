@@ -101,9 +101,9 @@ class ModelAccountFull extends \kae\core\Model
         {
             die('Select statement failed: '. $e->getMessage());
         }
-
         return $result;
     }
+
     public static function findOne($where = '1')
     {
        $results = self::find($where);
