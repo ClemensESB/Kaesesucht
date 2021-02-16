@@ -19,9 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="home Page">
+    <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="Anpassung post-&gt;get">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/pagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/pagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/cheeseFull.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/cheeseFull.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/shop.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +60,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Second_Chance" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -84,6 +87,10 @@
       <workItem from="1611329634075" duration="21009000" />
       <workItem from="1611400988134" duration="235000" />
       <workItem from="1613316283467" duration="1550000" />
+      <workItem from="1613434668129" duration="449000" />
+      <workItem from="1613463037676" duration="6210000" />
+      <workItem from="1613488902488" duration="7583000" />
+      <workItem from="1613497408581" duration="136000" />
     </task>
     <task id="LOCAL-00001" summary="profil logout pages">
       <created>1610640841456</created>
@@ -127,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613231119097</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Anpassung post-&gt;get">
+      <created>1613326045481</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1613326045481</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +165,7 @@
     <MESSAGE value="filter shop" />
     <MESSAGE value="shop page dynamic" />
     <MESSAGE value="home Page" />
-    <option name="LAST_COMMIT_MESSAGE" value="home Page" />
+    <MESSAGE value="Anpassung post-&gt;get" />
+    <option name="LAST_COMMIT_MESSAGE" value="Anpassung post-&gt;get" />
   </component>
 </project>
