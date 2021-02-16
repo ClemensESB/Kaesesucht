@@ -62,12 +62,12 @@ class Controller
 		extract($this->params);
 		// just include the view here, it's like putting the code of the php file by copy paste on this position.
 		include ASSETPATH.'navBar.html';
-		echo('<div id="wrapper">');
+		echo('<div class="wrapper">');
 		include $viewPath;
 		echo('</div>');
 		include ASSETPATH.'footer.html';
 	}
-
+	
 	/**
 	 * Setter for params, which will be used for the render method
 	 * @param  String $key   Key in the param array

@@ -141,9 +141,9 @@ class ShoppingController extends \kae\core\Controller
 				}
 			}	
 		echo'</select>';
-		echo('<noscript><button type="submit" class="btn btn--submit" name="submit">'.$icon.'</button></noscript>');
+		echo('<noscript><button type="submit" class="button" name="submit">'.$icon.'</button></noscript>');
 		if($btn){
-			echo('<button type="submit" class="btn btn--submit" name="submit">'.$icon.'</button>');
+			echo('<button type="submit" class="button" name="submit">'.$icon.'</button>');
 		}
 		echo('<input type="hidden" name="idProduct" value="'.$product->id.'">
 			</form>

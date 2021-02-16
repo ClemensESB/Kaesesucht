@@ -70,8 +70,7 @@ class PagesController extends \kae\core\Controller
 					<div class="product_descrip">
 						<img class = "product_image" src="'.$path.'" alt="'.$product->cheeseName.'">
 					</div><p class ="product_descrip" >
-						Ab '.$product->pricePerUnit.' € <br><br>
-						'.$product->descrip.'<br>
+						Ab '.$product->pricePerUnit.' € <br>
 						<br>Verfügbarkeit : '.$product->qtyInStock.'
 					</p>
 					<div class ="product_btn">

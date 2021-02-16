@@ -1,0 +1,29 @@
+.registration {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: var(--darken-color);
+}
+
+.registration * {
+    margin: 30px
+}
+
+.registration .head {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.registration input.inputtext,
+.registration .button {
+    padding: 10px;
+    width: 300px;
+}
+
+.registration p *,
+.registration p {
+    color: white;
+}

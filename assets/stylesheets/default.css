@@ -7,18 +7,25 @@
 }
 
 :root {
-    --first-prim-color: #E1BD81;
+    --first-prim-color: #8f8f8f;
     --first-sec-color: #000;
-    --second-prim-color: #EEC94C;
-    --second-sec-color: #000;
-    --fill-color: #6A4D4F;
+    --second-prim-color: #e9bf72;
+    --second-sec-color: rgb(46, 42, 42);
+    --fill-color: #ece7de;
+    --darken-color: rgba(0, 0, 0, 0.8)
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
-    background-color: var(--first-prim-color);
+    background-color: var(--fill-color);
     color: var(--first-sec-color)
+}
+
+.wrapper {
+    position: relative;
+    top: 80px;
+    min-height: calc(100vh - 7em - 15px);
 }
 
 h1,
@@ -44,7 +51,7 @@ a:active {
 }
 
 .inputtext,
-.button{
+.button {
     display: block;
     margin: 20px;
     padding: 2px;
@@ -55,7 +62,6 @@ a:active {
     font-size: 16px;
 }
 
-
 button {
     display: block;
     padding: 2px;
@@ -65,28 +71,7 @@ button {
     border-radius: 5px;
     font-size: 16px;
 }
-.home_top {
-    background-image: url("../images/homeImage.jpg")  ;
-    height: 500px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
 
-}
-.home_text {
-    font-size: 40px;
-    text-align: center;
-    padding-top: 5%;
-    color: white;
-}
-.home_linkbutton{
-    font-size: 40px;
-    text-align: center;
-    color: white;
-    padding: 10px;
-    border: 2px solid ;
-}
 .button:hover,
 .button.active,
 button {
@@ -121,21 +106,6 @@ nav ul a:hover {
 .footer {
     background: var(--second-prim-color);
     color: var(--second-sec-color);
-}
-
-.product_container {
-    background: var(--fill-color);
-}
-
-.product_container a,
-.product_container p {
-    color: var(--second-sec-color);
-}
-
-.product_container:hover,
-.product_container:active {
-    background: var(--second-prim-color);
-    transition: .5s;
 }
 
 @media (max-width: 858px) {

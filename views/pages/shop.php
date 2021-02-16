@@ -38,7 +38,7 @@
             <option value="1"<?echo(isset($_GET['rawMilk']) && $_GET['rawMilk'] == 1 ? 'selected' : '');?>>Ja</option>
             <option value="2"<?echo(isset($_GET['rawMilk']) && $_GET['rawMilk'] == 2 ? 'selected' : '');?>>Nein</option>
         </select>
-        <input type="submit" name="SubmitFilter" value="Anwenden" >
+        <input type="submit" name="SubmitFilter" value="Anwenden" class="button" >
     </form>
 </div>
 <?

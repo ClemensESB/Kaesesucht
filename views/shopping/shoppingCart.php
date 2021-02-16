@@ -2,7 +2,7 @@
 <?if(!empty($_SESSION['cart'])):?>
 	<div class="head--container">
 	<h1>Warenkorb</h1>
-		<div class ="product--btn">
+		<div class ="button">
 			<a href="index.php?c=shopping&a=checkout">Zur Kasse Summe: <?echo($_SESSION['summe']);?> €</a>
 		</div>
 	</div>
@@ -56,7 +56,7 @@
 </div>
 <?if(!empty($_SESSION['cart'])):?>
 <div class="panel">
-	<div class ="product--btn">
+	<div class ="button">
 		<a href="index.php?c=shopping&a=checkout"><?echo('Zur Kasse Summe: '.$_SESSION['summe'].' €');?></a>
 	</div>
 </div>
