@@ -95,6 +95,43 @@ class ModelCheeseFull extends \kae\core\Model
 
         return null;
     }
+    public static function countEntries()
+    {
+        $db = $GLOBALS['db'];
+        $total = null;
 
+        try {
+            $sql = ' SELECT COUNT(*) FROM ' . self::tablename() . ' ';
+            $total = $db->query($sql)->fetchAll();
+        }
+        catch (\PDOException $e)
+        {
+            die('Select statement failed: ' . $e->getMessage());
+        }
+        return $total;
+    }
+    public static function ProductsPerPage()
+    {
+        if(isset($_GET['page']) && !empty($_GET['page'])){
+            $currentPage = $_GET['page'];
+        }else{
+            $currentPage = 1;
+        }
+        $limit = 2;
+        $startFrom = ($currentPage * $limit) - $limit;
+        $db = $GLOBALS['db'];
+        $results = null;
+        try {
+            $sql = 'SELECT cheese.id, cheese.createdAt, cheese.updatetAt, cheeseName, sort_id, price_id, qtyInStock, descrip, recipe,
+             taste, lactose, milkType, rawMilk, pictureName, sortName, pricePerUnit FROM '.self::tablename().' 
+             JOIN sort ON cheese.sort_id = sort.id JOIN price ON cheese.price_id = price.id LIMIT $startFrom, $limit';
+            $results = $db->query($sql)->fetchAll();
+        }
+        catch (\PDOException $e)
+        {
+            die('Select statement failed: ' . $e->getMessage());
+        }
+        return $results;
+    }
 
 }

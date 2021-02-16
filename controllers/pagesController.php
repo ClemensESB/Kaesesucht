@@ -83,4 +83,51 @@ class PagesController extends \kae\core\Controller
         }
         echo('</div>');
 	}
+
+    public static function paging()
+    {
+
+        if (isset($_GET['page']) && !empty($_GET['page'])) {
+            $currentPage = $_GET['page'];
+        } else {
+            $currentPage = 1;
+        }
+        $limit = 2;
+        $startFrom = ($currentPage * $limit) - $limit;
+        $offset = ($currentPage - 1) * $limit;
+        $previous_page = $currentPage - 1;
+        $next_page = $currentPage + 1;
+        $total = FullProduct::countEntries();
+        $products = Fullproduct::ProductsPerPage();
+        $pages = ceil($total / $limit);
+
+        while ($products) {
+            echo('<div class="page_container">');
+            foreach ($products as $key => $value) {
+                $product = new FullProduct($products[$key]);
+                $path = ASSETPATH . 'images' . DIRECTORY_SEPARATOR . $product->pictureName;
+                echo('
+			<a href="index.php?c=shopping&a=product&id=' . $product->id . '">	
+				<div class="product_container">
+					<p class="product_title">' . $product->cheeseName . '<p>
+					<div class="product_descrip">
+						<img class = "product_image" src="' . $path . '" alt="' . $product->cheeseName . '">
+					</div><p class ="product_descrip" >
+						Ab ' . $product->pricePerUnit . ' € <br><br>
+						' . $product->descrip . '<br>
+						<br>Verfügbarkeit : ' . $product->qtyInStock . '
+					</p>
+					<div class ="product_btn">
+						<form method="GET" name="id">
+						</form>
+					</div>
+				</div>
+			</a>
+		    ');
+            }
+            }
+
+    
+
+            }
 }

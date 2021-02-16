@@ -41,6 +41,7 @@
         <input type="submit" name="SubmitFilter" value="Anwenden" class="button" >
     </form>
 </div>
+
 <?
 $this->loadProducts($this->params['stmt']);
 ?>
