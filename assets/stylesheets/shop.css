@@ -48,7 +48,7 @@ body::-webkit-scrollbar {
     transform: translateX(-50%);
     display: grid;
     grid-template-columns: 45% 45%;
-    grid-gap: 1.5%;
+    grid-gap: 1.5vw;
     padding-left: 5%;
     padding-right: 5%;
 }
