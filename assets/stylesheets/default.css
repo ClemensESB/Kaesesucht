@@ -58,6 +58,18 @@ a:active {
     color: var(--second-sec-color);
     border-radius: 5px;
     font-size: 16px;
+    text-align: center;
+    min-height: 40px;
+    max-height: 100px;
+    max-width: 250px;
+}
+.button a {
+    background-clip: padding-box;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding: 5px;
+
 }
 
 button {
@@ -118,4 +130,16 @@ nav ul a:hover {
         background: var(--second-prim-color);
         color: var(--second-sec-color);
     }
+}
+.content-align-mid{
+    position:relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.select-field {
+    appearance: none;
+    border: 1px solid #888888;
+    font-size: 20px;
+    text-align: center;
+    background-color: whitesmoke;
 }
