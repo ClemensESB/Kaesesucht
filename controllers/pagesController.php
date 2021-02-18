@@ -17,7 +17,6 @@ class PagesController extends \kae\core\Controller
 	{
 
         $this->products = FullProduct::findNewProducts();
-
 	}
 	public function actionImpressum()
 	{

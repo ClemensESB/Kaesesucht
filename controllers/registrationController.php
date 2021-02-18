@@ -17,7 +17,6 @@ class RegistrationController extends \kae\core\Controller
         // oh my good, we get data
         if(isset($_POST['submit']))
         {
-
             $email = $_POST['email'] ?? null;
             $password = $_POST['password'] ?? null;
             $_POST['password'] = hash( 'md5' , $password , false );
@@ -38,7 +37,6 @@ class RegistrationController extends \kae\core\Controller
             {
                 $errors['account'] = 'Anmelde Daten ungültig.';
             }
-
 
             // check errors?
             if(count($errors) == 0)
@@ -199,9 +197,7 @@ class RegistrationController extends \kae\core\Controller
             {
                 $_SESSION['loggedIn'] = true;
                 $_SESSION['email'] = $account->email;
-
             }
-
             $this->setParam('errors', $errors);
         }
     }

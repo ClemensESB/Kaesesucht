@@ -9,8 +9,7 @@
 </div>	
         <div class="page_container">
             <?foreach ($this->products as $product):
-	            $path = ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product['pictureName'];
-	        ?>
+	            $path = ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product['pictureName'];?>
 			<a href="index.php?c=shopping&a=product&id=<?echo ($product['id']);?>">	
 				<div class="product_container">
 					<p class="product_title"><?echo ($product['cheeseName']);?><p>
@@ -27,7 +26,7 @@
 					</div>
 				</div>
 			</a>
-        	<?endforeach;?>
+			<?endforeach;?>
  		</div>
  <div class ="home_text">
     <a class = "home_linkbutton" href="index.php?c=pages&a=shop">Alle Produkte ansehen</a>
