@@ -2,7 +2,7 @@
 <?if(!empty($_SESSION['cart'])):?>
 	<div class="shop_title">
 	<h1>Warenkorb</h1>
-		<div class ="button content-align-mid">
+		<div class ="button content-align-mid marg-20">
 			<a href="index.php?c=shopping&a=checkout">Zur Kasse Summe: <?echo($_SESSION['summe']);?> €</a>
 		</div>
 	</div>
@@ -41,7 +41,7 @@
 			</div>
 			<div class="column--sub del--action">
 				<form method="POST" action="">
-				<button type="submit" class="btn  del--btn" name="deleteProduct">X</button>
+				<button type="submit" class="button  del--btn" name="deleteProduct">X</button>
 				<input type="hidden" name="delID" value="<?echo($product->id)?>">
 				</form>
 			</div>
@@ -56,7 +56,7 @@
 </div>
 <?if(!empty($_SESSION['cart'])):?>
 <div class="panel">
-	<div class ="button content-align-mid">
+	<div class ="button content-align-mid marg-20">
 		<a href="index.php?c=shopping&a=checkout"><?echo('Zur Kasse Summe: '.$_SESSION['summe'].' €');?></a>
 	</div>
 </div>

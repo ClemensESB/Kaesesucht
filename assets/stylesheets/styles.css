@@ -78,6 +78,8 @@ body::-webkit-scrollbar {
     height: 100%;
 }
 
+
+
 .btn--submit2 {
     width: 70px;
     height: 40px;
@@ -111,4 +113,8 @@ body::-webkit-scrollbar {
 .selection--qty {
     height: 100%;
     width: 70px;
+}
+
+.marg-20{
+    margin-top: 20px;
 }
