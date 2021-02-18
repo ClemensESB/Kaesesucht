@@ -2,18 +2,6 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-.shop_title {
-    text-align: center;
-    margin: 30px 10px 10px 10px;
-    font-size: 20px;
-}
-
-.shop_text {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 17px;
-}
-
 .filter_container {
     position: relative;
     margin-top: 40px;
@@ -47,7 +35,7 @@ body::-webkit-scrollbar {
     left: 50%;
     transform: translateX(-50%);
     display: grid;
-    grid-template-columns: 45% 45%;
+    grid-template-columns: 50% 50%;
     grid-gap: 1.5vw;
     padding-left: 5%;
     padding-right: 5%;
