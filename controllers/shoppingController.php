@@ -127,7 +127,6 @@ class ShoppingController extends \kae\core\Controller
 
 	public function qtySelection($product,$btn = false,$icon = '->')
 	{
-
 		echo'<div class="column--sub duoBox">';
 		echo'<div class="price desc">Anzahl:</div>';
 		echo'<form method="POST" action="" class="form" name="chQuantity">';
