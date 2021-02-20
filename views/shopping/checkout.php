@@ -1,4 +1,4 @@
-<div class="head--container">
+<div class="product_title">
 	<h1>Kasse</h1>
 </div>
 
@@ -30,7 +30,7 @@
 				<?endforeach;?>
 
 			</select>
-				<noscript><button type="submit" class="btn btn--submit2" name="submit">Eingabe Bestätigen</button></noscript>
+				<noscript><button type="submit" class="button content-align-right" name="submit">Eingabe Bestätigen</button></noscript>
 		</form>
 	</div>
 
@@ -56,7 +56,7 @@
 	</div>
 	<div class ="panel">
 		<form method="POST" name="buy">
-			<button type="submit" class="btn btn--submit2" name="buy">Bestellen</button>
+			<button type="submit" class="button content-align-right" name="buy">Bestellen</button>
 		</form>
 	</div>
 

@@ -34,6 +34,7 @@ h4,
 h5,
 h6 {
     color: var(--first-sec-color);
+    text-align: center;
 }
 
 p {
@@ -52,7 +53,6 @@ a:active {
 .inputtext,
 .button {
     display: block;
-    margin: 20px;
     padding: 2px;
     background: var(--second-prim-color);
     border: 2px solid var(--second-prim-color);
@@ -60,7 +60,6 @@ a:active {
     border-radius: 5px;
     font-size: 16px;
     text-align: center;
-    min-height: 40px;
     max-height: 100px;
     max-width: 250px;
 }
@@ -70,7 +69,13 @@ a:active {
     display: inline-block;
     position: relative;
     width: 100%;
+<<<<<<< HEAD
     padding: 5px;
+=======
+    height:100%;
+    padding: 10px;
+
+>>>>>>> 1bf7f32aa55c0fb65c645144711b5b1f0222b751
 }
 
 button {
@@ -89,6 +94,7 @@ button {
     background: var(--second-sec-color);
     color: var(--second-prim-color);
     transition: .5s;
+    cursor: pointer;
 }
 
 nav {
@@ -145,4 +151,29 @@ nav ul a:hover {
         background: var(--second-prim-color);
         color: var(--second-sec-color);
     }
+<<<<<<< HEAD
+=======
+}
+.content-align-mid{
+    position:relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.select-field {
+    appearance: none;
+    border: 1px solid #888888;
+    font-size: 20px;
+    text-align: center;
+    background-color: whitesmoke;
+    height: auto;
+    width: auto;
+}
+
+
+.float--right{
+    float: right;
+}
+.float--left{
+    float:left;
+>>>>>>> 1bf7f32aa55c0fb65c645144711b5b1f0222b751
 }

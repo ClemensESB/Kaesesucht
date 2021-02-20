@@ -29,7 +29,11 @@
             <option value="1"<?echo(isset($_GET['rawMilk']) && $_GET['rawMilk'] == 1 ? 'selected' : '');?>>Ja</option>
             <option value="2"<?echo(isset($_GET['rawMilk']) && $_GET['rawMilk'] == 2 ? 'selected' : '');?>>Nein</option>
         </select>
+<<<<<<< HEAD
         <input type="submit" name="SubmitFilter" value="Anwenden" class="button content-align-mid" >
+=======
+        <input type="submit" name="SubmitFilter" value="Anwenden" class="button marg-20" >
+>>>>>>> 1bf7f32aa55c0fb65c645144711b5b1f0222b751
     </form>
 </div>
 

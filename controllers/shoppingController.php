@@ -125,9 +125,10 @@ class ShoppingController extends \kae\core\Controller
 	public function qtySelection($product,$btn = false,$icon = '->')
 	{
 
-		echo'<div class="column--sub">';
+		echo'<div class="column--sub duoBox">';
+		echo'<div class="price desc">Anzahl:</div>';
 		echo'<form method="POST" action="" class="form" name="chQuantity">';
-		?><select name="chQuantity" class="select-field selection--qty" onchange='this.form.submit();'><?
+		?><select name="chQuantity" class="select-field cart--select" onchange='this.form.submit();'><?
 
 			for ($i=1; $i <= $product->qtyInStock; $i++)
 			{
@@ -142,17 +143,14 @@ class ShoppingController extends \kae\core\Controller
 			}	
 		echo'</select>';
 		if($btn){
-			echo('<button type="submit" class="button" name="submit">'.$icon.'</button>');
+			echo('<button type="submit" class="button float--right" name="submit">'.$icon.'</button>');
 		}
 		else
 		{
-			echo('<noscript><button type="submit" class="btn btn--submit" name="submit">'.$icon.'</button></noscript>');
+			echo('<noscript><button type="submit" class="button float--right" name="submit">'.$icon.'</button></noscript>');
 		}
 		echo('<input type="hidden" name="idProduct" value="'.$product->id.'">
 			</form>
 			</div>');
 	}
-
-				
-
 }
