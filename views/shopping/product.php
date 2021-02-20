@@ -1,11 +1,8 @@
-<div class="panel">
-	<div class="">
-		<img class="product_image" src=<?echo(ASSETPATH.'images'.DIRECTORY_SEPARATOR.$this->fullProduct->__get('pictureName')); ?>>
-	</div>
-	
+<div class="product-image-container">
+	<img class="product_image" src=<?echo(ASSETPATH.'images'.DIRECTORY_SEPARATOR.$this->fullProduct->__get('pictureName')); ?>>
 </div>
-<div class="panel">
-	<div class="head--container">
+<div class="product-info-container">
+	<div class="head-container">
 		<h1><?echo($this->fullProduct->__get('cheeseName'))?></h1>
 	</div>
 	<div class="text-box">
