@@ -20,8 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="Anpassung post-&gt;get">
+      <change afterPath="$PROJECT_DIR$/assets/scripts/pagination.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/pages/loadPostAjax.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/pagination.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scripts/valid.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scripts/valid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/init.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/pagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/pagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/cheeseFull.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/cheeseFull.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/pages/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/shop.php" afterDir="false" />
     </list>
@@ -37,6 +44,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -60,7 +68,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Second_Chance" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Pikala-master" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -91,6 +99,12 @@
       <workItem from="1613463037676" duration="6210000" />
       <workItem from="1613488902488" duration="7583000" />
       <workItem from="1613497408581" duration="136000" />
+      <workItem from="1613504884301" duration="1827000" />
+      <workItem from="1613597166494" duration="270000" />
+      <workItem from="1613597545407" duration="7920000" />
+      <workItem from="1613658681617" duration="5288000" />
+      <workItem from="1613727520634" duration="21175000" />
+      <workItem from="1613815285400" duration="18722000" />
     </task>
     <task id="LOCAL-00001" summary="profil logout pages">
       <created>1610640841456</created>

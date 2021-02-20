@@ -60,6 +60,30 @@ class ModelCheeseFull extends \kae\core\Model
         //pre_r($result);
         return $result;
     }
+    public static function findNProducts($where = '',$key)
+    {
+        $db = $GLOBALS['db'];
+        $result = null;
+
+        try
+        {
+            $sql = 'SELECT cheese.id, cheese.createdAt, cheese.updatetAt, cheeseName, sort_id, price_id, qtyInStock, descrip, recipe, taste, lactose, milkType, rawMilk, pictureName, sortName, pricePerUnit FROM '.self::tablename().' JOIN sort ON cheese.sort_id = sort.id JOIN price ON cheese.price_id = price.id';
+
+            if(!empty($where))
+            {
+                $sql .= ' WHERE cheese.'.$where.';';
+            }
+            $sql .= ' LIMIT '.$key.';';
+            $result = $db->query($sql)->fetchAll();
+        }
+        catch(\PDOException $e)
+        {
+            die('Select statement failed: '. $e->getMessage());
+        }
+        // echo($sql);
+        //pre_r($result);
+        return $result;
+    }
     public static function findNewProducts()
     {
         $db = $GLOBALS['db'];
@@ -110,28 +134,22 @@ class ModelCheeseFull extends \kae\core\Model
         }
         return $total;
     }
-    public static function ProductsPerPage()
+    public static function nProducts($key)
     {
-        if(isset($_GET['page']) && !empty($_GET['page'])){
-            $currentPage = $_GET['page'];
-        }else{
-            $currentPage = 1;
-        }
-        $limit = 2;
-        $startFrom = ($currentPage * $limit) - $limit;
         $db = $GLOBALS['db'];
-        $results = null;
+        $result = null;
+
         try {
-            $sql = 'SELECT cheese.id, cheese.createdAt, cheese.updatetAt, cheeseName, sort_id, price_id, qtyInStock, descrip, recipe,
-             taste, lactose, milkType, rawMilk, pictureName, sortName, pricePerUnit FROM '.self::tablename().' 
-             JOIN sort ON cheese.sort_id = sort.id JOIN price ON cheese.price_id = price.id LIMIT $startFrom, $limit';
-            $results = $db->query($sql)->fetchAll();
-        }
-        catch (\PDOException $e)
-        {
+            $sql = 'SELECT * FROM ' . self::tablename();
+
+            $sql .= ' ORDER BY createdAt desc LIMIT ' . $key . ';';
+
+            $result = $db->query($sql)->fetchAll();
+        } catch (\PDOException $e) {
             die('Select statement failed: ' . $e->getMessage());
         }
-        return $results;
+
+        return $result;
     }
 
 }

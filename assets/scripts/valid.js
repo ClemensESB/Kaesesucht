@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			if(valid == false)
 			{
 				event.preventDefault();
-				event.stopPrpagation();
+				event.stopPropagation();
 			}
 
 			return valid;
