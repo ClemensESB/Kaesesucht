@@ -1,0 +1,18 @@
+.wrapper .product-image-container,
+.wrapper .product-info-container {
+    padding: 2%;
+    display: inline-block;
+}
+
+.wrapper .product-image-container img {
+    float: left;
+    left: 0;
+    transform: none;
+    max-width: 60%;
+    max-height: none;
+    height: auto
+}
+
+.head-container h1 {
+    text-align: left;
+}
