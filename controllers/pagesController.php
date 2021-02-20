@@ -81,30 +81,58 @@ class PagesController extends \kae\core\Controller
         }
         echo('</div>');
 	}
+    public function loadNProducts($filterStmt = '',$limit)
+    {
+        $array = FullProduct::findNProducts($filterStmt,$limit);
 
-    public static function paging()
+        echo('<div id = "page_container" class="page_container">');
+        foreach ($array as $key => $value)
+        {
+            $product = new FullProduct($array[$key]);
+            $path = ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product->pictureName;
+            echo('
+			<a href="index.php?c=shopping&a=product&id='.$product->id.'">	
+				<div class="product_container">
+					<p class="product_title">'.$product->cheeseName.'</p>
+						<img class="product_image" src="'.$path.'" alt="'.$product->cheeseName.'">
+						<p class ="product_descrip" >
+						Ab '.$product->pricePerUnit.' € <br>
+						<br>Verfügbarkeit : '.$product->qtyInStock.'
+					</p>
+					<div class ="product_btn">
+						<form method="GET" name="id">
+						</form>
+					</div>
+				</div>
+			</a>
+		    ');
+        }
+        echo('</div>');
+    }
+    public static function paging($filterStmt)
     {
 
-        if (isset($_GET['page']) && !empty($_GET['page'])) {
-            $currentPage = $_GET['page'];
-        } else {
-            $currentPage = 1;
+        $current_page = 1;
+        $offset = 0;
+        $limit = isset($_GET['per-page']) ? $_GET['per-page'] : 3;
+        if(isset($_GET['page-number'])) {
+            $current_page = (int)$_GET['page-number'];
+            $offset = ($current_page * $limit) - $limit;
         }
-        $limit = 2;
-        $startFrom = ($currentPage * $limit) - $limit;
-        $offset = ($currentPage - 1) * $limit;
-        $previous_page = $currentPage - 1;
-        $next_page = $currentPage + 1;
-        $total = FullProduct::countEntries();
-        $products = Fullproduct::ProductsPerPage();
-        $pages = ceil($total / $limit);
 
-        while ($products) {
+        $filtered_products= FullProduct::find($filterStmt);
+
+        $paged_products = array_slice($filtered_products, $offset, $limit);// Alter the array
+        $total_products = count($filtered_products);// Define total products
+        $total_pages = ceil( $total_products / $limit );// Get the total pages rounded up the nearest whole number
+        $paged = $total_products > count($paged_products) ? true : false;// Determine whether or not pagination should be made available.
+
+        if (count($paged_products)) {
             echo('<div class="page_container">');
-            foreach ($products as $key => $value) {
-                $product = new FullProduct($products[$key]);
-                $path = ASSETPATH . 'images' . DIRECTORY_SEPARATOR . $product->pictureName;
-                echo('
+                foreach ($paged_products as $key => $value) {
+                    $product = new FullProduct($paged_products[$key]);
+                    $path = ASSETPATH . 'images' . DIRECTORY_SEPARATOR . $product->pictureName;
+                    echo('
 			<a href="index.php?c=shopping&a=product&id=' . $product->id . '">	
 				<div class="product_container">
 					<p class="product_title">' . $product->cheeseName . '<p>
@@ -122,10 +150,16 @@ class PagesController extends \kae\core\Controller
 				</div>
 			</a>
 		    ');
-            }
-            }
+        }
+        }
 
-    
+        else {
+            echo '<p class="alert alert-warning" >No results found.</p>';
+        }
 
-            }
+        if ($paged) {
+            require VIEWSPATH.'pagination.php' ;
+        }
+}
+
 }

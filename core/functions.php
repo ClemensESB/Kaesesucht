@@ -9,4 +9,7 @@ function pre_r($array,$dbg = 'DBG: '){
 	echo('</pre>');
 }
 
-
+function nfProducts ($params = '',$key1)
+{
+return \kae\controller\PagesController::loadNProducts($params,$key1);
+}
