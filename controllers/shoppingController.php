@@ -22,7 +22,8 @@ class ShoppingController extends \kae\core\Controller
 		{
 			$_SESSION['order']->payMethod = $_POST['payMethod'];
 		}
-		else{
+		else
+		{
 			$_SESSION['order']->payMethod = $this->params['payMethod'][0];
 		}
 
@@ -40,7 +41,6 @@ class ShoppingController extends \kae\core\Controller
 				foreach ($_SESSION['cart'] as $key => $product) 
 				{
 					$price = $product->pricePerUnit*$product->getQuantity();
-
 					$orderItem = new OrderItem(['cheese_id'=>$product->id,'quantity'=>$product->getQuantity(),'actualPrice'=>$price,'orders_id'=>$_SESSION['order']->id]);
 					$orderItem->insert($errors);
 				}
@@ -49,8 +49,8 @@ class ShoppingController extends \kae\core\Controller
 				$this->redirect('index.php?c=pages&a=index');
 			}
 		}
-
 	}
+	
 	public function actionShoppingCart()
 	{	
 
