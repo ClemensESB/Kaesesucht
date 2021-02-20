@@ -1,4 +1,4 @@
-<div class="product">	
+<div class="panel">	
 	<div class="product-image-container">
 		<img class="product_image" src=<?echo(ASSETPATH.'images'.DIRECTORY_SEPARATOR.$this->fullProduct->__get('pictureName')); ?>>
 	</div>
