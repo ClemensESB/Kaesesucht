@@ -1,16 +1,37 @@
-.wrapper .product-image-container,
-.wrapper .product-info-container {
-    padding: 2%;
+.product {
+    padding: 1%;
     display: inline-block;
 }
 
-.wrapper .product-image-container img {
+.product-image-container {
+    height: 1px;
+}
+
+.product-image-container img {
     float: left;
     left: 0;
     transform: none;
     max-width: 60%;
     max-height: none;
     height: auto
+}
+
+.product-info-container {
+    display: list-item;
+}
+
+.product-info-container>* {
+    position: relative;
+    margin-left: 61%;
+}
+
+.quantity {
+    height: 100px
+}
+
+.quantity form {
+    width: 40%;
+    display: inline-block;
 }
 
 .head-container h1 {
