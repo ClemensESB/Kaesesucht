@@ -1,4 +1,4 @@
-<div class="head--container">
+<div class="product_title">
 	<h1>Kasse</h1>
 </div>
 
