@@ -49,7 +49,6 @@ class ModelCheeseFull extends \kae\core\Model
             {
                 $sql .= ' WHERE cheese.'.$where.';';
             }
-
             $result = $db->query($sql)->fetchAll();
         }
         catch(\PDOException $e)
@@ -60,6 +59,8 @@ class ModelCheeseFull extends \kae\core\Model
         //pre_r($result);
         return $result;
     }
+
+
     public static function findNProducts($where = '',$key)
     {
         $db = $GLOBALS['db'];
@@ -119,21 +120,8 @@ class ModelCheeseFull extends \kae\core\Model
 
         return null;
     }
-    public static function countEntries()
-    {
-        $db = $GLOBALS['db'];
-        $total = null;
 
-        try {
-            $sql = ' SELECT COUNT(*) FROM ' . self::tablename() . ' ';
-            $total = $db->query($sql)->fetchAll();
-        }
-        catch (\PDOException $e)
-        {
-            die('Select statement failed: ' . $e->getMessage());
-        }
-        return $total;
-    }
+
     public static function nProducts($key)
     {
         $db = $GLOBALS['db'];

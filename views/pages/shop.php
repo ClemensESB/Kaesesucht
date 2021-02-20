@@ -34,8 +34,20 @@
 </div>
 
 <?
-//$this->loadProducts($this->params['stmt']);
+$this->loadProducts($this->params['products']);
 //$this->paging($this->params['stmt']);
-$this->loadNProducts($this->params['stmt'],3);
+//$this->loadNProducts($this->params['stmt'],3);
 ?>
+<form method="get">
+    <input type="hidden" name="c" value="pages">
+    <input type="hidden" name="a" value="shop">
+    <button class="btn" name="p" value="<?echo($_GET['p']>1 ? $_GET['p']-1:1);?>" style="float: left;">previous</button>
+    <button class="btn" name="p" value="<?echo($_GET['p']<$this->params['pages'] ? $_GET['p']+1:$_GET['p']);?>" style="float: right;">next</button>
+    <input type="hidden" name="taste" value="<?echo(isset($_GET['taste']) ? $_GET['taste']:'');?>">
+    <input type="hidden" name="lactose" value="<?echo(isset($_GET['lactose']) ? $_GET['lactose']:'');?>">
+    <input type="hidden" name="milkType" value="<?echo(isset($_GET['milkType']) ? $_GET['milkType']:'');?>">
+    <input type="hidden" name="rawMilk" value="<?echo(isset($_GET['rawMilk']) ? $_GET['rawMilk']:'');?>">
+    <input type="hidden" name="SubmitFilter" value="Anwenden">
+</form>
+
 <button class="btn">Load More &#x21BB;</button>

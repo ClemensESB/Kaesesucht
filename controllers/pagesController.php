@@ -11,7 +11,7 @@ use \kae\model\ModelCheeseFull as FullProduct;
 
 class PagesController extends \kae\core\Controller
 {
-
+	const objects = 12;
 
 	public function actionIndex()
 	{
@@ -24,7 +24,6 @@ class PagesController extends \kae\core\Controller
 	}
 	public function actionShop()
 	{
-
 		#pre_r($_GET);
 		if (isset($_GET['SubmitFilter'])){
 		    $filterStmt = '';
@@ -49,13 +48,35 @@ class PagesController extends \kae\core\Controller
 		else{
 		    $this->params['stmt'] = '';
 		}
+
+		if(!isset($_GET['p'])){
+			$_GET['p'] = 1;
+		}
+		echo($this->params['stmt']);
+
+		if(isset($_GET['p'])) {
+			
+			$array = FullProduct::find($this->params['stmt']);
+			$entries = count($array);
+			$this->params['pages'] = ceil($entries/PagesController::objects);
+			//echo($this->params['pages']);
+			//pre_r($array);
+			$max = $_GET['p']*PagesController::objects;
+			$min = $max-PagesController::objects;
+			$products = array();
+			for($min;$min<$max;$min++){
+				if(isset($array[$min])){
+					array_push($products, $array[$min]);
+				}
+			}
+			$this->params['products'] = $products;
+		}
 	}
 
 
 
-	public function loadProducts($filterStmt = '')
+	public function loadProducts($array)
 	{
-        $array = FullProduct::find($filterStmt);
 
         echo('<div class="page_container">');
         foreach ($array as $key => $value) 
@@ -81,9 +102,11 @@ class PagesController extends \kae\core\Controller
         }
         echo('</div>');
 	}
-    public function loadNProducts($filterStmt = '',$limit)
+
+/*
+    public function loadNProducts($filterStmt = '')
     {
-        $array = FullProduct::findNProducts($filterStmt,$limit);
+        
 
         echo('<div id = "page_container" class="page_container">');
         foreach ($array as $key => $value)
@@ -109,6 +132,9 @@ class PagesController extends \kae\core\Controller
         }
         echo('</div>');
     }
+
+
+
     public static function paging($filterStmt)
     {
 
@@ -160,6 +186,7 @@ class PagesController extends \kae\core\Controller
         if ($paged) {
             require VIEWSPATH.'pagination.php' ;
         }
-}
+	}
+	*/
 
 }
