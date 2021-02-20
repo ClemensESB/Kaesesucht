@@ -1,5 +1,5 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div class = "filter_container">
+<div class = "filter_container content-align-mid">
     <form method="get">
         <input type="hidden" name="c" value="pages">
         <input type="hidden" name="a" value="shop">

@@ -69,10 +69,10 @@ a:active {
     display: inline-block;
     position: relative;
     width: 100%;
-    <<<<<<< HEAD padding: 5px;
-    =======height: 100%;
+    padding: 5px;
+    height: 100%;
     padding: 10px;
-    >>>>>>>90e9cc66d4810a1d6988536f0625ef76393d0542
+
 }
 
 button {
