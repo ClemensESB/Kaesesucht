@@ -41,8 +41,8 @@ $this->loadProducts($this->params['products']);
 <form method="get">
     <input type="hidden" name="c" value="pages">
     <input type="hidden" name="a" value="shop">
-    <button class="btn" name="p" value="<?echo($_GET['p']>1 ? $_GET['p']-1:1);?>" style="float: left;">previous</button>
-    <button class="btn" name="p" value="<?echo($_GET['p']<$this->params['pages'] ? $_GET['p']+1:$_GET['p']);?>" style="float: right;">next</button>
+    <button class="button" name="p" value="<?echo($_GET['p']>1 ? $_GET['p']-1:1);?>" style="float: left;">previous</button>
+    <button class="button" name="p" value="<?echo($_GET['p']<$this->params['pages'] ? $_GET['p']+1:$_GET['p']);?>" style="float: right;">next</button>
     <input type="hidden" name="taste" value="<?echo(isset($_GET['taste']) ? $_GET['taste']:'');?>">
     <input type="hidden" name="lactose" value="<?echo(isset($_GET['lactose']) ? $_GET['lactose']:'');?>">
     <input type="hidden" name="milkType" value="<?echo(isset($_GET['milkType']) ? $_GET['milkType']:'');?>">

@@ -19,7 +19,7 @@
     <div class ="button marg-20 content-align-mid">
     <a href="javascript:toggle('dataid')">Nutzerdaten ändern</a>
     </div>
-    <div id="dataid" class="panel popout content-align-mid" style="display:none">
+    <div id="dataid" class="panel popout content-align-mid" style="">
         <form method="POST" class="" id="editUser" action="">
             
             <input type="text" value="<?echo($this->currentUser['email']);?>" id="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" class="inputtext">

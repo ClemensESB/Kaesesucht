@@ -52,9 +52,10 @@ class PagesController extends \kae\core\Controller
 		if(!isset($_GET['p'])){
 			$_GET['p'] = 1;
 		}
-		echo($this->params['stmt']);
+		//echo($this->params['stmt']);
 
-		if(isset($_GET['p'])) {
+		if(isset($_GET['p'])) 
+		{
 			
 			$array = FullProduct::find($this->params['stmt']);
 			$entries = count($array);
@@ -64,17 +65,16 @@ class PagesController extends \kae\core\Controller
 			$max = $_GET['p']*PagesController::objects;
 			$min = $max-PagesController::objects;
 			$products = array();
-			for($min;$min<$max;$min++){
-				if(isset($array[$min])){
+			for($min;$min<$max;$min++)
+			{
+				if(isset($array[$min]))
+				{
 					array_push($products, $array[$min]);
 				}
 			}
 			$this->params['products'] = $products;
 		}
 	}
-
-
-
 	public function loadProducts($array)
 	{
 
@@ -106,8 +106,6 @@ class PagesController extends \kae\core\Controller
 /*
     public function loadNProducts($filterStmt = '')
     {
-        
-
         echo('<div id = "page_container" class="page_container">');
         foreach ($array as $key => $value)
         {
@@ -188,5 +186,4 @@ class PagesController extends \kae\core\Controller
         }
 	}
 	*/
-
 }
