@@ -104,7 +104,7 @@
       <workItem from="1613597545407" duration="7920000" />
       <workItem from="1613658681617" duration="5288000" />
       <workItem from="1613727520634" duration="21175000" />
-      <workItem from="1613815285400" duration="18722000" />
+      <workItem from="1613815285400" duration="19059000" />
     </task>
     <task id="LOCAL-00001" summary="profil logout pages">
       <created>1610640841456</created>
@@ -180,6 +180,7 @@
     <MESSAGE value="shop page dynamic" />
     <MESSAGE value="home Page" />
     <MESSAGE value="Anpassung post-&gt;get" />
-    <option name="LAST_COMMIT_MESSAGE" value="Anpassung post-&gt;get" />
+    <MESSAGE value="need help guys.. :P" />
+    <option name="LAST_COMMIT_MESSAGE" value="need help guys.. :P" />
   </component>
 </project>
