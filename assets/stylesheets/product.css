@@ -4,7 +4,7 @@
 }
 
 .product-image-container {
-    height: 1px;
+    overflow: auto;
 }
 
 .product-image-container img {
@@ -22,7 +22,6 @@
 
 .product-info-container>* {
     position: relative;
-    margin-left: 61%;
 }
 
 .quantity {
@@ -36,4 +35,10 @@
 
 .head-container h1 {
     text-align: left;
+}
+
+@media (max-width: 858px) {
+    .product {
+        display: list-item;
+    }
 }
