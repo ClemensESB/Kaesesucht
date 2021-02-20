@@ -19,9 +19,7 @@
 	<div class ="panel">
 		<form method="POST" class="form" name="payMethod">
 			<select name="payMethod" class="select-field selection--method" onchange='this.form.submit();'>
-				
 				<?foreach ($this->params['payMethod'] as $key => $method):?>
-				
 					<?if($method == $_SESSION['order']->payMethod):?>
 						<option value="<?echo($method);?>" selected="selected"><?echo($method);?></option>
 					<?else:?>
@@ -47,7 +45,7 @@
 		<div>
 			<p>
 			<?foreach ($_SESSION['cart'] as $key => $value):?>
-				Artikel: <?echo($value->__get('cheeseName').' '.$value->__get('pricePerUnit')*$value->getQuantity());?> €<br>
+				Artikel: <?echo($value->cheeseName.' '.$value->pricePerUnit*$value->getQuantity());?> €<br>
 			<?endforeach;?>
 				Summe: <?echo($_SESSION['summe']);?>€
 			</p>
