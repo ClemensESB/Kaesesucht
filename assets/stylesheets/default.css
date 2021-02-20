@@ -120,11 +120,6 @@ nav ul a:hover {
     color: var(--second-sec-color);
 }
 
-.content-align-mid {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-}
 
 .select-field {
     appearance: none;
@@ -134,19 +129,6 @@ nav ul a:hover {
     background-color: whitesmoke;
 }
 
-@media (max-width: 858px) {
-    nav ul {
-        background-color: var(--second-sec-color);
-    }
-    nav ul li a {
-        color: var(--second-prim-color)
-    }
-    nav ul a.active,
-    nav ul a:hover {
-        background: var(--second-prim-color);
-        color: var(--second-sec-color);
-    }
-}
 .content-align-mid{
     display: block;
     margin-left: auto;
@@ -181,4 +163,18 @@ nav ul a:hover {
     padding: 10px;
     width: 300px;
     margin-top: 10px;
+}
+
+@media (max-width: 858px) {
+    nav ul {
+        background-color: var(--second-sec-color);
+    }
+    nav ul li a {
+        color: var(--second-prim-color)
+    }
+    nav ul a.active,
+    nav ul a:hover {
+        background: var(--second-prim-color);
+        color: var(--second-sec-color);
+    }
 }
