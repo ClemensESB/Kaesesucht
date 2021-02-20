@@ -20,7 +20,10 @@ class ShoppingController extends \kae\core\Controller
 		}
 		if(isset($_POST['payMethod']))
 		{
-			$_SESSION['order']->__set('payMethod',$_POST['payMethod']);
+			$_SESSION['order']->payMethod = $_POST['payMethod'];
+		}
+		else{
+			$_SESSION['order']->payMethod = $this->params['payMethod'][0];
 		}
 
 		if(isset($_POST['buy']))
@@ -30,9 +33,9 @@ class ShoppingController extends \kae\core\Controller
 			if(in_array($_SESSION['order']->payMethod, $this->params['payMethod']))
 			{
 			#pre_r($_POST);
-			$_SESSION['order']->__set('account_id',$this->currentUser['id']);
+			$_SESSION['order']->account_id = $this->currentUser['id'];
 			$currentDateTime = date('Y-m-d H:i:s');
-			$_SESSION['order']->__set('createdAt',$currentDateTime);
+			$_SESSION['order']->createdAt = $currentDateTime;
 			$_SESSION['order']->insert($errors);
 				foreach ($_SESSION['cart'] as $key => $product) 
 				{

@@ -8,13 +8,13 @@
 	<div class="text-box">
 		<p>
 			Artikelbeschreibung:<br>
-			<?echo($this->fullProduct->__get('descrip'));?>
+			<?echo($this->fullProduct->descrip);?>
 		</p>
 	</div>
 	<div class="text-box">
 		<p>
 			Rezept:<br>
-			<?echo($this->fullProduct->__get('recipe'));?>
+			<?echo($this->fullProduct->recipe);?>
 		</p>
 	</div>
 	<div class="">
