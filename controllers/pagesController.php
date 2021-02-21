@@ -1,6 +1,4 @@
 <?php
-
-
 namespace kae\controller;
 use \kae\core\Controller as C;
 use \kae\model\ModelCheese as Cheese;
@@ -11,11 +9,10 @@ use \kae\model\ModelCheeseFull as FullProduct;
 
 class PagesController extends \kae\core\Controller
 {
-	const objects = 12;
+	const objects = 2; //gerade zahlen sind das gebot
 
 	public function actionIndex()
 	{
-
         $this->products = FullProduct::findNewProducts();
 	}
 	public function actionImpressum()
@@ -48,39 +45,46 @@ class PagesController extends \kae\core\Controller
 		else{
 		    $this->params['stmt'] = '';
 		}
-
-		if(!isset($_GET['p'])){
+		if(isset($_COOKIE['js']) && !isset($_POST['p'])){
+			$_POST['p']= 1;
+		}
+		elseif(!isset($_COOKIE['js']) && !isset($_GET['p'])){
 			$_GET['p'] = 1;
+			unset($_POST['p']);
+
 		}
 		//echo($this->params['stmt']);
-
-		if(isset($_GET['p'])) 
-		{
-			
 			$array = FullProduct::find($this->params['stmt']);
 			$entries = count($array);
-			$this->params['pages'] = ceil($entries/PagesController::objects);
-			//echo($this->params['pages']);
-			//pre_r($array);
-			$max = $_GET['p']*PagesController::objects;
-			$min = $max-PagesController::objects;
-			$products = array();
-			for($min;$min<$max;$min++)
+			
+			
+			if(isset($_POST['p']))
 			{
-				if(isset($array[$min]))
-				{
-					array_push($products, $array[$min]);
-				}
+				$this->params['pages'] = ceil($entries/PagesController::objects);
+				$offset = ($_POST['p']-1)*PagesController::objects;
+				$array = array_slice($array, $offset, PagesController::objects);// Alter the array
 			}
-			$this->params['products'] = $products;
-		}
+			else
+			{
+				$this->params['pages'] = ceil($entries/PagesController::objects);
+				$offset = ($_GET['p']-1)*PagesController::objects;
+				$array = array_slice($array, $offset, PagesController::objects);// Alter the array
+			}
+			
+			
+			
+
+			
+			$this->params['products'] = $array;
 	}
+
 	public function loadProducts($array)
 	{
 
         echo('<div class="page_container">');
         foreach ($array as $key => $value) 
         {
+        	echo('<div class="panel">');
             $product = new FullProduct($array[$key]);
             $path = ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product->pictureName;
             echo('
@@ -99,9 +103,11 @@ class PagesController extends \kae\core\Controller
 				</div>
 			</a>
 		    ');
+		    echo('</div>');
         }
         echo('</div>');
-	}
+        
+}
 
 /*
     public function loadNProducts($filterStmt = '')
@@ -187,3 +193,4 @@ class PagesController extends \kae\core\Controller
 	}
 	*/
 }
+?>

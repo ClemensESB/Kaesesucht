@@ -1,3 +1,13 @@
+<?
+if(isset($_POST['p']) &&  $_POST['p'] > 1){
+
+    $this->loadProducts($this->params['products']);
+    exit();
+}
+
+?>
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class = "filter_container content-align-mid">
     <form method="get">
@@ -33,12 +43,23 @@
     </form>
 </div>
 
+
+  
+
+<!-- (A) CONTENTS -->
+<div id="page-content" class="">
+ <? $this->loadProducts($this->params['products']);?>
+</div>
+<!-- (B) NOW LOADING -->
+<div id="page-loading" class="panel" style="display: none;">Now loading...</div>
 <?
-$this->loadProducts($this->params['products']);
 //$this->paging($this->params['stmt']);
 //$this->loadNProducts($this->params['stmt'],3);
+//$this->loadProducts($this->params['products']);
 ?>
-<form method="get">
+<div>
+<noscript>
+  <form method="get">
     <input type="hidden" name="c" value="pages">
     <input type="hidden" name="a" value="shop">
     <button class="button" name="p" value="<?echo($_GET['p']>1 ? $_GET['p']-1:1);?>" style="float: left;">previous</button>
@@ -48,6 +69,8 @@ $this->loadProducts($this->params['products']);
     <input type="hidden" name="milkType" value="<?echo(isset($_GET['milkType']) ? $_GET['milkType']:'');?>">
     <input type="hidden" name="rawMilk" value="<?echo(isset($_GET['rawMilk']) ? $_GET['rawMilk']:'');?>">
     <input type="hidden" name="SubmitFilter" value="Anwenden">
-</form>
+  </form>
+</noscript>
 
-<button class="btn">Load More &#x21BB;</button>
+<script type="text/javascript" src="assets/scripts/endless.js"></script>
+</div>

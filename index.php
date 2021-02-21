@@ -82,23 +82,21 @@ else
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/stylesheets/styles.css">
-
-
-    <script>
-        $(document).ready(function() {
-            var count = 3;
-            $(".btn").click(function() {
-                count += 3;
-                $("#page_container").load("", {
-                    newCount: count,
-                });
-            });
-        });
-    </script>
-
     <title>Käsesucht</title>
+    <script type="text/javascript">
+        setCookie();
+        function setCookie(){
+        var d = new Date();
+        d.setTime(d.getTime() + (60*1000));
+        var expires = "expires="+ d.toUTCString();
+        document.cookie = 'js=true;'+expires;
+        }
+        
+    </script>
 </head>
 <body>
+        <?
+        if(!isset($_POST['p']) || $_POST['p'] == 1):?>
         <?include ASSETPATH.'navBar.html';?>
         <div class="wrapper">
         <?php
@@ -107,5 +105,10 @@ else
         $controller->render();?>
         </div>
         <?include ASSETPATH.'footer.html';?>
+        <?else:
+            $controller->render();
+          endif;
+        ?>
+
 </body>
 </html>
