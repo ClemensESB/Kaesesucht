@@ -18,9 +18,7 @@ var endless = {
     // (B1) GET HTML ELEMENTS
     endless.eLoad = document.getElementById("page-loading");
     endless.eContent = document.getElementById("page-content");
-
     // (B2) ATTACH SCROLL LISTENER
-    // CREDITS: https://stackoverflow.com/questions/9439725/javascript-how-to-detect-if-browser-window-is-scrolled-to-bottom
     window.addEventListener("scroll", function(){
       if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
         endless.load();
