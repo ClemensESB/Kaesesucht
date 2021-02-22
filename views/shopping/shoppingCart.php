@@ -69,7 +69,7 @@
 	
 
 <?else:?>
-	<div class="head--container">
+	<div class="product_title content-align-mid">
 		Sie haben keine Produkte ausgewählt
 	</div>
 	

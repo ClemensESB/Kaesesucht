@@ -1,4 +1,4 @@
-<div class="registration">
+<div class="registration content-align-mid">
     <form method="POST" id="signupform" action="">
         <p class="head">Signup</p>
         <input type="text" value="<?echo(isset($_POST['firstName']) ? $_POST['firstName'] : '');?>" id="firstName" name="firstName" placeholder="Vorname" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Vorname'" class="inputtext">
@@ -21,6 +21,6 @@
         
         <input type="submit" name="submit" id="signupbutton" value="Signup" class="button">
     </form>
-
+        <div class="filler"></div>
         <script type="text/javascript" src="assets/scripts/valid.js"></script>
 </div>

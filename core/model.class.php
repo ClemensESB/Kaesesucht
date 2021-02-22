@@ -129,7 +129,8 @@ abstract class Model
         return $result;
     }
 
-    public function updateModel(){
+    public function updateModel()
+    {
         $wherestr = '';
         foreach ($this->data as $key => $value) 
         {

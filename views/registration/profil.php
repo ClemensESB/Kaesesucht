@@ -15,9 +15,9 @@
     <div class ="button marg-20 content-align-mid">
     <a href="javascript:toggle('dataid')">Nutzerdaten ändern</a>
     </div>
-    <div id="dataid" class="panel popout content-align-mid" style="">
+    <div id="dataid" class="popout content-align-mid registration" style="">
         <form method="POST" class="" id="editUser" action="">
-
+            <p class="head">Nutzerdaten</p>
             <input type="text" value="<?echo($this->currentUser['email']);?>" id="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" class="inputtext">
             <input type="text" value="<?echo($this->currentUser['city']);?>" id="city" name="city" placeholder="Ort" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ort'" class="inputtext">
             <input type="text" value="<?echo($this->currentUser['street']);?>" id="street" name="street" placeholder="Straße" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Straße'" class="inputtext">

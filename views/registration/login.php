@@ -1,5 +1,5 @@
 <div class="background">
-    <div class="registration">
+    <div class="registration content-align-mid">
         <form method="POST" id="loginform" action="">
             <p class="head">Login</p>
             <input type="text" value="" id="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" class="inputtext">
@@ -11,5 +11,6 @@
             |
             <a href="index.php?c=registration&a=logout">Logout</a>
         </p>
+        <div class="filler"></div>
     </div>
 </div>

@@ -9,7 +9,7 @@ use \kae\model\ModelCheeseFull as FullProduct;
 
 class PagesController extends \kae\core\Controller
 {
-	const objects = 12; //gerade zahlen sind das gebot
+	const objects = 4; //gerade zahlen sind das gebot
 
 	public function actionIndex()
 	{

@@ -11,7 +11,7 @@ var endless = {
   // (A3) HTML ELEMENTS
   eLoad: null, // now loading
   eContent: null, // where to load contents into
-  eLimit: null,
+  eLimit: "END",
 
   // (B) INIT
   init: function () {
@@ -46,12 +46,11 @@ var endless = {
       xhr.onload = function () 
       {
         // NO MORE CONTENTS TO LOAD
-        if (endless.eLimit == endless.page) 
+        if (this.response.slice(-3) == endless.eLimit)
         {
-          endless.eLoad.innerHTML = "END";
+          endless.eLoad.innerHTML = "";
           endless.hasMore = false;
         }
-
         // PUT CONTENTS INTO HTML
         else 
         {
