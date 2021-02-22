@@ -1,7 +1,13 @@
 <?
 if(isset($_POST['p']) &&  $_POST['p'] > 1){
-
-    $this->loadProducts($this->params['products']);
+    if($_POST['p'] == $this->params['pages']+1)
+    {
+        echo("END");
+    }
+    else
+    {
+        $this->loadProducts($this->params['products']);
+    }
     exit();
 }
 

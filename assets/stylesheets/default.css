@@ -131,9 +131,7 @@ nav ul a:hover {
 
 .content-align-mid {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 15em;
+    margin: 0px auto;
 }
 
 .float--right {
@@ -146,6 +144,7 @@ nav ul a:hover {
 
 .popout {
     background-color: var(--darken-color);
+    min-height: 427px;
 }
 
 .popout input.inputtext,
@@ -153,6 +152,10 @@ nav ul a:hover {
     padding: 10px;
     width: 300px;
     margin-top: 10px;
+}
+
+.filler{
+   height: 10px;
 }
 
 @media (max-width: 858px) {
