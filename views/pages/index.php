@@ -12,13 +12,12 @@
 	            $path = ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product['pictureName'];?>
 			<a href="index.php?c=shopping&a=product&id=<?echo ($product['id']);?>">	
 				<div class="product_container">
-					<p class="product_title"><?echo ($product['cheeseName']);?><p>
 					<div class="product_descrip">
 						<img class = "product_image" src="<?echo($path);?>" alt="<?echo ($product['cheeseName']);?>">
 					</div><p class ="product_descrip" >
-						Ab <?echo($product['pricePerUnit']);?> € <br><br>
-						<?echo($product['descrip']);?><br>
-						<br>Verfügbarkeit : <?echo($product['qtyInStock']);?>
+					<p class="product_title"><?echo ($product['cheeseName']);?><p>	
+					Ab <?echo($product['pricePerUnit']);?> € <br><br>
+					<br>Verfügbarkeit : <?echo($product['qtyInStock']);?>
 					</p>
 					<div class ="product_btn">
 						<form method="GET" name="id">
