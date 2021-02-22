@@ -1,5 +1,6 @@
 <?
-if(isset($_POST['p']) &&  $_POST['p'] > 1){
+if(isset($_POST['p']) &&  $_POST['p'] > 1 && isset($_POST['js'])) // only for javascript is needed to make the "endless" scrolling stop it's endlessness
+{
     if($_POST['p'] == $this->params['pages']+1)
     {
         echo("END");
@@ -19,6 +20,7 @@ if(isset($_POST['p']) &&  $_POST['p'] > 1){
     <form method="get">
         <input type="hidden" name="c" value="pages">
         <input type="hidden" name="a" value="shop">
+        <input type="hidden" name="p" value="1">
         <label for="taste">Geschmack</label>
         <select id="taste" class="select-field" name="taste">
             <option value="" <?echo(empty($_GET['taste']) ? 'selected' : '');?>>Keine Präferenz</option>

@@ -9,7 +9,7 @@ use \kae\model\ModelCheeseFull as FullProduct;
 
 class PagesController extends \kae\core\Controller
 {
-	const objects = 4; //gerade zahlen sind das gebot
+	const objects = 4; //only even numbers
 
 	public function actionIndex()
 	{
@@ -22,7 +22,9 @@ class PagesController extends \kae\core\Controller
 	public function actionShop()
 	{
 		#pre_r($_GET);
-		if (isset($_GET['SubmitFilter'])){
+		#pre_r($_COOKIE);
+		if (isset($_GET['SubmitFilter'])) // builds the Filterstatement
+		{
 		    $filterStmt = '';
 		    if (isset($_GET['taste'])&& !empty($_GET['taste'])){
 		        $taste= $_GET['taste'];
@@ -42,45 +44,47 @@ class PagesController extends \kae\core\Controller
 		    }
 		    $this->params['stmt'] = preg_replace('/\W\w+\s*(\W*)$/', '$1', $filterStmt);
 		}
-		else{
+		else
+		{
 		    $this->params['stmt'] = '';
 		}
-		if(isset($_COOKIE['js']) && !isset($_POST['p'])){
-			$_POST['p']= 1;
-		}
-		elseif(!isset($_COOKIE['js']) && !isset($_GET['p'])){
+
+
+
+		$array = FullProduct::find($this->params['stmt']);
+		$entries = count($array); // cpt. obvious
+		
+		
+		if(empty($_GET['p'])) // if the user didn't use the link and did type the address in by himself he might forget the p
+		{ 
 			$_GET['p'] = 1;
-			unset($_POST['p']);
+		}
+		
+		if(!isset($_POST['p']) || $_POST['p'] < $_GET['p']) // is needed to sync the paging with/without javascript only problem is altering the p while using javascript
+		{
+			$_POST['p'] = $_GET['p'];
+		}
+		elseif($_POST['p'] > $_GET['p'])
+		{
+			$_GET['p'] = $_POST['p'];
+		}
+		else{
 
 		}
-		//echo($this->params['stmt']);
-			$array = FullProduct::find($this->params['stmt']);
-			$entries = count($array);
-			
-			
-			if(isset($_POST['p']))
-			{
-				$this->params['pages'] = ceil($entries/PagesController::objects);
-				$offset = ($_POST['p']-1)*PagesController::objects;
-				$array = array_slice($array, $offset, PagesController::objects);// Alter the array
-			}
-			else
-			{
-				$this->params['pages'] = ceil($entries/PagesController::objects);
-				$offset = ($_GET['p']-1)*PagesController::objects;
-				$array = array_slice($array, $offset, PagesController::objects);// Alter the array
-			}
-			
-			
-			
+		//pre_r($_POST);
+		//pre_r($_GET);
+		//pre_r($_COOKIE);
+		//pre_r($GLOBALS);
 
-			
-			$this->params['products'] = $array;
+		$this->params['pages'] = ceil($entries/PagesController::objects); // determines how many pages are needed
+		$offset = ($_POST['p']-1)*PagesController::objects; // calculates the start of the array for the selected page
+		$array = array_slice($array, $offset, PagesController::objects);// array for the selected page is sliced
+
+		$this->params['products'] = $array;
 	}
 
-	public function loadProducts($array)
+	public function loadProducts($array) // builds the block for an array of products
 	{
-
         echo('<div class="page_container">');
         foreach ($array as $key => $value) 
         {
@@ -106,91 +110,6 @@ class PagesController extends \kae\core\Controller
 		    echo('</div>');
         }
         echo('</div>');
-        
-}
-
-/*
-    public function loadNProducts($filterStmt = '')
-    {
-        echo('<div id = "page_container" class="page_container">');
-        foreach ($array as $key => $value)
-        {
-            $product = new FullProduct($array[$key]);
-            $path = ASSETPATH.'images'.DIRECTORY_SEPARATOR.$product->pictureName;
-            echo('
-			<a href="index.php?c=shopping&a=product&id='.$product->id.'">	
-				<div class="product_container">
-					<p class="product_title">'.$product->cheeseName.'</p>
-						<img class="product_image" src="'.$path.'" alt="'.$product->cheeseName.'">
-						<p class ="product_descrip" >
-						Ab '.$product->pricePerUnit.' € <br>
-						<br>Verfügbarkeit : '.$product->qtyInStock.'
-					</p>
-					<div class ="product_btn">
-						<form method="GET" name="id">
-						</form>
-					</div>
-				</div>
-			</a>
-		    ');
-        }
-        echo('</div>');
-    }
-
-
-
-    public static function paging($filterStmt)
-    {
-
-        $current_page = 1;
-        $offset = 0;
-        $limit = isset($_GET['per-page']) ? $_GET['per-page'] : 3;
-        if(isset($_GET['page-number'])) {
-            $current_page = (int)$_GET['page-number'];
-            $offset = ($current_page * $limit) - $limit;
-        }
-
-        $filtered_products= FullProduct::find($filterStmt);
-
-        $paged_products = array_slice($filtered_products, $offset, $limit);// Alter the array
-        $total_products = count($filtered_products);// Define total products
-        $total_pages = ceil( $total_products / $limit );// Get the total pages rounded up the nearest whole number
-        $paged = $total_products > count($paged_products) ? true : false;// Determine whether or not pagination should be made available.
-
-        if (count($paged_products)) {
-            echo('<div class="page_container">');
-                foreach ($paged_products as $key => $value) {
-                    $product = new FullProduct($paged_products[$key]);
-                    $path = ASSETPATH . 'images' . DIRECTORY_SEPARATOR . $product->pictureName;
-                    echo('
-			<a href="index.php?c=shopping&a=product&id=' . $product->id . '">	
-				<div class="product_container">
-					<p class="product_title">' . $product->cheeseName . '<p>
-					<div class="product_descrip">
-						<img class = "product_image" src="' . $path . '" alt="' . $product->cheeseName . '">
-					</div><p class ="product_descrip" >
-						Ab ' . $product->pricePerUnit . ' € <br><br>
-						' . $product->descrip . '<br>
-						<br>Verfügbarkeit : ' . $product->qtyInStock . '
-					</p>
-					<div class ="product_btn">
-						<form method="GET" name="id">
-						</form>
-					</div>
-				</div>
-			</a>
-		    ');
-        }
-        }
-
-        else {
-            echo '<p class="alert alert-warning" >No results found.</p>';
-        }
-
-        if ($paged) {
-            require VIEWSPATH.'pagination.php' ;
-        }
 	}
-	*/
 }
 ?>

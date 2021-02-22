@@ -18,8 +18,8 @@ foreach(glob(MODELSPATH."*.php") as $file)
 }
 
 
-session_start();
 
+session_start();
 $controllerName = 'pages'; // default controller if noting is set
 $actionName = 'index'; // default action if nothing is set
 
@@ -37,23 +37,23 @@ if(isset($_GET['a']))
 
 
 // check controller/class and method exists
-if(file_exists(CONTROLLERSPATH.$controllerName.'Controller.php')) // √
+if(file_exists(CONTROLLERSPATH.$controllerName.'Controller.php'))
 {
     // include the controller file
-    require_once CONTROLLERSPATH.$controllerName.'Controller.php'; // √
+    require_once CONTROLLERSPATH.$controllerName.'Controller.php';
 
     // generate the class name of the controller using the name extended by Controller
     // also add the namespace in front
-    $className = '\\kae\\controller\\'.ucfirst($controllerName).'Controller'; // √
+    $className = '\\kae\\controller\\'.ucfirst($controllerName).'Controller';
 
     // generate an instace of the controller using the name, stored in $className
     // it is the same like calling for example: new \dwp\controller\PagesController()
-    $controller = new $className($controllerName, $actionName); // √
+    $controller = new $className($controllerName, $actionName);
 
     // checking the method is available in the controller class
     // the method looks like: actionIndex()
-    $actionMethod = 'action'.ucfirst($actionName); // √
-    if(!method_exists($controller, $actionMethod)) // √
+    $actionMethod = 'action'.ucfirst($actionName);
+    if(!method_exists($controller, $actionMethod))
     {
         // redirect to error page 404 because not found
         header('Location: index.php?c=errors&a=error404');
@@ -64,7 +64,7 @@ if(file_exists(CONTROLLERSPATH.$controllerName.'Controller.php')) // √
         // call the action method to do the job
         // so the action cann fill the params for the view which will be used 
         // in the render process later
-        $controller->{$actionMethod}(); // √
+        $controller->{$actionMethod}();
     }
 }
 else
@@ -74,6 +74,9 @@ else
     exit(0);
 }
 //<link rel="stylesheet" href="assets/styles/style.css">
+//pre_r($GLOBALS);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -83,32 +86,30 @@ else
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/stylesheets/styles.css">
     <title>Käsesucht</title>
-    <script type="text/javascript">
-        setCookie();
-        function setCookie(){
-        var d = new Date();
-        d.setTime(d.getTime() + (60*1000));
-        var expires = "expires="+ d.toUTCString();
-        document.cookie = 'js=true;'+expires;
-        }
-        
+    <script type="text/javascript" src="assets/scripts/cookie.js">
     </script>
+    <script type="text/javascript" src="assets/scripts/simpleajax.js"></script>
 </head>
 <body>
+        
         <?
-        if(!isset($_POST['p']) || $_POST['p'] == 1):?>
+        if(!isset($_POST['js'])):?>
         <?include ASSETPATH.'navBar.html';?>
         <div class="wrapper">
         <?php
+
         // this method will render the view of the called action
         // for this the the file in the views directory will be included
         $controller->render();?>
         </div>
         <?include ASSETPATH.'footer.html';?>
         <?else:
-            $controller->render();
-          endif;
+        $controller->render();
+        endif;
         ?>
-
+       
+        
 </body>
+
+
 </html>

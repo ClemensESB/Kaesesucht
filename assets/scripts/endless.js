@@ -39,6 +39,7 @@ var endless = {
       var data = new FormData(),
       nextPg = endless.page + 1;
       data.append('p',nextPg);
+      data.append('js',1);
       // (C4) AJAX
       var xhr = new XMLHttpRequest();
       xhr.open("POST", endless.url);
@@ -65,14 +66,15 @@ var endless = {
           if (endless.first && endless.hasMore) 
           {
             if (document.body.scrollHeight <= window.innerHeight) 
-              { 
-                endless.load(); 
-              }
+            { 
+              endless.load(); 
+            }
             else 
-              { 
-                endless.first = false; 
-              }
-          } else 
+            { 
+              endless.first = false; 
+            }
+          } 
+          else 
           { 
             endless.first = false; 
           }
