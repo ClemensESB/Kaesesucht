@@ -9,7 +9,7 @@ use \kae\model\ModelCheeseFull as FullProduct;
 
 class PagesController extends \kae\core\Controller
 {
-	const objects = 4; //only even numbers
+	const objects = 6; //only even numbers
 
 	public function actionIndex()
 	{
@@ -85,7 +85,7 @@ class PagesController extends \kae\core\Controller
 
 	public function loadProducts($array) // builds the block for an array of products
 	{
-        echo('<div class="page_container">');
+        //echo('<div class="page_container content-align-mid">');
         foreach ($array as $key => $value) 
         {
         	echo('<div class="panel">');
@@ -109,7 +109,7 @@ class PagesController extends \kae\core\Controller
 		    ');
 		    echo('</div>');
         }
-        echo('</div>');
+        //echo('</div>');
 	}
 }
 ?>
