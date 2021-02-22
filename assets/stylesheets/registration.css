@@ -1,7 +1,7 @@
 .registration {
     text-align: center;
     background-color: var(--darken-color);
-    width:330px;
+    width: 330px;
 }
 
 .registration * {
@@ -23,4 +23,5 @@
 .registration p *,
 .registration p {
     color: white;
+    padding-top: 20px;
 }
