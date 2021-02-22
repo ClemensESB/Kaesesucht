@@ -6,6 +6,12 @@
 		<div class="head-container">
 			<h1><?echo($this->fullProduct->__get('cheeseName'))?></h1>
 		</div>
+		<div class="text-box">
+			<p>
+				Preis pro Stück:<br>
+				<?echo($this->fullProduct->pricePerUnit." €");?>
+			</p>
+		</div>
 		<div class="quantity">
 			<?$this->qtySelection($this->fullProduct,true,'in den Warenkorb legen');?>
 		</div>
