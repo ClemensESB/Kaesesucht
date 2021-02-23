@@ -20,6 +20,7 @@
 }
 
 .filter_container .button {
+    margin-top: 10px;
     width: 80%;
     padding: 10px;
 }
