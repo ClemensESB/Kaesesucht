@@ -9,6 +9,11 @@ nav * {
     line-height: 80px;
 }
 
+nav img {
+    height: 50px;
+    width: auto;
+}
+
 label.logo a {
     font-size: 35px;
     float: left;
