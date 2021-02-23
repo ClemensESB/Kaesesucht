@@ -162,6 +162,10 @@ nav ul a:hover {
     height: 10px;
 }
 
+.border--bottom{
+    border-bottom: 1px solid grey;
+}
+
 @media (max-width: 858px) {
     nav ul {
         background-color: var(--second-sec-color);

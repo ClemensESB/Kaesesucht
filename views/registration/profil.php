@@ -10,7 +10,7 @@
 
 <div class="panel" >
     <div id="id">
-        <div class ="button marg-20 content-align-mid">
+        <div class ="button marg-20 content-align-mid btn--size">
         <a href="javascript:toggle('dataid')">Nutzerdaten ändern</a>
         </div>
         <div id="dataid" class="popout content-align-mid registration" style="">
@@ -23,13 +23,14 @@
                 <input type="text" value="<?echo($this->currentUser['zipCode']);?>" id="zipCode" name="zipCode" placeholder="PLZ" onfocus="this.placeholder = ''" onblur="this.placeholder = 'PLZ'" class="inputtext">
                 <input type="submit" name="submit" id="editUser" value="editUser" class="button">
             </form>
+            <div class="filler"></div>
         </div>
     </div>
 </div>
 
 <div class="panel">
     <div id="id">
-    <div class ="button marg-20 content-align-mid">
+    <div class ="button marg-20 content-align-mid btn--size">
     <a href="javascript:toggle('orderid')">Meine Bestellungen</a>
     </div>
     <div id="orderid" class="panel" style="display:none">
