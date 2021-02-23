@@ -5,7 +5,7 @@
    </div>
 </div>
 <div>
-<p class ="home_text">Neue Produkte<p>
+<p class ="home_text dark">Neue Produkte<p>
 </div>	
 <div class="page_container content-align-mid">
 

@@ -9,7 +9,7 @@
  :root {
     --first-prim-color: #8f8f8f;
     --first-sec-color: #000;
-    --second-prim-color: #e9bf72;
+    --second-prim-color: #daa74a;
     --second-sec-color: rgb(46, 42, 42);
     --fill-color: #ece7de;
     --darken-color: rgba(0, 0, 0, 0.8)
@@ -23,9 +23,10 @@ body {
     display: list-item;
 }
 
-.wrapper {
+.wrapper,
+.background {
     padding: 1px;
-    min-height: calc(100vh - 80px - 50px - 30px);
+    min-height: calc(100vh - 80px - 42px);
     position: relative;
 }
 
@@ -167,41 +168,11 @@ nav ul a:hover {
     height: 10px;
 }
 
-.border--bottom{
+.border--bottom {
     border-bottom: 1px solid grey;
 }
 
-ul li:hover ul {
-    display: block;
-}
-ul li ul {
-  position: absolute;
-  width: auto;
-  display: none;
-}
-ul li ul li { 
-  background:var(--second-prim-color); 
-  display: block; 
-}
-ul li ul li a {display:block !important;} 
-ul li ul li:hover {background: var(--second-sec-color);}
-
-
-
-
-
 @media (max-width: 858px) {
-    nav ul {
-        background-color: var(--second-sec-color);
-    }
-    nav ul li a {
-        color: var(--second-prim-color)
-    }
-    nav ul a.active,
-    nav ul a:hover {
-        background: var(--second-prim-color);
-        color: var(--second-sec-color);
-    }
     .wrapper {
         top: 80px;
     }

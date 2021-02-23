@@ -23,3 +23,7 @@
             border: 2px solid;
             transition: 0.5s;
         }
+        
+        .home_text.dark {
+            color: black;
+        }
