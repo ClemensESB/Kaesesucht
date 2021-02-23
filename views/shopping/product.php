@@ -10,24 +10,29 @@
 			<h1><?echo($this->fullProduct->cheeseName);?></h1>
 		</div>
 		<div class="text-box">
-			<p>
-				Preis pro Stück:<br>
-				<?echo($this->fullProduct->pricePerUnit." €");?>
+			<p >
+				Preis pro Stück:
 			</p>
+			<div class="price">
+			<?echo($this->fullProduct->pricePerUnit.' €');?>
+			</div>
 		</div>
 		<div class="quantity">
-			Mengenauswahl:
 			<?$this->qtySelection($this->fullProduct,true,'in den Warenkorb legen');?>
 		</div>
 		<div class="text-box">
+			<h2>
+				Artikelbeschreibung:
+			</h2>
 			<p>
-				Artikelbeschreibung:<br>
 				<?echo($this->fullProduct->descrip);?>
 			</p>
 		</div>
 		<div class="text-box">
+			<h2>
+				Rezept:
+			</h2>
 			<p>
-				Rezept:<br>
 				<?echo($this->fullProduct->recipe);?>
 			</p>
 		</div>		
