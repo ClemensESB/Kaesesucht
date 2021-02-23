@@ -6,7 +6,7 @@
 }
 
 .product-image-container {
-    position: relative;
+    position: fixed;
     width: 70%;
     float: left;
 }
@@ -18,9 +18,9 @@
 }
 
 .product-info-container {
+    float: right;
     position: relative;
     width: 30%;
-    float: left;
     padding: 0 20px;
 }
 
@@ -70,11 +70,13 @@
         display: list-item;
     }
     .product-image-container {
+        position: relative;
         max-width: 90%;
         left: 50%;
         transform: translateX(-50%);
     }
     .product-info-container {
+        float: left;
         width: 100%;
         max-width: 560px;
         left: 50%;
