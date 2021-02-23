@@ -25,11 +25,7 @@ class ShoppingController extends \kae\core\Controller
 			{
 				$_SESSION['order']->payMethod = $_POST['payMethod']; // takes the user input for the payMethod and puts it in the order
 			}
-			else
-			{
-				$_SESSION['order']->payMethod = $this->params['payMethod'][0]; // if nothing is set paymethod is default on first element in array
-			}
-
+			
 			if(isset($_POST['buy']))
 			{	
 				#pre_r($_SESSION['order']);

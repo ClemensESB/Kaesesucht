@@ -9,16 +9,13 @@
 		exit(0);
 	}
 ?>
-<div class ="panel">
-
-		
-
-</div>
-
 <div>
 	<div class ="panel">
 		<form method="POST" class="form" name="payMethod">
 			<select name="payMethod" class="select-field selection--method" onchange='this.form.submit();'>
+				<?if(empty($_SESSION['order']->payMethod)):?>
+				<option value="" selected="selected">--Zahlungsmethode wählen--</option>
+				<?endif;?>
 				<?foreach ($this->params['payMethod'] as $key => $method):?>
 					<?if($method == $_SESSION['order']->payMethod):?>
 						<option value="<?echo($method);?>" selected="selected"><?echo($method);?></option>
@@ -31,8 +28,13 @@
 				<noscript><button type="submit" class="button content-align-right" name="submit">Eingabe Bestätigen</button></noscript>
 		</form>
 	</div>
+	<div class ="panel">
+		<form method="POST" name="buy">
+			<button type="submit" class="button btn--size" style="padding: 10px;" name="buy">Bestellen <?echo($_SESSION['summe']);?>€</button>
+		</form>
+	</div>
 
-	<div class ="panel duoBox">
+	<div class ="panel">
 		<div>
 			<p>
 				Vorname: <?echo($this->currentUser['firstName']);?><br>
@@ -42,21 +44,25 @@
 				Zahlungsmethode: <?echo($_SESSION['order']->__get('payMethod'));?><br>
 			</p>
 		</div>
-		<div>
-			<p>
+	</div>
+		<div class="panel">
 			<?foreach ($_SESSION['cart'] as $key => $value):?>
-				Artikel: <?echo($value->cheeseName.' '.$value->pricePerUnit*$value->getQuantity());?> €<br>
+
+			<div class="panel border--bottom">
+			<div class="table--object column--full">
+				<img src="<?echo(ASSETPATH.'images'.DIRECTORY_SEPARATOR.$value->pictureName);?>" class="column--image">
+				Artikel: <?echo($value->cheeseName.'<br>Anzahl: '.$value->getQuantity().'<br>Preis gesamt: '.$value->pricePerUnit*$value->getQuantity());?> €<br>
+			</div>
+			</div>
 			<?endforeach;?>
 				Summe: <?echo($_SESSION['summe']);?>€
-			</p>
 		</div>
+			
+	
+		
 
-	</div>
-	<div class ="panel">
-		<form method="POST" name="buy">
-			<button type="submit" class="button content-align-right" name="buy">Bestellen</button>
-		</form>
-	</div>
+	
+	
 
 
 </div>

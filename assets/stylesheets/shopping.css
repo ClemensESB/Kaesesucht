@@ -139,7 +139,9 @@ body::-webkit-scrollbar {
     float: none;
 }
 
-
+.btn--size{
+    width: 300px;
+}
 
 
 @media (max-width: 858px) {

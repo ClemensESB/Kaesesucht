@@ -4,7 +4,7 @@
 	<h1>Warenkorb</h1>
 	</div>
 	<div class="panel">
-		<div class ="button content-align-mid marg-20">
+		<div class ="button content-align-mid marg-20 btn--size">
 			<a href="index.php?c=shopping&a=checkout">Zur Kasse Summe: <?echo($_SESSION['summe']);?> €</a>
 		</div>
 	</div>
@@ -82,7 +82,7 @@
 </div>
 <?if(!empty($_SESSION['cart'])):?>
 <div class="panel">
-	<div class ="button content-align-mid marg-20">
+	<div class ="button content-align-mid marg-20 btn--size">
 		<a href="index.php?c=shopping&a=checkout"><?echo('Zur Kasse Summe: '.$_SESSION['summe'].' €');?></a>
 	</div>
 </div>
