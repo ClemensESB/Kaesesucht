@@ -49,7 +49,9 @@ a:hover,
 a:active {
     color: var(--second-prim-color);
 }
-
+.d_center {
+    text-align: center;
+}
 .inputtext,
 .button {
     display: block;

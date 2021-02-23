@@ -19,6 +19,10 @@ class PagesController extends \kae\core\Controller
 	{
 		
 	}
+	public function actionDocumentation()
+	{
+
+	}
 	public function actionShop()
 	{
 		#pre_r($_GET);
