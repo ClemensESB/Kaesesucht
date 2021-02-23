@@ -7,6 +7,12 @@
     text-align: center;
 }
 
+.footer a:hover,
+.footer a:active {
+    color: black;
+    text-decoration: underline;
+}
+
 @media (max-width: 858px) {
     .footer {
         top: 80px
