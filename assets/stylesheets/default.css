@@ -20,10 +20,11 @@ body {
     font-size: 18px;
     background-color: var(--fill-color);
     color: var(--first-sec-color);
+    display: list-item;
 }
 
 .wrapper {
-    min-height: calc(100vh - 7em - 24px);
+    min-height: calc(100vh - 80px - 50px - 50px);
     position: relative;
 }
 
@@ -49,9 +50,11 @@ a:hover,
 a:active {
     color: var(--second-prim-color);
 }
+
 .d_center {
     text-align: center;
 }
+
 .inputtext,
 .button {
     display: block;
@@ -62,7 +65,6 @@ a:active {
     border-radius: 5px;
     font-size: 16px;
     text-align: center;
-
 }
 
 .button a {
@@ -155,8 +157,8 @@ nav ul a:hover {
     margin-top: 10px;
 }
 
-.filler{
-   height: 10px;
+.filler {
+    height: 10px;
 }
 
 @media (max-width: 858px) {
@@ -170,5 +172,8 @@ nav ul a:hover {
     nav ul a:hover {
         background: var(--second-prim-color);
         color: var(--second-sec-color);
+    }
+    .wrapper {
+        top: 80px;
     }
 }

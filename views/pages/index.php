@@ -7,7 +7,7 @@
 <div>
 <p class ="home_text">Neue Produkte<p>
 </div>	
-        <div class="page_container">
+        <div class="page_container content-align-mid">
 
             <?$this->loadProducts($this->products);?>
  		</div>

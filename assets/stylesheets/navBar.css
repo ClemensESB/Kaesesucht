@@ -105,4 +105,8 @@ nav .login {
     #menucheck:checked~ul {
         left: 0;
     }
+    nav {
+        top: 0px;
+        position: fixed;
+    }
 }
