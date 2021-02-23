@@ -1,9 +1,10 @@
 .product {
-    padding: 1%;
+    padding: 1px;
     display: inline-block;
 }
 
 .product-image-container {
+    position: relative;
     max-width: 60%;
     float: left;
 }
@@ -15,9 +16,10 @@
 }
 
 .product-info-container {
+    position: relative;
     width: 40%;
     float: left;
-    margin-left: 40px;
+    padding: 0 20px;
 }
 
 .quantity {
@@ -25,7 +27,7 @@
 }
 
 .quantity form {
-    width: 40%;
+    width: 100px;
     display: inline-block;
 }
 
@@ -33,8 +35,16 @@
     text-align: left;
 }
 
-@media (max-width: 858px) {
+@media (max-width: 1050px) {
     .product {
         display: list-item;
+    }
+    .product-image-container {
+        max-width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .product-info-container {
+        width: 100%;
     }
 }
