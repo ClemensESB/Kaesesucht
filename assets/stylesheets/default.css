@@ -9,7 +9,7 @@
  :root {
     --first-prim-color: #8f8f8f;
     --first-sec-color: #000;
-    --second-prim-color: #e9bf72;
+    --second-prim-color: #daa74a;
     --second-sec-color: rgb(46, 42, 42);
     --fill-color: #ece7de;
     --darken-color: rgba(0, 0, 0, 0.8)
@@ -175,21 +175,25 @@ nav ul a:hover {
 ul li:hover ul {
     display: block;
 }
+
 ul li ul {
-  position: absolute;
-  width: auto;
-  display: none;
+    position: absolute;
+    width: auto;
+    display: none;
 }
-ul li ul li { 
-  background:var(--second-prim-color); 
-  display: block; 
+
+ul li ul li {
+    background: var(--second-prim-color);
+    display: block;
 }
-ul li ul li a {display:block !important;} 
-ul li ul li:hover {background: var(--second-sec-color);}
 
+ul li ul li a {
+    display: block !important;
+}
 
-
-
+ul li ul li:hover {
+    background: var(--second-sec-color);
+}
 
 @media (max-width: 858px) {
     nav ul {
