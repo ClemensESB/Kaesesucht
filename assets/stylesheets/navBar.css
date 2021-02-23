@@ -50,6 +50,7 @@ ul li:hover ul {
 ul li ul {
     position: absolute;
     width: auto;
+    display: none;
     list-style: none;
     margin-left: 0px;
     top: 80px;
