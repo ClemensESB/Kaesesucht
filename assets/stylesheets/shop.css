@@ -29,7 +29,7 @@
     position: relative;
     left: 0px;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     grid-gap: 20px;
     width: min-content;
 }
@@ -88,6 +88,13 @@
 .product_container:active {
     background: var(--second-prim-color);
     transition: .5s;
+}
+
+@media (max-width: 1100px) {
+    .page_container {
+        grid-template-columns: auto auto auto;
+        width: min-content;
+    }
 }
 
 @media (max-width: 858px) {
