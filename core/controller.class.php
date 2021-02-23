@@ -44,7 +44,7 @@ class Controller
 
 		#echo($_SESSION['email']);
 		// check the file exists
-
+		
 		if(isset($_SESSION['email'])!= false)
 		{
 			#echo($_SESSION['email']);
@@ -57,7 +57,7 @@ class Controller
 			redirect('index.php?c=errors&a=error404&error=viewpath');
 			exit(0);
 		}
-
+		
 		// extract the params array to get all needed variables for the view
 		extract($this->params);
 		// just include the view here, it's like putting the code of the php file by copy paste on this position.

@@ -36,11 +36,16 @@
 				</div>
 				<div class="table--content">
 					<p><?echo($product->cheeseName);?></p>
-					<p><?echo($product->id);?></p>
+					<p>ArtNr. <?echo($product->id);?></p>
 				</div>
 			</div>
-
-			<?$this->qtySelection($product,false);?>
+			<div class="column--sub duoBox">
+				<div class="price desc">
+					Anzahl:
+				</div>
+				<?$this->qtySelection($product,false);?>
+			</div>
+			
 
 			<div class="column--sub duoBox">
 				<div class="price desc">

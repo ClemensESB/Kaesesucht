@@ -39,6 +39,7 @@ var endless = {
       var data = new FormData(),
       nextPg = endless.page + 1;
       data.append('p',nextPg);
+      data.append('js',1);
       // (C4) AJAX
       var xhr = new XMLHttpRequest();
       xhr.open("POST", endless.url);
@@ -54,9 +55,14 @@ var endless = {
         // PUT CONTENTS INTO HTML
         else 
         {
-          var el = document.createElement('div');
-          el.innerHTML = this.response;
-          endless.eContent.appendChild(el);
+
+          //var el = document.createElement('div');
+          //var el = document.getElementById('page-content');
+          //alert(el.innerHTML);
+          //el.innerHTML = this.response.slice(430);
+          //alert(el.innerHTML);
+          //endless.eContent.appendChild(el);
+          endless.eContent.innerHTML += this.response.slice(430);
           endless.eLoad.style.display = "none";
           endless.page = nextPg;
           endless.proceed = true;
@@ -65,14 +71,15 @@ var endless = {
           if (endless.first && endless.hasMore) 
           {
             if (document.body.scrollHeight <= window.innerHeight) 
-              { 
-                endless.load(); 
-              }
+            { 
+              endless.load(); 
+            }
             else 
-              { 
-                endless.first = false; 
-              }
-          } else 
+            { 
+              endless.first = false; 
+            }
+          } 
+          else 
           { 
             endless.first = false; 
           }

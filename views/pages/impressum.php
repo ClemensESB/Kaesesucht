@@ -37,8 +37,10 @@
 
 	Duis imperdiet nisl ut elit rhoncus sollicitudin. Mauris venenatis dui magna, eget lacinia turpis fermentum ut. Fusce aliquet erat et lectus rhoncus, sed congue erat bibendum. Donec quis sem eu est accumsan ultrices. Donec a diam lobortis risus pellentesque lacinia. Aliquam ligula eros, iaculis non velit et, eleifend sollicitudin nunc. Mauris ac elit euismod ante egestas egestas. Duis rutrum volutpat lacus, lobortis tempor nibh vulputate at. Cras ac neque non augue commodo pulvinar sit amet in lacus. Nulla gravida et turpis sit amet cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean vitae est fermentum, iaculis mi a, porta metus. Etiam pellentesque dignissim sem, at imperdiet lorem feugiat tincidunt. Integer sed eleifend dui. Nam quis tempus erat, et dignissim sem. In ac fringilla tortor, mattis vehicula augue. Aliquam lacinia scelerisque lectus nec sollicitudin. Vestibulum cursus turpis sapien, sit amet imperdiet orci porttitor a. 
 	</p>
-
-
+    <br><br><br>
+    <div class="button">
+        <a href="index.php?c=pages&a=documentation">Dokumentation</a>
+    </div>
 
 
 

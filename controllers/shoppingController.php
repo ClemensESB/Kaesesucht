@@ -13,42 +13,47 @@ class ShoppingController extends \kae\core\Controller
 	public function actionCheckout()
 	{
 		#pre_r($_POST);
-		$this->setParam('payMethod',['Bitcoin','Paypal','Sofort']);
-		if($this->currentUser !== null && !(isset($_SESSION['order'])))
+		if($this->currentUser !== null)
 		{
-			$_SESSION['order'] = new Order(['account_id' => $this->currentUser['id']]);
-		}
-		if(isset($_POST['payMethod']))
-		{
-			$_SESSION['order']->payMethod = $_POST['payMethod'];
-		}
-		else
-		{
-			$_SESSION['order']->payMethod = $this->params['payMethod'][0];
-		}
+			$this->setParam('payMethod',['Bitcoin','Paypal','Sofort']);  // sets the payMethods
 
-		if(isset($_POST['buy']))
-		{	
-			#pre_r($_SESSION['order']);
-			#pre_r($this->params['payMethod']);
-			if(in_array($_SESSION['order']->payMethod, $this->params['payMethod']))
+			if(!(isset($_SESSION['order'])))
 			{
-			#pre_r($_POST);
-			$_SESSION['order']->account_id = $this->currentUser['id'];
-			$currentDateTime = date('Y-m-d H:i:s');
-			$_SESSION['order']->createdAt = $currentDateTime;
-			$_SESSION['order']->insert($errors);
-				foreach ($_SESSION['cart'] as $key => $product) 
+				$_SESSION['order'] = new Order(['account_id' => $this->currentUser['id']]); // is a user logged in a new order is set
+			}
+			if(isset($_POST['payMethod']))
+			{
+				$_SESSION['order']->payMethod = $_POST['payMethod']; // takes the user input for the payMethod and puts it in the order
+			}
+			else
+			{
+				$_SESSION['order']->payMethod = $this->params['payMethod'][0]; // if nothing is set paymethod is default on first element in array
+			}
+
+			if(isset($_POST['buy']))
+			{	
+				#pre_r($_SESSION['order']);
+				#pre_r($this->params['payMethod']);
+				if(in_array($_SESSION['order']->payMethod, $this->params['payMethod'])) 
 				{
-					$price = $product->pricePerUnit*$product->getQuantity();
-					$orderItem = new OrderItem(['cheese_id'=>$product->id,'quantity'=>$product->getQuantity(),'actualPrice'=>$price,'orders_id'=>$_SESSION['order']->id]);
-					$orderItem->insert($errors);
+				#pre_r($_POST);
+				$_SESSION['order']->account_id = $this->currentUser['id']; //if the User clicks buy the order is put together for the current user.
+				$currentDateTime = date('Y-m-d H:i:s'); 
+				$_SESSION['order']->createdAt = $currentDateTime; // to make sure the order doesn't overwrites an existing entry the time is set here and not by db
+				$_SESSION['order']->insert($errors); //the order gets inserted
+					foreach ($_SESSION['cart'] as $key => $product) //after the order is inserted the ordered Items are inserted
+					{
+						$price = $product->pricePerUnit*$product->getQuantity();
+						$orderItem = new OrderItem(['cheese_id'=>$product->id,'quantity'=>$product->getQuantity(),'actualPrice'=>$price,'orders_id'=>$_SESSION['order']->id]);
+						$orderItem->insert($errors);
+					}
+					unset($_SESSION['order']); 
+					unset($_SESSION['cart']); 
+					$this->redirect('index.php?c=pages&a=index');
 				}
-				unset($_SESSION['order']);
-				unset($_SESSION['cart']);
-				$this->redirect('index.php?c=pages&a=index');
 			}
 		}
+		
 	}
 	
 	public function actionShoppingCart()
@@ -59,7 +64,7 @@ class ShoppingController extends \kae\core\Controller
 		#pre_r($_GET);
 		if(!empty($_SESSION['cart']))
 		{
-			if(isset($_POST['deleteProduct']))
+			if(isset($_POST['deleteProduct'])) // deletes a product by given id from cart
 			{
 				#pre_r($_POST);
 				foreach ($_SESSION['cart'] as $key => $value) 
@@ -70,7 +75,7 @@ class ShoppingController extends \kae\core\Controller
 					}
 				}
 			}
-			if(isset($_POST['chQuantity']))
+			if(isset($_POST['chQuantity'])) // changes quantity of a product by given id in cart
 			{
 			#pre_r($_POST);
 				foreach ($_SESSION['cart'] as $key => $value) 
@@ -81,7 +86,7 @@ class ShoppingController extends \kae\core\Controller
 					}
 				}
 			}
-			foreach ($_SESSION['cart'] as $key => $product) 
+			foreach ($_SESSION['cart'] as $key => $product) //calculates the entire sum
 			{
 				$_SESSION['summe'] += $product->pricePerUnit*$product->getQuantity();
 			}
@@ -93,7 +98,7 @@ class ShoppingController extends \kae\core\Controller
 		if(Full::findOne('id = '.$_GET['id']) != null){
 			$this->fullProduct = new Full(Full::findOne('id = '.$_GET['id']));
 
-			if(isset($_POST['submit']))
+			if(isset($_POST['submit'])) // puts the Product in the shopping cart
 			{
 				$this->fullProduct->setQuantity($_POST['chQuantity']);
 				$this->putInCart($this->fullProduct);
@@ -112,7 +117,7 @@ class ShoppingController extends \kae\core\Controller
 		$bool = true;
 		foreach ($_SESSION['cart'] as $key => $value) 
 		{
-			if($value->id == $fullProduct->id)
+			if($value->id == $fullProduct->id) // if the product is already in the cart the quantity is overwritten
 			{
 				
 				$_SESSION['cart'][$key] = $fullProduct;
@@ -121,18 +126,16 @@ class ShoppingController extends \kae\core\Controller
 		}
 		if($bool)
 		{
-			array_push($_SESSION['cart'],$fullProduct);
+			array_push($_SESSION['cart'],$fullProduct); // puts the product in the cart if it's not in there
 		}
 	}
 
-	public function qtySelection($product,$btn = false,$icon = '->')
+	public function qtySelection($product,$btn = false,$icon = '->') // function builds the quantity selection for a Product
 	{
-		echo'<div class="column--sub duoBox">';
-		echo'<div class="price desc">Anzahl:</div>';
+		
 		echo'<form method="POST" action="" class="form" name="chQuantity">';
-		?><select name="chQuantity" class="select-field cart--select" onchange='this.form.submit();'><?
-
-			for ($i=1; $i <= $product->qtyInStock; $i++)
+		echo('<select name="chQuantity" class="select-field cart--select float--left" onchange="this.form.submit();">');
+			for ($i=1; $i <= $product->qtyInStock; $i++) // the user can only order maximum what we have in stock
 			{
 				if($product->getQuantity() == $i)
 				{
@@ -145,14 +148,13 @@ class ShoppingController extends \kae\core\Controller
 			}	
 		echo'</select>';
 		if($btn){
-			echo('<button type="submit" class="button float--right" name="submit">'.$icon.'</button>');
+			echo('<button type="submit" class="button" name="submit">'.$icon.'</button>');
 		}
 		else
 		{
-			echo('<noscript><button type="submit" class="button float--right" name="submit">'.$icon.'</button></noscript>');
+			echo('<noscript><button type="submit" class="button" name="submit">'.$icon.'</button></noscript>');
 		}
 		echo('<input type="hidden" name="idProduct" value="'.$product->id.'">
-			</form>
-			</div>');
+			</form>');
 	}
 }
