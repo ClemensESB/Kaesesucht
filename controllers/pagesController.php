@@ -9,7 +9,7 @@ use \kae\model\ModelCheeseFull as FullProduct;
 
 class PagesController extends \kae\core\Controller
 {
-	const objects = 6; //only even numbers
+	const objects = 8;
 
 	public function actionIndex()
 	{

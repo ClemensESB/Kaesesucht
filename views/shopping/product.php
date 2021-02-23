@@ -1,11 +1,22 @@
+<div class="product_title">
+	<h1><?echo($this->fullProduct->cheeseName);?></h1>
+</div>
+
 <div class="panel">	
 	<div class="product-image-container">
-		<img class="product_image" src=<?echo(ASSETPATH.'images'.DIRECTORY_SEPARATOR.$this->fullProduct->pictureName); ?>>
+		<img class="" src=<?echo(ASSETPATH.'images'.DIRECTORY_SEPARATOR.$this->fullProduct->pictureName); ?>>
 	</div>
 	<div class="product-info-container">
-		<div class="head-container">
-			<h1><?echo($this->fullProduct->cheeseName)?></h1>
+		<div class="text-box">
+			<p>
+				Artikelbeschreibung:<br>
+				<?echo($this->fullProduct->descrip);?>
+			</p>
 		</div>
+		
+	</div>
+</div>
+	<div class="product-info-container">
 		<div class="text-box">
 			<p>
 				Preis pro Stück:<br>
@@ -13,14 +24,10 @@
 			</p>
 		</div>
 		<div class="quantity">
+			Mengenauswahl:
 			<?$this->qtySelection($this->fullProduct,true,'in den Warenkorb legen');?>
 		</div>
-		<div class="text-box">
-			<p>
-				Artikelbeschreibung:<br>
-				<?echo($this->fullProduct->descrip);?>
-			</p>
-		</div>
+		
 		<div class="text-box">
 			<p>
 				Rezept:<br>
@@ -28,4 +35,3 @@
 			</p>
 		</div>
 	</div>
-</div>

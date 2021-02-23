@@ -4,23 +4,24 @@
 }
 
 .product-image-container {
-    overflow: auto;
+    max-width: 60%;
+    float: left;
 }
 
 .product-image-container img {
-    left: 0;
-    transform: none;
-    max-width: 60%;
-    max-height: none;
-    height: auto
+    width: 100%;
+    max-width: 820px; 
+    height: auto;
 }
 
 .product-info-container {
-    display: list-item;
+    width:40%;
+    float: left;
+    margin-left: 40px;
 }
 
-.product-info-container>* {
-    position: relative;
+.product-info-container>*{
+    
 }
 
 .quantity {
