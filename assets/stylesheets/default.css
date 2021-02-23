@@ -172,41 +172,7 @@ nav ul a:hover {
     border-bottom: 1px solid grey;
 }
 
-ul li:hover ul {
-    display: block;
-}
-
-ul li ul {
-    position: absolute;
-    width: auto;
-    display: none;
-}
-
-ul li ul li {
-    background: var(--second-prim-color);
-    display: block;
-}
-
-ul li ul li a {
-    display: block !important;
-}
-
-ul li ul li:hover {
-    background: var(--second-sec-color);
-}
-
 @media (max-width: 858px) {
-    nav ul {
-        background-color: var(--second-sec-color);
-    }
-    nav ul li a {
-        color: var(--second-prim-color)
-    }
-    nav ul a.active,
-    nav ul a:hover {
-        background: var(--second-prim-color);
-        color: var(--second-sec-color);
-    }
     .wrapper {
         top: 80px;
     }
