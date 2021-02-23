@@ -7,10 +7,7 @@
 <div>
 <p class ="home_text">Neue Produkte<p>
 </div>	
-        <div class="page_container content-align-mid">
+<div class="page_container content-align-mid">
 
-            <?$this->loadProducts($this->products);?>
- 		</div>
- <div class ="home_text">
-    <a class = "home_linkbutton" href="index.php?c=pages&a=shop">Zum Shop</a>
- </div>
+   <?$this->loadProducts($this->products);?>
+</div>
