@@ -100,14 +100,10 @@ class PagesController extends \kae\core\Controller
 				<div class="product_container">
 						<img class="product_image" src="'.$path.'" alt="'.$product->cheeseName.'">
 						<p class="product_title">'.$product->cheeseName.'</p>
-						<p class ="product_descrip" >
-						Ab '.$product->pricePerUnit.' € <br>
-						<br>Verfügbarkeit : '.$product->qtyInStock.'
+						<p class ="product_descrip" >Ab</p>
+						<div class ="price">'.$product->pricePerUnit.' €</div>
+						<p class ="product_descrip stock" >Verfügbarkeit: '.$product->qtyInStock.'</p>
 					</p>
-					<div class ="product_btn">
-						<form method="GET" name="id">
-						</form>
-					</div>
 				</div>
 			</a>
 		    ');
