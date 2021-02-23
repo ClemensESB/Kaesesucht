@@ -1,20 +1,21 @@
-* {
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
+.footer {
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    margin: 40px 0px 0px 0px;
+    position: relative;
+    padding-top: 10px;
+    text-align: center;
 }
 
- :root {
-    --first-prim-color: #8f8f8f;
-    --first-sec-color: #000;
-    --second-prim-color: #e9bf72;
-    --second-sec-color: rgb(46, 42, 42);
-    --fill-color: #ece7de;
-    --darken-color: rgba(0, 0, 0, 0.8)
+@media (max-width: 858px) {
+    .footer {
+        top: 80px
+    }
 }
 
+--darken-color: rgba(0, 0, 0, 0.8)
+}
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
@@ -22,13 +23,11 @@ body {
     color: var(--first-sec-color);
     display: list-item;
 }
-
 .wrapper {
     padding: 1px;
     min-height: calc(100vh - 80px - 50px - 30px);
     position: relative;
 }
-
 h1,
 h2,
 h3,
@@ -38,24 +37,19 @@ h6 {
     color: var(--first-sec-color);
     text-align: center;
 }
-
 p {
     color: var(--first-sec-color);
 }
-
 a {
     color: var(--first-sec-color);
 }
-
 a:hover,
 a:active {
     color: var(--second-prim-color);
 }
-
 .d_center {
     text-align: center;
 }
-
 .inputtext,
 .button {
     display: block;
@@ -67,7 +61,6 @@ a:active {
     font-size: 16px;
     text-align: center;
 }
-
 .button a {
     background-clip: padding-box;
     display: inline-block;
@@ -77,7 +70,6 @@ a:active {
     height: 100%;
     padding: 10px;
 }
-
 button {
     display: block;
     padding: 2px;
@@ -87,7 +79,6 @@ button {
     border-radius: 5px;
     font-size: 16px;
 }
-
 .button:hover,
 .button.active,
 button {
@@ -96,35 +87,28 @@ button {
     transition: .5s;
     cursor: pointer;
 }
-
 nav {
     background: var(--second-prim-color);
 }
-
 .logo a {
     color: var(--second-sec-color);
 }
-
 nav ul li a {
     color: var(--second-sec-color);
 }
-
 nav ul a:active,
 nav ul a:hover {
     background: var(--second-sec-color);
     color: var(--second-prim-color);
     transition: .5s;
 }
-
 .menu {
     color: var(--second-sec-color);
 }
-
 .footer {
     background: var(--second-prim-color);
     color: var(--second-sec-color);
 }
-
 .select-field {
     appearance: none;
     border: 1px solid #888888;
@@ -132,48 +116,44 @@ nav ul a:hover {
     text-align: center;
     background-color: whitesmoke;
 }
-
 .content-align-mid {
     display: block;
     margin: 0px auto;
 }
-
 .float--right {
     float: right;
 }
-
 .float--left {
     float: left;
 }
-
 .popout {
     background-color: var(--darken-color);
     min-height: 427px;
 }
-
 .popout input.inputtext,
 .popout .button {
     padding: 10px;
     width: 300px;
     margin-top: 10px;
 }
-
 .filler {
     height: 10px;
 }
-
 @media (max-width: 858px) {
     nav ul {
         background-color: var(--second-sec-color);
     }
+    
     nav ul li a {
         color: var(--second-prim-color)
     }
+    
     nav ul a.active,
     nav ul a:hover {
         background: var(--second-prim-color);
         color: var(--second-sec-color);
     }
+    
     .wrapper {
         top: 80px;
     }
