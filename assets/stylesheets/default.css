@@ -24,7 +24,9 @@ body {
 }
 
 .wrapper {
-    min-height: calc(100vh - 80px - 50px - 50px);
+    padding: 1px;
+    height: min-content;
+    min-height: calc(100vh - 80px - 50px - 30px);
     position: relative;
 }
 
