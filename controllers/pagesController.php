@@ -59,7 +59,7 @@ class PagesController extends \kae\core\Controller
 		$entries = count($products); // cpt. obvious
 		
 		
-		if(empty($_GET['p'])) // if the user didn't use the link and did type the address in by himself he might forget the p
+		if(empty($_GET['p']) || !is_numeric($_GET['p']) || 1 > $_GET['p']) // if the user didn't use the link and did type the address in by himself he might forget the p
 		{ 
 			$_GET['p'] = 1;
 		}
