@@ -14,6 +14,7 @@
 .product-image-container img {
     width: 100%;
     height: auto;
+    max-height: calc(100vh - 80px - 42px);
     object-fit: contain;
 }
 
