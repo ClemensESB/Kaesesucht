@@ -90,11 +90,6 @@
     padding: 14px 20px;
 }
 
-.product_container .price {
-    color: var(--second-prim-color);
-    font-weight: bold;
-}
-
 .product_container a,
 .product_container p {
     color: var(--second-sec-color);

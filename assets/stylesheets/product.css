@@ -1,6 +1,7 @@
 .product {
     padding: 1px;
     display: inline-block;
+    overflow: auto;
 }
 
 .product-image-container {
@@ -22,13 +23,33 @@
     padding: 0 20px;
 }
 
+.product h2 {
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
 .quantity {
     height: 100px
 }
 
 .quantity form {
-    width: 100px;
-    display: inline-block;
+    width: 200px;
+    display: inline;
+}
+
+.quantity form select,
+.quantity form button {
+    height: 60px;
+}
+
+.quantity form select {
+    width: 60px;
+}
+
+.quantity form button {
+    width: 85px;
 }
 
 .head-container h1 {
@@ -46,5 +67,8 @@
     }
     .product-info-container {
         width: 100%;
+        max-width: 560px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

@@ -146,6 +146,11 @@ nav ul a:hover {
     float: left;
 }
 
+.price {
+    color: var(--second-prim-color);
+    font-weight: bold;
+}
+
 .popout {
     background-color: var(--darken-color);
     min-height: 427px;
