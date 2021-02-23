@@ -26,7 +26,7 @@ body {
 .wrapper,
 .background {
     padding: 1px;
-    min-height: calc(100vh - 80px - 42px);
+    min-height: calc(100vh - 80px - 40px);
     position: relative;
 }
 
@@ -176,5 +176,4 @@ nav ul a:hover {
     .wrapper {
         top: 80px;
     }
-
 }
