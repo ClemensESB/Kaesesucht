@@ -23,9 +23,10 @@ body {
     display: list-item;
 }
 
-.wrapper {
+.wrapper,
+.background {
     padding: 1px;
-    min-height: calc(100vh - 80px - 50px - 30px);
+    min-height: calc(100vh - 80px - 42px);
     position: relative;
 }
 
@@ -167,7 +168,7 @@ nav ul a:hover {
     height: 10px;
 }
 
-.border--bottom{
+.border--bottom {
     border-bottom: 1px solid grey;
 }
 
