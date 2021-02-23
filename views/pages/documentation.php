@@ -10,16 +10,16 @@
     <h1>Beschreibung des fiktiven Kunden</h1><br><br>
 
     <p>
-        Der fiktive Kunde ist ein Retailer mit einem oder mehrere Shops. Nennen wir die Firma Käsesucht AG. <br>
-        sie verkauft Käsesorten . <br><br>
-        Ziel der Firma : Die Firma ist auf der Suche nach einer Webseite mit Shop-System, da ihre Käseliferanten mehr als sie vertreibt liefern können.<br>
+        Der fiktive Kunde ist ein Retailer mit einem oder mehreren Shops. Nennen wir die Firma Käsesucht AG. <br>
+        sie verkauft exquisiten Käse. <br><br>
+        Ziel der Firma : Die Firma ist auf der Suche nach einer Shopseite,<br>
+        die Firma erhofft sich durch aufsetzen einer Shopseite erhöhten Proft.<br>
         Die Einnahmen der Firma stammen aus dem Verkauf von Produkten.<br><br><br>
     </p>
 
     <h1>Beschreibung der Websitenutzer(Zielgruppe)</h1><br><br>
-    <p >
         *Demografie : <br><br>
-        -Ab 18Jahre,wohnt allein oder mit anderen<br><br>
+        -Käseliebhaber jeden Alters<br><br>
         *Arbeitsweise :<br><br>
         -nutzt Internet<br>
         -kauft lokal aber auch online<br><br>
@@ -31,8 +31,8 @@
         -kann im lokalen Shop nicht alle Infos finden<br>
         -hat keine Zeit fürs Einkaufen<br><br>
         *Ziele und Wünsche : <br><br>
-        -möchte neue Sorten probieren<br>
-        -möchte Käse online bestelen<br><br><br>
+        -möchte neue Käsesorten probieren<br>
+        -möchte Käse online bestellen<br><br><br>
     </p>
     <h1>Ähnliche Seiten</h1><br><br>
     <a href="https://www.kaeseparadies.de/">Link  : https://www.kaeseparadies.de/</a><br><br><br><br>
@@ -58,6 +58,7 @@
         *Amine : Controllers, Javascript<br>
         > Lösung : Lernen im Internet (Tutorials)<br><br>
         *Clemens : Javascript<br>
+        > Lösung : Stackoverflow,youtube tutorials,ein Pakt mit dem Teufel <br>
         *Antonio :
         <br><br>
     </p>

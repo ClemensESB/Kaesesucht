@@ -26,6 +26,4 @@
             <div class="filler"></div>
             <script type="text/javascript" src="assets/scripts/valid.js"></script>
     </div>
-
-
 </div>

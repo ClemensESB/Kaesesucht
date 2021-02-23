@@ -55,8 +55,8 @@ class PagesController extends \kae\core\Controller
 
 
 
-		$array = FullProduct::find($this->params['stmt']);
-		$entries = count($array); // cpt. obvious
+		$products = FullProduct::find($this->params['stmt']);
+		$entries = count($products); // cpt. obvious
 		
 		
 		if(empty($_GET['p'])) // if the user didn't use the link and did type the address in by himself he might forget the p
@@ -82,9 +82,9 @@ class PagesController extends \kae\core\Controller
 
 		$this->params['pages'] = ceil($entries/PagesController::objects); // determines how many pages are needed
 		$offset = ($_POST['p']-1)*PagesController::objects; // calculates the start of the array for the selected page
-		$array = array_slice($array, $offset, PagesController::objects);// array for the selected page is sliced
+		$products = array_slice($products, $offset, PagesController::objects);// array for the selected page is sliced
 
-		$this->params['products'] = $array;
+		$this->params['products'] = $products;
 	}
 
 	public function loadProducts($array) // builds the block for an array of products
