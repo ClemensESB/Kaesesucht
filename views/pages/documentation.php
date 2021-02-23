@@ -75,7 +75,23 @@
         -Styles : Styles für Home and Shop pages (die wir geändert haben)<br><br>
         -Aufwand : Hoch <br><br>
         Antonio :<br>
+
         Clemens :
+        <ul type="disc">
+        <li>core: Controller,BaseModel</li>
+        <li>initiales Datenbankdesign und Datenbank entwicklung</li>
+        <li>alle Datenbank Models</li>
+        <li>errorsController</li>
+        <li>pagesController: shop,loadProducts</li>
+        <li>shoppingConroller: vollständig</li>
+        <li>registrationController: Profil</li>
+        <li>etwas: css</li>
+        <li>Seiten: checkout,shoppingCart,profil,shop,error,impressum</li>
+        <li>js: signup validierung,endless scroll</li>
+        <li>Zeitaufwand ca. 80 Stunden</li>
+        </ul>
+        
+
     </p>
 
 

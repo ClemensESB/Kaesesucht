@@ -44,6 +44,7 @@ class RegistrationController extends \kae\core\Controller
                 //TODO Datenbankanbindung
                 $_SESSION['loggedIn'] = true;
                 $_SESSION['email'] = $email;
+                $this->redirect('index.php?c=pages&a=shop&p=1');
             }
 
         // push to view ;)
@@ -73,7 +74,7 @@ class RegistrationController extends \kae\core\Controller
 
             if($_POST['password'] == null || !preg_match($passRegex, $_POST['password']))
             {
-                $errors['password'] = 'Passwort ist bullshit, min.8 Zeichen 1 Großbuchstabe, 1 Zahl.';
+                $errors['password'] = 'Passwort ist ungültig, min.8 Zeichen 1 Großbuchstabe, 1 Zahl.';
             }
             else if($_POST['password1'] == null || $_POST['password'] != $_POST['password1'])
             {
@@ -94,7 +95,21 @@ class RegistrationController extends \kae\core\Controller
             $address->validate($errors);
             $account->validate($errors);
 
-            pre_r($errors);
+            //pre_r($errors);
+
+
+            foreach ($errors as $key => $value) {
+                if(is_array($value))
+                {
+                    foreach ($value as $key => $object) 
+                    {
+                        $errors[$key] = $object;
+                    }   
+                }
+            }
+            //$flat = array_reduce(...$errors);
+            //array_walk_recursive($errors, function($a) use (&$return) { $return[] = $a; });
+            //pre_r($errors);
 
 
             if(count($errors) == 0)

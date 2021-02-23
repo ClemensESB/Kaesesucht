@@ -1,3 +1,4 @@
+
 <div class="background">   
     <div class="registration content-align-mid">
         <form method="POST" id="signupform" action="">
@@ -9,7 +10,7 @@
             <input type="text" value="<?echo(isset($_POST['street']) ? $_POST['street'] : '');?>" id="street" name="street" placeholder="Straße" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Straße'" class="inputtext">
             <div><?echo (isset($this->params['errors']['street']) ? $this->params['errors']['street'] : '' );?></div>
             <input type="text" value="<?echo(isset($_POST['strNo']) ? $_POST['strNo'] : '');?>" id="strNo" name="strNo" placeholder="Straßennummer" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Straßennummer'" class="inputtext">
-            <div><?echo (isset($this->params['errors']['streetNo']) ? $this->params['errors']['streetNo'] : '' );?></div>
+            <div><?echo (isset($this->params['errors']['strNo']) ? $this->params['errors']['strNo'] : '' );?></div>
             <input type="text" value="<?echo(isset($_POST['zipCode']) ? $_POST['zipCode'] : '');?>" id="zipCode" name="zipCode" placeholder="PLZ" onfocus="this.placeholder = ''" onblur="this.placeholder = 'PLZ'" class="inputtext">
             <div><?echo (isset($this->params['errors']['zipCode']) ? $this->params['errors']['zipCode'] : '' );?></div>
             <input type="text" value="<?echo(isset($_POST['city']) ? $_POST['city'] : '');?>" id="city" name="city" placeholder="Ort" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ort'" class="inputtext">
@@ -25,4 +26,6 @@
             <div class="filler"></div>
             <script type="text/javascript" src="assets/scripts/valid.js"></script>
     </div>
+
+
 </div>

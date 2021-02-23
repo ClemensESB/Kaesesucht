@@ -267,7 +267,7 @@ abstract class Model
     protected function validateValue($attribute,&$value,&$schemaOptions)
     {
         $type = $schemaOptions['type'];
-        $errors = [];
+        $errors = array();
 
         switch($type)
         {
@@ -279,19 +279,19 @@ abstract class Model
             {
                 if(isset($schemaOptions['validate']['min']) && mb_strlen($value) < $schemaOptions['validate']['min'])
                 {
-                    $errors[] = $attribute.': String needs min. '.$schemaOptions['validate']['min'].' characters!';
+                    $errors[$attribute] = 'String needs min. '.$schemaOptions['validate']['min'].' characters!';
                 }
                 if(isset($schemaOptions['validate']['max']) && mb_strlen($value) > $schemaOptions['validate']['max'])
                 {
-                    $errors[] = $attribute.': String can have max. '.$schemaOptions['validate']['max'].' characters!';
+                    $errors[$attribute] = 'String can have max. '.$schemaOptions['validate']['max'].' characters!';
                 }
                 if(isset($schemaOptions['validate']['email']) && !filter_var($value, FILTER_VALIDATE_EMAIL))
                 {
-                    $errors[] = $attribute.': Email string not valid';
+                    $errors[$attribute] = 'Email string not valid';
                 }
                 if(isset($schemaOptions['validate']['zip']) && mb_strlen($value) != $schemaOptions['validate']['zip'])
                 {
-                    $errors[] = $attribute.': PLZ zu lang oder kurz';
+                    $errors[$attribute] = 'PLZ zu lang oder kurz';
                 }
             }
             break;
