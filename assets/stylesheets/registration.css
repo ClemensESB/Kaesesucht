@@ -1,35 +1,34 @@
-.background {
-    background-image: url("../images/background.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 150%;
-    padding: none;
-}
-
-.registration {
-    text-align: center;
-    background-color: var(--darken-color);
-    width: 380px;
-}
-
-.registration * {
-    margin: 20px
-}
-
-.registration .head {
-    color: white;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.registration input.inputtext,
-.registration .button {
-    padding: 10px;
-    width: 300px;
-}
-
-.registration p *,
-.registration p {
-    color: white;
-    padding-top: 20px;
-}
+        .background {
+        background-image: url("../images/background.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 150%;
+        padding: none;
+    }
+    
+    .registration {
+        text-align: center;
+        background-color: var(--darken-color);
+        width: 380px;
+    }
+    
+    .registration * {
+        margin: 20px
+    }
+    
+    .registration .head {
+        color: white;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .registration input.inputtext,
+    .registration .button {
+        padding: 10px;
+        width: 300px;
+    }
+    
+    .registration p *,
+    .registration p {
+        color: white;
+        padding: 20px 0;

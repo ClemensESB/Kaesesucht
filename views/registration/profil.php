@@ -2,7 +2,7 @@
     <h1>Benutzerdaten</h1>
 </div>
 
-<div>
+<div class="username">
     <p>
         <?echo($this->currentUser['firstName'].' '.$this->currentUser['lastName']);?>
     </p>
