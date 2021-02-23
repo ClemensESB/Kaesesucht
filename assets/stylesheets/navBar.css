@@ -10,14 +10,13 @@ nav * {
 }
 
 nav img {
-    height: 50px;
+    height: 35px;
     width: auto;
 }
 
 label.logo a {
     font-size: 35px;
     float: left;
-    padding: 0 20px;
     font-weight: bold;
 }
 
@@ -44,20 +43,23 @@ nav ul a:hover {
 }
 
 nav .login {
+    height: 35px;
+    margin-top: 20px;
     float: right;
-    margin-right: 30px;
+    margin-right: 20px;
     font-size: 35px;
+    line-height: 35px;
 }
 
 .menu {
+    height: 35px;
+    width: 35px;
+    margin-top: 20px;
     font-size: 30px;
     color: grey;
     float: left;
-    line-height: 80px;
+    line-height: 35px;
     cursor: pointer;
-}
-
-.menu {
     display: none;
     margin-left: 20px;
 }
@@ -79,7 +81,6 @@ nav .login {
 @media (max-width: 858px) {
     .menu {
         display: block;
-        width: 50px;
     }
     nav ul {
         position: fixed;
