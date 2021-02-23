@@ -3,11 +3,13 @@ body::-webkit-scrollbar {
 }
 
 .panel {
-    
     padding: 10px 10px;
     margin-bottom: 10px;
 }
 
+.wrapper>.product_title {
+    text-align: center;
+}
 
 .table--object {
     position: relative;
@@ -37,8 +39,8 @@ body::-webkit-scrollbar {
     height: 100%;
 }
 
-.desc{
-    display: none;  
+.desc {
+    display: none;
 }
 
 .column--sub {
@@ -79,27 +81,30 @@ body::-webkit-scrollbar {
     width: 100%;
     height: 100%;
 }
-.duoBox {
 
-}
-.table--header{
+.duoBox {}
+
+.table--header {
     height: 40px;
     width: 100%;
 }
-.panel--th{
-    float:left;
+
+.panel--th {
+    float: left;
 }
-.th--article{
+
+.th--article {
     width: 60%;
 }
-.th--sub{
+
+.th--sub {
     text-align: right;
     width: 10%;
 }
-.t-align-left{
+
+.t-align-left {
     text-align: left;
 }
-
 
 .price {
     font-size: 24px;
@@ -119,36 +124,36 @@ body::-webkit-scrollbar {
 .text-box p {
     margin-bottom: 20px;
 }
+
 .selection--qty {
     height: 100%;
     width: 70px;
 }
 
-.marg-20{
+.marg-20 {
     margin-top: 20px;
 }
 
-.cart--select{
+.cart--select {
     width: 65%;
     height: 100%;
 }
 
-.column--full{
+.column--full {
     width: 100%;
     height: 80px;
     float: none;
 }
 
-.btn--size{
+.btn--size {
     width: 300px;
 }
 
-
 @media (max-width: 858px) {
     .table--object {
-    position: relative;
-    margin-bottom: 5px;
-    height: auto;
+        position: relative;
+        margin-bottom: 5px;
+        height: auto;
     }
     .column--prim {
         width: 60%;
@@ -161,14 +166,12 @@ body::-webkit-scrollbar {
         float: none;
         width: auto;
     }
-
     .column--sub form {
         height: 100%;
         text-align: right;
         float: none;
         width: auto;
     }
-
     .del--action {
         width: 20%;
         text-align: right;
@@ -179,13 +182,11 @@ body::-webkit-scrollbar {
         height: 40px;
         width: 40px;
     }
-
     .del--action form {
         width: 100%;
         height: 100%;
         display: inline-block;
     }
-
     .del--btn {
         font-size: 30px;
         color: red;
@@ -197,12 +198,10 @@ body::-webkit-scrollbar {
         display: grid;
         grid-template-columns: 50% 50%;
     }
-
-    .desc{
+    .desc {
         display: inline;
     }
-    .table--header{
+    .table--header {
         display: none;
     }
-
 }

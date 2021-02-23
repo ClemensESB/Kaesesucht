@@ -48,7 +48,7 @@
     border: 3px solid var(--first-prim-color);
 }
 
-.product_title {
+.product_container>.product_title {
     text-align: left;
     margin-top: 10px;
     font-size: 20px;
