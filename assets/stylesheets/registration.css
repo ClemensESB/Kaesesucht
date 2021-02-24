@@ -13,7 +13,7 @@
 }
 
 .registration * {
-    margin: 20px
+    margin: 30px 20px 0;
 }
 
 .registration .head {
@@ -32,4 +32,11 @@
 .registration p {
     color: white;
     padding: 20px 0;
+}
+
+.registration form div {
+    text-align: left;
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
 }

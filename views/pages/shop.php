@@ -76,7 +76,7 @@ if(isset($_POST['p']) &&  $_POST['p'] > 1 && isset($_POST['js'])) // only for ja
 //$this->loadNProducts($this->params['stmt'],3);
 //$this->loadProducts($this->params['products']);
 ?>
-<div>
+<div class="noscript">
 <noscript>
   <form method="get">
     <input type="hidden" name="c" value="pages">
@@ -91,6 +91,6 @@ if(isset($_POST['p']) &&  $_POST['p'] > 1 && isset($_POST['js'])) // only for ja
     <input type="hidden" name="SF" value="A">
   </form>
 </noscript>
+</div>
 
 <script type="text/javascript" src="assets/scripts/endless.js"></script>
-</div>
