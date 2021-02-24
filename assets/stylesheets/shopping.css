@@ -8,6 +8,7 @@ body::-webkit-scrollbar {
 }
 
 .wrapper>.product_title {
+    margin-top: 1px;
     text-align: center;
 }
 

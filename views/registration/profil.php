@@ -9,6 +9,9 @@
 </div>
 
 <div class="panel" >
+    <div class="button marg-20 content-align-mid btn--size">
+        <a href="index.php?c=registration&a=logout">Logout</a>
+    </div>
     <div id="id">
         <div class ="button marg-20 content-align-mid btn--size">
         <a href="javascript:toggle('dataid')">Nutzerdaten ändern</a>

@@ -8,8 +8,6 @@
         </form>
         <p>
             <a href="index.php?c=registration&a=signup">Signup</a>
-            |
-            <a href="index.php?c=registration&a=logout">Logout</a>
         </p>
         <div class="filler"></div>
     </div>
