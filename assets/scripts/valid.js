@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		btnSubmit.addEventListener('click', function() {
 			var valid = true;
 			const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-			const passRegex = /^(?=.*?[A-Z].*?)(?=.*?[a-z].*?)(?=.*[0-9].*?).{4,}$/m;
+			const passRegex = /^(?=.*?[A-Z].*?)(?=.*?[a-z].*?)(?=.*[0-9].*?).{8,}$/m;
 
 			if(!inputEmail || !inputEmail.value.match(emailRegex))
 			{

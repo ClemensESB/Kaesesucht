@@ -6,6 +6,9 @@
             <input type="password" id="password" name="password" placeholder="Passwort" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Passwort'" class="inputtext content-align-mid">
             <input type="submit" name="submit" id="loginbutton" value="Login" class="button content-align-mid">
         </form>
+        <div>
+            <?echo (isset($errors['account']) ? $errors['account'] : '');?>
+        </div>
         <p>
             <a href="index.php?c=registration&a=signup">Signup</a>
         </p>
