@@ -20,17 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="Anpassung post-&gt;get">
-      <change afterPath="$PROJECT_DIR$/assets/images/Datenfluss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/Navigationstruktur.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/SeitenLayout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/rmDB.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/website1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/website2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/documentation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/stylesheets/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/stylesheets/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/pagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/pagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/impressum.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/impressum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/registration/profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/registration/profil.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +59,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Second_Chance" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DynWebProg-BurgerCity-main" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -106,6 +97,7 @@
       <workItem from="1613727520634" duration="21175000" />
       <workItem from="1613815285400" duration="26899000" />
       <workItem from="1613992174969" duration="28619000" />
+      <workItem from="1614188325857" duration="2769000" />
     </task>
     <task id="LOCAL-00001" summary="profil logout pages">
       <created>1610640841456</created>
