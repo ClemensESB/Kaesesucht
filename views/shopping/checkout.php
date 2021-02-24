@@ -30,7 +30,7 @@
 	</div>
 	<div class ="panel">
 		<form method="POST" name="buy">
-			<button type="submit" class="button btn--size" style="padding: 10px;" name="buy">Bestellen <?echo($_SESSION['summe']);?>€</button>
+			<button type="submit" class="button btn--size" style="padding: 10px;" name="buy">bestellen <?echo($_SESSION['summe']);?>€</button>
 		</form>
 	</div>
 

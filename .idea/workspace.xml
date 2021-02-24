@@ -19,9 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="Anpassung post-&gt;get">
+    <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="kleine änderung">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/stylesheets/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/stylesheets/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/errorsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/errorsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/controller.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/controller.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/errors/error404.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/errors/error404.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/registration/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/registration/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/registration/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/registration/logout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/registration/profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/registration/profil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/registration/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/registration/signup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/shopping/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/shopping/checkout.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +106,7 @@
       <workItem from="1613727520634" duration="21175000" />
       <workItem from="1613815285400" duration="26899000" />
       <workItem from="1613992174969" duration="28619000" />
-      <workItem from="1614188325857" duration="2769000" />
+      <workItem from="1614188325857" duration="7129000" />
     </task>
     <task id="LOCAL-00001" summary="profil logout pages">
       <created>1610640841456</created>
@@ -155,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613840020436</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="kleine änderung">
+      <created>1614194025038</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1614194025038</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +197,7 @@
     <MESSAGE value="home Page" />
     <MESSAGE value="Anpassung post-&gt;get" />
     <MESSAGE value="need help guys.. :P" />
-    <option name="LAST_COMMIT_MESSAGE" value="need help guys.. :P" />
+    <MESSAGE value="kleine änderung" />
+    <option name="LAST_COMMIT_MESSAGE" value="kleine änderung" />
   </component>
 </project>

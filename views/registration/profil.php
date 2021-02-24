@@ -10,7 +10,7 @@
 
 <div class="panel" >
     <div class="button marg-20 content-align-mid btn--size">
-        <a href="index.php?c=registration&a=logout">Logout</a>
+        <a href="index.php?c=registration&a=logout">abmelden</a>
     </div>
     <div id="id">
         <div class ="button marg-20 content-align-mid btn--size">
