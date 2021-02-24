@@ -33,7 +33,7 @@ abstract class Model
 
             if(isset($params[$key]))
             {
-                $this->{$key} = $params[$key]; //schreibt bei key von schema
+                $this->{$key} = $params[$key];
             }
             else
             {
@@ -129,7 +129,7 @@ abstract class Model
         return $result;
     }
 
-    public function updateModel()
+    public function updateModel() // updates the current model to db version
     {
         $wherestr = '';
         foreach ($this->data as $key => $value) 
@@ -188,7 +188,7 @@ abstract class Model
             $sql .= ')'.$valueString.');';
             $statement = $db->prepare($sql);
             $statement->execute();
-            $this->updateModel();
+            $this->updateModel(); // inserted model will be updated to db version with id this is done in every insert because it doesn't harm and somtimes we need the id immediately
             return true;
         }
         catch(\PDOException $e)
@@ -272,6 +272,12 @@ abstract class Model
         switch($type)
         {
             case Model::TYPE_INT:
+            {
+                if(!is_numeric($value))
+                {
+                    $errors[$attribute] = 'is not an integer!';
+                }
+            }
             break;
             case Model::TYPE_FLOAT:
             break;

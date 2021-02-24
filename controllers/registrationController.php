@@ -14,7 +14,6 @@ class RegistrationController extends \kae\core\Controller
         $errors = [];
         $success = false;
 
-        // oh my good, we get data
         if(isset($_POST['submit']))
         {
             $email = $_POST['email'] ?? null;
@@ -41,19 +40,13 @@ class RegistrationController extends \kae\core\Controller
             // check errors?
             if(count($errors) == 0)
             {
-                //TODO Datenbankanbindung
                 $_SESSION['loggedIn'] = true;
                 $_SESSION['email'] = $email;
                 $this->redirect('index.php?c=pages&a=shop&p=1');
             }
 
-        // push to view ;)
         $this->setParam('errors', $errors);
         $this->setParam('success', $success);
-        //pre_r($errors);
-        //echo($_SESSION['email']);
-
-
         }
     }
 
@@ -66,7 +59,6 @@ class RegistrationController extends \kae\core\Controller
 	{
         $errors = [];
         $success = false;
-        // oh my good, we get data
         if(isset($_POST['submit']))
         {
             $passRegex = "/^(?=.*?[A-Z].*?)(?=.*?[a-z].*?)(?=.*[0-9].*?).{8,}$/m";
@@ -95,10 +87,10 @@ class RegistrationController extends \kae\core\Controller
             $address->validate($errors);
             $account->validate($errors);
 
-            //pre_r($errors);
 
 
-            foreach ($errors as $key => $value) {
+            foreach ($errors as $key => $value) 
+            {
                 if(is_array($value))
                 {
                     foreach ($value as $key => $object) 
@@ -107,7 +99,6 @@ class RegistrationController extends \kae\core\Controller
                     }   
                 }
             }
-            //$flat = array_reduce(...$errors);
             //array_walk_recursive($errors, function($a) use (&$return) { $return[] = $a; });
             //pre_r($errors);
 
@@ -129,8 +120,6 @@ class RegistrationController extends \kae\core\Controller
                 $account->insert($errors);
             }
         }
-
-        // push to view ;)
         $this->setParam('errors', $errors);
         $this->setParam('success', $success);
 	}
@@ -155,8 +144,6 @@ class RegistrationController extends \kae\core\Controller
             $errors = array();
             $address = new Address($this->currentUser);
             $account = new Account($this->currentUser);
-            #pre_r($address);
-            #pre_r($account);
             if($_POST['email'] != $this->currentUser['email'])
             {
                 $exists = Account::findOne('email = "'.$_POST['email'].'"');
@@ -170,18 +157,11 @@ class RegistrationController extends \kae\core\Controller
 
                     $account->email = $_POST['email'];
                     $account->validate($errors);
-                    #pre_r($account);
                     if(count($errors) == 0)
                     {
                         $account = new Account($_POST);
                         $account->id = $this->currentUser['id'];
-                        #pre_r($account);
                         $account->update($errors);
-                    }
-                    else
-                    {
-
-                        #pre_r($errors);
                     }
                 }
             }
@@ -189,7 +169,6 @@ class RegistrationController extends \kae\core\Controller
             {
                 $sql = ' zipCode = "'.$_POST['zipCode'].'" and city = "'.$_POST['city'].'" and street = "'.$_POST['street'].'" and strNo = "'.$_POST['strNo'].'"';
                 $temp = Address::findone($sql);
-                #pre_r($temp);
                 if(!empty($temp))
                 {
                     $address = new Address($temp);
@@ -205,7 +184,6 @@ class RegistrationController extends \kae\core\Controller
                 }
 
                     $account->address_id = $address->id;
-                    #pre_r($account);
                     $account->update($errors);
             }
             if(count($errors) == 0)

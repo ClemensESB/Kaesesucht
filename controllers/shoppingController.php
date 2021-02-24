@@ -12,7 +12,6 @@ class ShoppingController extends \kae\core\Controller
 
 	public function actionCheckout()
 	{
-		#pre_r($_POST);
 		if($this->currentUser !== null)
 		{
 			$this->setParam('payMethod',['Bitcoin','Paypal','Sofort']);  // sets the payMethods
@@ -28,15 +27,12 @@ class ShoppingController extends \kae\core\Controller
 			
 			if(isset($_POST['buy']))
 			{	
-				#pre_r($_SESSION['order']);
-				#pre_r($this->params['payMethod']);
 				if(in_array($_SESSION['order']->payMethod, $this->params['payMethod'])) 
 				{
-				#pre_r($_POST);
-				$_SESSION['order']->account_id = $this->currentUser['id']; //if the User clicks buy the order is put together for the current user.
-				$currentDateTime = date('Y-m-d H:i:s'); 
-				$_SESSION['order']->createdAt = $currentDateTime; // to make sure the order doesn't overwrites an existing entry the time is set here and not by db
-				$_SESSION['order']->insert($errors); //the order gets inserted
+					$_SESSION['order']->account_id = $this->currentUser['id']; //if the User clicks buy the order is put together for the current user.
+					$currentDateTime = date('Y-m-d H:i:s'); 
+					$_SESSION['order']->createdAt = $currentDateTime; // to make sure the order doesn't overwrites an existing entry the time is set here and not by db
+					$_SESSION['order']->insert($errors); //the order gets inserted
 					foreach ($_SESSION['cart'] as $key => $product) //after the order is inserted the ordered Items are inserted
 					{
 						$price = $product->pricePerUnit*$product->getQuantity();
@@ -49,20 +45,15 @@ class ShoppingController extends \kae\core\Controller
 				}
 			}
 		}
-		
 	}
 	
 	public function actionShoppingCart()
 	{	
-
-		#pre_r($_POST);
 		$_SESSION['summe'] = 0;
-		#pre_r($_GET);
 		if(!empty($_SESSION['cart']))
 		{
 			if(isset($_POST['deleteProduct'])) // deletes a product by given id from cart
 			{
-				#pre_r($_POST);
 				foreach ($_SESSION['cart'] as $key => $value) 
 				{
 					if($_SESSION['cart'][$key]->id == $_POST['delID'])
@@ -73,7 +64,6 @@ class ShoppingController extends \kae\core\Controller
 			}
 			if(isset($_POST['chQuantity'])) // changes quantity of a product by given id in cart
 			{
-			#pre_r($_POST);
 				foreach ($_SESSION['cart'] as $key => $value) 
 				{
 					if($_SESSION['cart'][$key]->id == $_POST['idProduct'])
@@ -88,9 +78,9 @@ class ShoppingController extends \kae\core\Controller
 			}
 		}
 	}
+
 	public function actionProduct()
 	{
-		#pre_r($_GET['id']);
 		if(Full::findOne('id = '.$_GET['id']) != null){
 			$this->fullProduct = new Full(Full::findOne('id = '.$_GET['id']));
 
@@ -104,8 +94,6 @@ class ShoppingController extends \kae\core\Controller
 		{
 			$this->redirect('index.php?c=pages&a=shop');
 		}
-
-		#pre_r($this->fullProduct);
 	}
 
 	public function putInCart($fullProduct)
@@ -135,11 +123,13 @@ class ShoppingController extends \kae\core\Controller
 			{
 				if($product->getQuantity() == $i)
 				{
-					echo('<option selected="selected" value="'.$i.'">'.$i.'</option>');
+					$actual = $i*100;
+					echo('<option selected="selected" value="'.$i.'">'.$actual.'g</option>');
 				}	
 				else
 				{
-					echo('<option value="'.$i.'">'.$i.'</option>');
+					$actual = $i*100;
+					echo('<option value="'.$i.'">'.$actual.'g</option>');
 				}
 			}	
 		echo'</select>';

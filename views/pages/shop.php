@@ -47,6 +47,17 @@ if(isset($_POST['p']) &&  $_POST['p'] > 1 && isset($_POST['js'])) // only for ja
             <option value="1"<?echo(isset($_GET['rawMilk']) && $_GET['rawMilk'] == 1 ? 'selected' : '');?>>Ja</option>
             <option value="2"<?echo(isset($_GET['rawMilk']) && $_GET['rawMilk'] == 2 ? 'selected' : '');?>>Nein</option>
         </select>
+        <label for="sort">Sorte</label>
+        <select id="sort" class="select-field content-align-mid" name="sort">
+                <option value="" <?echo(empty($_GET['sort']) ? 'selected' : '');?>>Keine Präferenz</option>
+            <?foreach($this->params['sorts'] as $value):?>
+                <?if(isset($_GET['sort']) && $_GET['sort'] == $value['id']):?>
+                    <option value="<?echo($value['id']);?>" selected><?echo($value['sortName']);?></option>
+                <?else:?>
+                    <option value="<?echo($value['id']);?>"><?echo($value['sortName']);?></option>
+                <?endif;?>
+            <?endforeach;?>
+        </select>
         <input type="submit" name="SubmitFilter" value="Anwenden" class="button content-align-mid" >
     </form>
 </div>
@@ -59,7 +70,7 @@ if(isset($_POST['p']) &&  $_POST['p'] > 1 && isset($_POST['js'])) // only for ja
  <? $this->loadProducts($this->params['products']);?>
 </div>
 <!-- (B) NOW LOADING -->
-<div id="page-loading" class="panel" style="display: none;">Now loading...</div>
+<div id="page-loading" class="panel" style="display: none;">keine Ergebnisse</div>
 <?
 //$this->paging($this->params['stmt']);
 //$this->loadNProducts($this->params['stmt'],3);

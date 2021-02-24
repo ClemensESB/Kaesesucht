@@ -27,11 +27,13 @@ class ModelCheeseFull extends \kae\core\Model
     'pricePerUnit'  =>['type' => BaseModel::TYPE_FLOAT],
 	];
 
-  private $quantity = 1;
-  public function getQuantity(){
+  private $quantity = 1; // quantity for the shoppingcart
+  public function getQuantity()
+  {
     return $this->quantity;
   }
-  public function setQuantity($qty){
+  public function setQuantity($qty)
+  {
     $this->quantity= $qty;
   }
 
@@ -94,24 +96,4 @@ class ModelCheeseFull extends \kae\core\Model
 
         return null;
     }
-
-
-    public static function nProducts($key)
-    {
-        $db = $GLOBALS['db'];
-        $result = null;
-
-        try {
-            $sql = 'SELECT * FROM ' . self::tablename();
-
-            $sql .= ' ORDER BY createdAt desc LIMIT ' . $key . ';';
-
-            $result = $db->query($sql)->fetchAll();
-        } catch (\PDOException $e) {
-            die('Select statement failed: ' . $e->getMessage());
-        }
-
-        return $result;
-    }
-
 }

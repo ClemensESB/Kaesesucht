@@ -11,7 +11,7 @@
 		</div>
 		<div class="text-box">
 			<p >
-				Preis pro Stück:
+				Preis pro 100g:
 			</p>
 			<div class="price">
 			<?echo($this->fullProduct->pricePerUnit.' €');?>

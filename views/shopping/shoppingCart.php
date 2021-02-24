@@ -16,7 +16,7 @@
 			Artikel
 		</div>
 		<div class="panel--th th--sub">
-			Anzahl
+			Menge
 		</div>
 		<div class="panel--th th--sub">
 			Stückpreis
@@ -41,7 +41,7 @@
 			</div>
 			<div class="column--sub duoBox">
 				<div class="price desc">
-					Anzahl:
+					Menge:
 				</div>
 				<?$this->qtySelection($product,false);?>
 			</div>

@@ -45,7 +45,7 @@
                             <img src="<?echo(ASSETPATH.'images'.DIRECTORY_SEPARATOR.$item['pictureName']);?>" class="column--image">
 
                             <?echo($item['cheeseName']);?><br>
-                            Stückzahl: <?echo($item['quantity']);?><br>
+                            Menge: <?echo($item['quantity']*100);?>g<br>
                             Preis: <?echo($item['price']);?> €
                         </div>
                         <?$sum += $item['price'];?>

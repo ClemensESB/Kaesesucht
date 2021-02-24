@@ -5,7 +5,7 @@ use \kae\model\ModelCheese as Cheese;
 use \kae\model\ModelAddress as Address;
 use \kae\model\ModelPrice as Price;
 use \kae\model\ModelCheeseFull as FullProduct;
-
+use \kae\model\ModelSort as Sort;
 
 class PagesController extends \kae\core\Controller
 {
@@ -25,8 +25,6 @@ class PagesController extends \kae\core\Controller
 	}
 	public function actionShop()
 	{
-		#pre_r($_GET);
-		#pre_r($_COOKIE);
 		if (isset($_GET['SubmitFilter'])) // builds the Filterstatement
 		{
 		    $filterStmt = '';
@@ -46,12 +44,18 @@ class PagesController extends \kae\core\Controller
 		      $rawMilk= $_GET['rawMilk'];
 		      $filterStmt .= 'rawMilk = '.$rawMilk.' AND ';
 		    }
+		    if(isset($_GET['sort']) && !empty($_GET['sort']))
+		    {
+		    	$filterStmt .= 'sort_id = '.$_GET['sort'].' AND ';
+		    }
 		    $this->params['stmt'] = preg_replace('/\W\w+\s*(\W*)$/', '$1', $filterStmt);
 		}
 		else
 		{
 		    $this->params['stmt'] = '';
 		}
+
+		$this->params['sorts'] = Sort::find();
 
 
 
@@ -75,11 +79,6 @@ class PagesController extends \kae\core\Controller
 		else{
 
 		}
-		//pre_r($_POST);
-		//pre_r($_GET);
-		//pre_r($_COOKIE);
-		//pre_r($GLOBALS);
-
 		$this->params['pages'] = ceil($entries/PagesController::objects); // determines how many pages are needed
 		$offset = ($_POST['p']-1)*PagesController::objects; // calculates the start of the array for the selected page
 		$products = array_slice($products, $offset, PagesController::objects);// array for the selected page is sliced
@@ -89,7 +88,6 @@ class PagesController extends \kae\core\Controller
 
 	public function loadProducts($array) // builds the block for an array of products
 	{
-        //echo('<div class="page_container content-align-mid">');
         foreach ($array as $key => $value) 
         {
         	echo('<div class="panel">');
@@ -109,7 +107,6 @@ class PagesController extends \kae\core\Controller
 		    ');
 		    echo('</div>');
         }
-        //echo('</div>');
 	}
 }
 ?>
