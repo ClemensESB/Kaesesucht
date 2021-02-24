@@ -16,9 +16,9 @@ $db = null;
 try
 {
     $db = new PDO($dns, $user, $pw, $options);
+
 } 
 catch (PDOException $e)
 {
     die( 'Database connection failed: ' . $e->getMessage() );
 }
-

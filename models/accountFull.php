@@ -67,26 +67,10 @@ class ModelAccountFull extends \kae\core\Model
                 ],
 	];
 
-  public static function fullTable()
-    {
-      $db = $GLOBALS['db'];
-      $result = null;
-      $sql = 'SELECT account.id,account.createdAt.account.updatetAt,email,firstName,lastName,address_id,isAdmin,passwordHash,zipCode,city,street,strNo FROM '.self::tablename().' JOIN address ON account.address_id = address.id';
-
-      $result = $db->query($sql)->fetchAll();
-      return $result;
-    }
-  public function fullUser()
-    {
-      $result = self::fullTable();
-      return $result[0];
-    }
-
   public static function find($where = '')
     {
         $db = $GLOBALS['db'];
         $result = null;
-
         try
         {
             $sql = 'SELECT account.id, account.createdAt,account.updatetAt,email,firstName,lastName,address_id,isAdmin,passwordHash,zipCode,city,street,strNo FROM '.self::tablename().' JOIN address ON account.address_id = address.id';
@@ -99,7 +83,10 @@ class ModelAccountFull extends \kae\core\Model
         }
         catch(\PDOException $e)
         {
-            die('Select statement failed: '. $e->getMessage());
+            $_SESSION['error'] = $e->getMessage();
+            header('location: index.php?c=errors&a=error404&error=sql');
+            exit();
+            //die('Select statement failed: '. $e->getMessage());
         }
         return $result;
     }

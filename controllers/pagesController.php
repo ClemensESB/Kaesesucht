@@ -5,7 +5,7 @@ use \kae\model\ModelCheese as Cheese;
 use \kae\model\ModelAddress as Address;
 use \kae\model\ModelPrice as Price;
 use \kae\model\ModelCheeseFull as FullProduct;
-
+use \kae\model\ModelSort as Sort;
 
 class PagesController extends \kae\core\Controller
 {
@@ -25,26 +25,31 @@ class PagesController extends \kae\core\Controller
 	}
 	public function actionShop()
 	{
-		#pre_r($_GET);
-		#pre_r($_COOKIE);
-		if (isset($_GET['SubmitFilter'])) // builds the Filterstatement
+		if (isset($_GET['SF'])) // builds the Filterstatement
 		{
 		    $filterStmt = '';
-		    if (isset($_GET['taste'])&& !empty($_GET['taste'])){
-		        $taste= $_GET['taste'];
-		        $filterStmt .= 'taste = "'.$taste.'" AND ';
+		    if (isset($_GET['t'])&& !empty($_GET['t']))
+		    {
+		        $filterStmt .= 'taste = "'.$_GET['t'].'" AND ';
 		    }
-		    if (isset($_GET['lactose'])&& !empty($_GET['lactose'])){
-		        $lactose= $_GET['lactose'];
-		        $filterStmt .= 'lactose = '.$lactose.' AND ';
+		    if (isset($_GET['l'])&& !empty($_GET['l']))
+		    {
+		        $filterStmt .= 'lactose = '.$_GET['l'].' AND ';
 		    }
-		    if (isset($_GET['milkType'])&& !empty($_GET['milkType'])){
-		        $milkType= $_GET['milkType'];
-		        $filterStmt .= 'milkType = "'.$milkType.'" AND ';
+		    if (isset($_GET['m'])&& !empty($_GET['m']))
+		    {
+		        $filterStmt .= 'milkType = "'.$_GET['m'].'" AND ';
 		    }
-		    if (isset($_GET['rawMilk'])&& !empty($_GET['rawMilk'])){
-		      $rawMilk= $_GET['rawMilk'];
-		      $filterStmt .= 'rawMilk = '.$rawMilk.' AND ';
+		    if (isset($_GET['r'])&& !empty($_GET['r']))
+		    {
+		      $filterStmt .= 'rawMilk = '.$_GET['r'].' AND ';
+		    }
+		    if(isset($_GET['s']) && !empty($_GET['s']) && is_numeric($_GET['s']))
+		    {
+		    	$filterStmt .= 'sort_id = '.$_GET['s'].' AND ';
+		    }
+		    else{
+		    	$filterStmt .= '';
 		    }
 		    $this->params['stmt'] = preg_replace('/\W\w+\s*(\W*)$/', '$1', $filterStmt);
 		}
@@ -53,13 +58,15 @@ class PagesController extends \kae\core\Controller
 		    $this->params['stmt'] = '';
 		}
 
+		$this->params['sorts'] = Sort::find();
+
 
 
 		$products = FullProduct::find($this->params['stmt']);
 		$entries = count($products); // cpt. obvious
 		
 		
-		if(empty($_GET['p'])) // if the user didn't use the link and did type the address in by himself he might forget the p
+		if(empty($_GET['p']) || !is_numeric($_GET['p']) || 1 > $_GET['p']) // if the user didn't use the link and did type the address in by himself he might forget the p
 		{ 
 			$_GET['p'] = 1;
 		}
@@ -75,11 +82,6 @@ class PagesController extends \kae\core\Controller
 		else{
 
 		}
-		//pre_r($_POST);
-		//pre_r($_GET);
-		//pre_r($_COOKIE);
-		//pre_r($GLOBALS);
-
 		$this->params['pages'] = ceil($entries/PagesController::objects); // determines how many pages are needed
 		$offset = ($_POST['p']-1)*PagesController::objects; // calculates the start of the array for the selected page
 		$products = array_slice($products, $offset, PagesController::objects);// array for the selected page is sliced
@@ -89,7 +91,6 @@ class PagesController extends \kae\core\Controller
 
 	public function loadProducts($array) // builds the block for an array of products
 	{
-        //echo('<div class="page_container content-align-mid">');
         foreach ($array as $key => $value) 
         {
         	echo('<div class="panel">');
@@ -109,7 +110,6 @@ class PagesController extends \kae\core\Controller
 		    ');
 		    echo('</div>');
         }
-        //echo('</div>');
 	}
 }
 ?>

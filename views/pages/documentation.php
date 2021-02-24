@@ -91,10 +91,5 @@
         <li>js: signup validierung,endless scroll</li>
         <li>Zeitaufwand ca. 80 Stunden</li>
         </ul>
-        
-
     </p>
-
-
-
 </div>

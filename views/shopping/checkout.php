@@ -51,7 +51,9 @@
 			<div class="panel border--bottom">
 			<div class="table--object column--full">
 				<img src="<?echo(ASSETPATH.'images'.DIRECTORY_SEPARATOR.$value->pictureName);?>" class="column--image">
-				Artikel: <?echo($value->cheeseName.'<br>Anzahl: '.$value->getQuantity().'<br>Preis gesamt: '.$value->pricePerUnit*$value->getQuantity());?> €<br>
+				Artikel: 
+				<? $gram = $value->getQuantity()*100; 
+				echo($value->cheeseName.'<br>Menge: '.$gram.'g<br>Preis gesamt: '.$value->pricePerUnit*$value->getQuantity());?> €<br>
 			</div>
 			</div>
 			<?endforeach;?>

@@ -5,9 +5,9 @@ namespace kae\model;
 use \kae\core\Model as BaseModel;
 
 
-class ModelSorts extends \kae\core\Model
+class ModelSort extends \kae\core\Model
 {
-	const TABELNAME = '`sort`';
+	const TABLENAME = '`sort`';
 	protected $schema = [
 	'id'		=>['type' => BaseModel::TYPE_INT],
   	'createdAt'	=>['type' => BaseModel::TYPE_STRING],

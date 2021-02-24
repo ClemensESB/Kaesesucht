@@ -27,11 +27,13 @@ class ModelCheeseFull extends \kae\core\Model
     'pricePerUnit'  =>['type' => BaseModel::TYPE_FLOAT],
 	];
 
-  private $quantity = 1;
-  public function getQuantity(){
+  private $quantity = 1; // quantity for the shoppingcart
+  public function getQuantity()
+  {
     return $this->quantity;
   }
-  public function setQuantity($qty){
+  public function setQuantity($qty)
+  {
     $this->quantity= $qty;
   }
 
@@ -40,7 +42,7 @@ class ModelCheeseFull extends \kae\core\Model
     {
         $db = $GLOBALS['db'];
         $result = null;
-
+        
         try
         {
             $sql = 'SELECT cheese.id, cheese.createdAt, cheese.updatetAt, cheeseName, sort_id, price_id, qtyInStock, descrip, recipe, taste, lactose, milkType, rawMilk, pictureName, sortName, pricePerUnit FROM '.self::tablename().' JOIN sort ON cheese.sort_id = sort.id JOIN price ON cheese.price_id = price.id';
@@ -53,7 +55,10 @@ class ModelCheeseFull extends \kae\core\Model
         }
         catch(\PDOException $e)
         {
-            die('Select statement failed: '. $e->getMessage());
+            $_SESSION['error'] = $e->getMessage();
+            header('location: index.php?c=errors&a=error404&error=sql');
+            exit();
+            //die('Select statement failed: '. $e->getMessage());
         }
        // echo($sql);
         //pre_r($result);
@@ -63,7 +68,6 @@ class ModelCheeseFull extends \kae\core\Model
     {
         $db = $GLOBALS['db'];
         $result = null;
-
         try
         {
             $sql = 'SELECT cheese.id, cheese.createdAt, cheese.updatetAt, cheeseName, sort_id, price_id, qtyInStock, descrip, recipe,
@@ -77,7 +81,11 @@ class ModelCheeseFull extends \kae\core\Model
         }
         catch(\PDOException $e)
         {
-            die('Select statement failed: '. $e->getMessage());
+            $_SESSION['error'] = $e->getMessage();
+            header('location: index.php?c=errors&a=error404&error=sql');
+            exit();
+            //die('Select statement failed: '. $e->getMessage());
+
         }
         // echo($sql);
         //pre_r($result);
@@ -94,24 +102,4 @@ class ModelCheeseFull extends \kae\core\Model
 
         return null;
     }
-
-
-    public static function nProducts($key)
-    {
-        $db = $GLOBALS['db'];
-        $result = null;
-
-        try {
-            $sql = 'SELECT * FROM ' . self::tablename();
-
-            $sql .= ' ORDER BY createdAt desc LIMIT ' . $key . ';';
-
-            $result = $db->query($sql)->fetchAll();
-        } catch (\PDOException $e) {
-            die('Select statement failed: ' . $e->getMessage());
-        }
-
-        return $result;
-    }
-
 }

@@ -15,6 +15,7 @@ class ErrorsController extends \kae\core\Controller
 	{
         $errorMessage = 'Unknown error, please check your code!';
 
+
         if(isset($_GET['error']))
         {
             switch($_GET['error'])
@@ -24,6 +25,9 @@ class ErrorsController extends \kae\core\Controller
                     break;
                 case 'viewpath':
                     $errorMessage = 'no valid view';
+                    break;
+                case 'sql':
+                    $errorMessage = isset($_SESSION['error']) ? $_SESSION['error'] : '¯\_(ツ)_/¯';
                     break;
             }
         }
