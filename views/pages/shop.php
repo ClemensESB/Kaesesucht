@@ -1,13 +1,13 @@
 <?
 if(isset($_POST['p']) &&  $_POST['p'] > 1 && isset($_POST['js'])) // only for javascript is needed to make the "endless" scrolling stop it's endlessness
 {
-    if($_POST['p'] == $this->params['pages']+1)
+    if($_POST['p'] == $pages+1)
     {
         echo("END");
     }
     else
     {
-        $this->loadProducts($this->params['products']);
+        $this->loadProducts($products);
     }
     exit();
 }
@@ -50,7 +50,7 @@ if(isset($_POST['p']) &&  $_POST['p'] > 1 && isset($_POST['js'])) // only for ja
         <label for="sort">Sorte</label>
         <select id="sort" class="select-field content-align-mid" name="s">
                 <option value="" <?echo(empty($_GET['s']) ? 'selected' : '');?>>Keine Präferenz</option>
-            <?foreach($this->params['sorts'] as $value):?>
+            <?foreach($sorts as $value):?>
                 <?if(isset($_GET['s']) && $_GET['s'] == $value['id']):?>
                     <option value="<?echo($value['id']);?>" selected><?echo($value['sortName']);?></option>
                 <?else:?>
@@ -67,7 +67,7 @@ if(isset($_POST['p']) &&  $_POST['p'] > 1 && isset($_POST['js'])) // only for ja
 
 <!-- (A) CONTENTS -->
 <div id="page-content" class="page_container content-align-mid">
- <? $this->loadProducts($this->params['products']);?>
+ <? $this->loadProducts($products);?>
 </div>
 <!-- (B) NOW LOADING -->
 <div id="page-loading" class="panel" style="display: none;">keine Ergebnisse</div>
@@ -82,7 +82,7 @@ if(isset($_POST['p']) &&  $_POST['p'] > 1 && isset($_POST['js'])) // only for ja
     <input type="hidden" name="c" value="pages">
     <input type="hidden" name="a" value="shop">
     <button class="button" name="p" value="<?echo($_GET['p']>1 ? $_GET['p']-1:1);?>" style="float: left;">previous</button>
-    <button class="button" name="p" value="<?echo($_GET['p']<$this->params['pages'] ? $_GET['p']+1:$_GET['p']);?>" style="float: right;">next</button>
+    <button class="button" name="p" value="<?echo($_GET['p']<$pages ? $_GET['p']+1:$_GET['p']);?>" style="float: right;">next</button>
     <input type="hidden" name="t" value="<?echo(isset($_GET['t']) ? $_GET['t']:'');?>">
     <input type="hidden" name="l" value="<?echo(isset($_GET['l']) ? $_GET['l']:'');?>">
     <input type="hidden" name="m" value="<?echo(isset($_GET['m']) ? $_GET['m']:'');?>">
