@@ -281,7 +281,7 @@ abstract class Model
             {
                 if(!is_numeric($value))
                 {
-                    $errors[$attribute] = 'is not an integer!';
+                    $errors[$attribute] = 'ist keine Zahl!';
                 }
             }
             break;
@@ -291,15 +291,15 @@ abstract class Model
             {
                 if(isset($schemaOptions['validate']['min']) && mb_strlen($value) < $schemaOptions['validate']['min'])
                 {
-                    $errors[$attribute] = 'String needs min. '.$schemaOptions['validate']['min'].' characters!';
+                    $errors[$attribute] = 'mindestens '.$schemaOptions['validate']['min'].' Buchstaben!';
                 }
                 if(isset($schemaOptions['validate']['max']) && mb_strlen($value) > $schemaOptions['validate']['max'])
                 {
-                    $errors[$attribute] = 'String can have max. '.$schemaOptions['validate']['max'].' characters!';
+                    $errors[$attribute] = 'maximal '.$schemaOptions['validate']['max'].' Buchstaben!';
                 }
                 if(isset($schemaOptions['validate']['email']) && !filter_var($value, FILTER_VALIDATE_EMAIL))
                 {
-                    $errors[$attribute] = 'Email string not valid';
+                    $errors[$attribute] = 'E-mail ungültig';
                 }
                 if(isset($schemaOptions['validate']['zip']) && mb_strlen($value) != $schemaOptions['validate']['zip'])
                 {
