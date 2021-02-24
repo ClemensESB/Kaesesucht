@@ -102,7 +102,21 @@
     transition: .5s;
 }
 
-@media (max-width: 1130px) {
+.noscript {
+    position: relative;
+    margin-bottom: 20px;
+    height: 40px;
+    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.noscript .button {
+    height: 40px;
+    width: 70px;
+}
+
+@media (max-width: 1380px) {
     .page_container {
         grid-template-columns: auto auto auto;
         width: min-content;
