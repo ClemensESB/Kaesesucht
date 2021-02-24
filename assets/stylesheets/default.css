@@ -38,6 +38,7 @@ h5,
 h6 {
     color: var(--first-sec-color);
     text-align: center;
+    padding: 1px;
 }
 
 p {
