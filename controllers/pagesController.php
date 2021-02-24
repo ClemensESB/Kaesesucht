@@ -25,28 +25,31 @@ class PagesController extends \kae\core\Controller
 	}
 	public function actionShop()
 	{
-		if (isset($_GET['SubmitFilter'])) // builds the Filterstatement
+		if (isset($_GET['SF'])) // builds the Filterstatement
 		{
 		    $filterStmt = '';
-		    if (isset($_GET['taste'])&& !empty($_GET['taste'])){
-		        $taste= $_GET['taste'];
-		        $filterStmt .= 'taste = "'.$taste.'" AND ';
-		    }
-		    if (isset($_GET['lactose'])&& !empty($_GET['lactose'])){
-		        $lactose= $_GET['lactose'];
-		        $filterStmt .= 'lactose = '.$lactose.' AND ';
-		    }
-		    if (isset($_GET['milkType'])&& !empty($_GET['milkType'])){
-		        $milkType= $_GET['milkType'];
-		        $filterStmt .= 'milkType = "'.$milkType.'" AND ';
-		    }
-		    if (isset($_GET['rawMilk'])&& !empty($_GET['rawMilk'])){
-		      $rawMilk= $_GET['rawMilk'];
-		      $filterStmt .= 'rawMilk = '.$rawMilk.' AND ';
-		    }
-		    if(isset($_GET['sort']) && !empty($_GET['sort']))
+		    if (isset($_GET['t'])&& !empty($_GET['t']))
 		    {
-		    	$filterStmt .= 'sort_id = '.$_GET['sort'].' AND ';
+		        $filterStmt .= 'taste = "'.$_GET['t'].'" AND ';
+		    }
+		    if (isset($_GET['l'])&& !empty($_GET['l']))
+		    {
+		        $filterStmt .= 'lactose = '.$_GET['l'].' AND ';
+		    }
+		    if (isset($_GET['m'])&& !empty($_GET['m']))
+		    {
+		        $filterStmt .= 'milkType = "'.$_GET['m'].'" AND ';
+		    }
+		    if (isset($_GET['r'])&& !empty($_GET['r']))
+		    {
+		      $filterStmt .= 'rawMilk = '.$_GET['r'].' AND ';
+		    }
+		    if(isset($_GET['s']) && !empty($_GET['s']) && is_numeric($_GET['s']))
+		    {
+		    	$filterStmt .= 'sort_id = '.$_GET['s'].' AND ';
+		    }
+		    else{
+		    	$filterStmt .= '';
 		    }
 		    $this->params['stmt'] = preg_replace('/\W\w+\s*(\W*)$/', '$1', $filterStmt);
 		}

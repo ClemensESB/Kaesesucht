@@ -1,6 +1,5 @@
 <?php
 
-
 require_once 'config/init.php';
 //lädt die initialen Werte
 require_once 'config/database.php';

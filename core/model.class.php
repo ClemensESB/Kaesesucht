@@ -93,7 +93,10 @@ abstract class Model
         }
         catch(\PDOException $e)
         {
-            die('Select statement failed: '. $e->getMessage());
+            //die('Select statement failed: '. $e->getMessage());
+            $_SESSION['error'] = $e->getMessage();
+            header('location: index.php?c=errors&a=error404&error=sql');
+            exit();
         }
 
         return $result;
@@ -122,7 +125,10 @@ abstract class Model
         }
         catch(\PDOException $e)
         {
-            die('Select statement failed: '. $e->getMessage());
+            $_SESSION['error'] = $e->getMessage();
+            header('location: index.php?c=errors&a=error404&error=sql');
+            exit();
+            //die('Select statement failed: '. $e->getMessage());
         }
         $result = $result[0]['count(id)'];
 

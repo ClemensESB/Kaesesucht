@@ -42,7 +42,7 @@ class ModelCheeseFull extends \kae\core\Model
     {
         $db = $GLOBALS['db'];
         $result = null;
-
+        
         try
         {
             $sql = 'SELECT cheese.id, cheese.createdAt, cheese.updatetAt, cheeseName, sort_id, price_id, qtyInStock, descrip, recipe, taste, lactose, milkType, rawMilk, pictureName, sortName, pricePerUnit FROM '.self::tablename().' JOIN sort ON cheese.sort_id = sort.id JOIN price ON cheese.price_id = price.id';
@@ -55,7 +55,10 @@ class ModelCheeseFull extends \kae\core\Model
         }
         catch(\PDOException $e)
         {
-            die('Select statement failed: '. $e->getMessage());
+            $_SESSION['error'] = $e->getMessage();
+            header('location: index.php?c=errors&a=error404&error=sql');
+            exit();
+            //die('Select statement failed: '. $e->getMessage());
         }
        // echo($sql);
         //pre_r($result);
@@ -65,7 +68,6 @@ class ModelCheeseFull extends \kae\core\Model
     {
         $db = $GLOBALS['db'];
         $result = null;
-
         try
         {
             $sql = 'SELECT cheese.id, cheese.createdAt, cheese.updatetAt, cheeseName, sort_id, price_id, qtyInStock, descrip, recipe,
@@ -79,7 +81,11 @@ class ModelCheeseFull extends \kae\core\Model
         }
         catch(\PDOException $e)
         {
-            die('Select statement failed: '. $e->getMessage());
+            $_SESSION['error'] = $e->getMessage();
+            header('location: index.php?c=errors&a=error404&error=sql');
+            exit();
+            //die('Select statement failed: '. $e->getMessage());
+
         }
         // echo($sql);
         //pre_r($result);
