@@ -301,9 +301,9 @@ abstract class Model
                 {
                     $errors[$attribute] = 'E-mail ungültig';
                 }
-                if(isset($schemaOptions['validate']['zip']) && mb_strlen($value) != $schemaOptions['validate']['zip'])
+                if(isset($schemaOptions['validate']['zip']) && !preg_match("/^[0-9]{5}$/m",$value))
                 {
-                    $errors[$attribute] = 'PLZ zu lang oder kurz';
+                    $errors[$attribute] = 'PLZ nicht nur aus 5 Ziffern';
                 }
             }
             break;
