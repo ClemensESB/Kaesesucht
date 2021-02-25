@@ -102,7 +102,7 @@
         -pages : Home, Shop , Documentation <br>
         -Controllers : Filter Controller, Home Controller <br>
         -Styles : Styles für Home and Shop pages (die wir geändert haben)<br><br>
-        -Aufwand : Hoch <br><br>
+        -Aufwand : ca. 60h<br><br>
         Antonio :
         <ul>
             <li>Seitenlayout, Farbschema</li>

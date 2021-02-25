@@ -19,15 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="kleine änderung">
-      <change afterPath="$PROJECT_DIR$/assets/images/c_home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/c_kasse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/c_login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/c_product.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/c_profil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/c_shop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/c_signup.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/c_warenkorb.png" afterDir="false" />
+    <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="Doku">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/pages/documentation.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/documentation.php" afterDir="false" />
     </list>
@@ -110,7 +102,8 @@
       <workItem from="1613727520634" duration="21175000" />
       <workItem from="1613815285400" duration="26899000" />
       <workItem from="1613992174969" duration="28619000" />
-      <workItem from="1614188325857" duration="10271000" />
+      <workItem from="1614188325857" duration="10516000" />
+      <workItem from="1614245326665" duration="102000" />
     </task>
     <task id="LOCAL-00001" summary="profil logout pages">
       <created>1610640841456</created>
@@ -182,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614207019782</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Doku">
+      <created>1614214513548</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1614214513549</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +209,7 @@
     <MESSAGE value="Anpassung post-&gt;get" />
     <MESSAGE value="need help guys.. :P" />
     <MESSAGE value="kleine änderung" />
-    <option name="LAST_COMMIT_MESSAGE" value="kleine änderung" />
+    <MESSAGE value="Doku" />
+    <option name="LAST_COMMIT_MESSAGE" value="Doku" />
   </component>
 </project>
