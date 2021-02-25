@@ -63,7 +63,7 @@
 
      <noscript>
     <div id="orderid" class="panel " style="">
-            <?foreach($this->orders as $key => $value):?>
+            <?foreach($this->params['orders'] as $key => $value):?>
 
                 <div class="panel has--border">
                     <?echo('Bestellung vom '.date('d.m.o H:i:s', strtotime($value[0]['orderDate'])).'<br> Zahlungsmethode '.$value[0]['payMethod']);?>
