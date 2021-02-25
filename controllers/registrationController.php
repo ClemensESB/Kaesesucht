@@ -141,8 +141,6 @@ class RegistrationController extends \kae\core\Controller
         }
         $this->setParam('orders',$orders);
 
-        pre_r($this->params);
-
         
         if(isset($_POST['submit']) || $GLOBALS['isJSON'])
         {
