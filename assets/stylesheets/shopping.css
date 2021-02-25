@@ -107,7 +107,9 @@ body::-webkit-scrollbar {
     text-align: left;
 }
 
-.price {
+.column--sub .price {
+    font-weight: normal;
+    color: black;
     font-size: 24px;
 }
 
