@@ -16,7 +16,7 @@
 				<?if(empty($_SESSION['order']->payMethod)):?>
 				<option value="" selected="selected">--Zahlungsmethode wählen--</option>
 				<?endif;?>
-				<?foreach ($this->payMethod as $key => $method):?>
+				<?foreach ($this->params['payMethod'] as $key => $method):?>
 					<?if($method == $_SESSION['order']->payMethod):?>
 						<option value="<?echo($method);?>" selected="selected"><?echo($method);?></option>
 					<?else:?>

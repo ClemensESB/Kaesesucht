@@ -16,5 +16,5 @@ Daten bank Zugriff :
 user  = 'root';
 password    = '';
 
-repository: https://github.com/fh-erfurt/Kaesesucht
+repository: https://github.com/ClemensESB/Kaesesucht
 
