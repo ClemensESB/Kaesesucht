@@ -13,7 +13,7 @@
 }
 
 .registration * {
-    margin: 30px 20px 0;
+    margin: 5px 20px 0;
 }
 
 .registration .head {
@@ -27,6 +27,9 @@
     padding: 10px;
     width: 300px;
 }
+.button {
+    margin-top: 25px;
+}
 
 .registration p *,
 .registration p {
@@ -34,9 +37,9 @@
     padding: 20px 0;
 }
 
-.registration form div {
+.registration form span {
     text-align: left;
     color: red;
     font-size: 14px;
-    margin-top: 10px;
+    
 }

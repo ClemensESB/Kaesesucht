@@ -13,7 +13,6 @@
         <a href="index.php?c=registration&a=logout">abmelden</a>
     </div>
     <div id="id">
-        <button class="button marg-20 content-align-mid btn--size" onclick="toggle('dataid')">Nutzerdaten</button>
         <div class ="button marg-20 content-align-mid btn--size">
         <a href="javascript:toggle('dataid');">Nutzerdaten</a>
         </div>

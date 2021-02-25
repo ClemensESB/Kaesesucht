@@ -128,7 +128,7 @@ class RegistrationController extends \kae\core\Controller
         {
             $this->redirect('index.php?c=registration&a=login');
         }
-        if(isset($_GET['json']) && $_GET['json'] == 'true')
+        if(isset($_GET['json']) && $_GET['json'] == 'true') // edit userdata can be send via standart submit or with ajax
         {
            $userInputData = $GLOBALS['data']['data'];
         }

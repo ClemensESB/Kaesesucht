@@ -152,7 +152,7 @@ else
         </div>
         <?include ASSETPATH.'footer.html';?>
         <script type="text/javascript" src="assets/scripts/functions.js"></script>
-     <script type="text/javascript" src="assets/scripts/signup.js"></script>
+        <script type="text/javascript" src="assets/scripts/signup.js"></script>
 </body>
 </html>
 
