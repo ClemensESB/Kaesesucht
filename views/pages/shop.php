@@ -1,7 +1,7 @@
 <?
-if(isset($_POST['p']) &&  $_POST['p'] > 1 && isset($_POST['js'])) // only for javascript is needed to make the "endless" scrolling stop it's endlessness
+if(isset($_POST['endless'])) // only for javascript is needed to make the "endless" scrolling stop it's endlessness
 {
-    if($_POST['p'] == $pages+1)
+    if($_POST['p'] > $pages)
     {
         echo("END");
     }
@@ -11,7 +11,6 @@ if(isset($_POST['p']) &&  $_POST['p'] > 1 && isset($_POST['js'])) // only for ja
     }
     exit();
 }
-
 ?>
 
 
@@ -94,3 +93,4 @@ if(isset($_POST['p']) &&  $_POST['p'] > 1 && isset($_POST['js'])) // only for ja
 </div>
 
 <script type="text/javascript" src="assets/scripts/endless.js"></script>
+

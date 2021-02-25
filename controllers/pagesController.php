@@ -70,20 +70,18 @@ class PagesController extends \kae\core\Controller
 		{ 
 			$_GET['p'] = 1;
 		}
-		
-		if(!isset($_POST['p']) || $_POST['p'] < $_GET['p']) // is needed to sync the paging with/without javascript only problem is altering the p while using javascript
-		{
-			$_POST['p'] = $_GET['p'];
-		}
-		elseif($_POST['p'] > $_GET['p'])
-		{
-			$_GET['p'] = $_POST['p'];
-		}
-		else{
 
+		if($GLOBALS['isEndless'])
+		{
+			$page = $_POST['p'];
 		}
+		else
+		{
+			$page = $_GET['p'];
+		}
+		
 		$this->params['pages'] = ceil($entries/PagesController::objects); // determines how many pages are needed
-		$offset = ($_POST['p']-1)*PagesController::objects; // calculates the start of the array for the selected page
+		$offset = ($page-1)*PagesController::objects; // calculates the start of the array for the selected page
 		$products = array_slice($products, $offset, PagesController::objects);// array for the selected page is sliced
 
 		$this->params['products'] = $products;

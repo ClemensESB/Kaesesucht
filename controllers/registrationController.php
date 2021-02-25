@@ -101,8 +101,6 @@ class RegistrationController extends \kae\core\Controller
             }
             //array_walk_recursive($errors, function($a) use (&$return) { $return[] = $a; });
             //pre_r($errors);
-
-
             if(count($errors) == 0)
             {
                 // TODO: save to database
@@ -130,6 +128,14 @@ class RegistrationController extends \kae\core\Controller
         {
             $this->redirect('index.php?c=registration&a=login');
         }
+        if(isset($_GET['json']) && $_GET['json'] == 'true')
+        {
+           $userInputData = $GLOBALS['data']['data'];
+        }
+        else
+        {
+            $userInputData = $_POST;
+        }
 
         $orders = Orders::find('account_id = "'.$this->currentUser['id'].'"');
         foreach($orders as $key => $value)
@@ -138,15 +144,16 @@ class RegistrationController extends \kae\core\Controller
         }
         $this->setParam('orders',$orders);
 
-
-        if(isset($_POST['submit']))
+        
+        if(isset($_POST['submit']) || $GLOBALS['isJSON'])
         {
             $errors = array();
             $address = new Address($this->currentUser);
             $account = new Account($this->currentUser);
-            if($_POST['email'] != $this->currentUser['email'])
+
+            if($userInputData['email'] != $this->currentUser['email'] || $userInputData['email'] != $this->currentUser['email'])
             {
-                $exists = Account::findOne('email = "'.$_POST['email'].'"');
+                $exists = Account::findOne('email = "'.$userInputData['email'].'"');
 
                 if(!empty($exists))
                 {
@@ -154,20 +161,19 @@ class RegistrationController extends \kae\core\Controller
                 }
                 else
                 {
-
-                    $account->email = $_POST['email'];
+                    $account->email = $userInputData['email'];
                     $account->validate($errors);
                     if(count($errors) == 0)
                     {
-                        $account = new Account($_POST);
+                        $account = new Account($userInputData);
                         $account->id = $this->currentUser['id'];
                         $account->update($errors);
                     }
                 }
             }
-            if($_POST['city'] != $address->city || $_POST['street'] != $address->street || $_POST['strNo'] != $address->strNo || $_POST['zipCode'] != $address->zipCode)
+            if($userInputData['city'] != $address->city || $userInputData['street'] != $address->street || $userInputData['strNo'] != $address->strNo || $userInputData['zipCode'] != $address->zipCode)
             {
-                $sql = ' zipCode = "'.$_POST['zipCode'].'" and city = "'.$_POST['city'].'" and street = "'.$_POST['street'].'" and strNo = "'.$_POST['strNo'].'"';
+                $sql = ' zipCode = "'.$userInputData['zipCode'].'" and city = "'.$userInputData['city'].'" and street = "'.$userInputData['street'].'" and strNo = "'.$userInputData['strNo'].'"';
                 $temp = Address::findone($sql);
                 if(!empty($temp))
                 {
@@ -175,7 +181,7 @@ class RegistrationController extends \kae\core\Controller
                 }
                 else
                 {
-                    $address = new Address($_POST);
+                    $address = new Address($userInputData);
                     $address->validate($errors);
                     if(count($errors) == 0)
                     {
@@ -192,6 +198,12 @@ class RegistrationController extends \kae\core\Controller
                 $_SESSION['email'] = $account->email;
             }
             $this->setParam('errors', $errors);
+        }
+
+        if($GLOBALS['isJSON'])
+        {
+           //pre_r($errors);
+            exit();
         }
     }
 }

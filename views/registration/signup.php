@@ -24,6 +24,6 @@
             <input type="submit" name="submit" id="signupbutton" value="registrieren" class="button">
         </form>
             <div class="filler"></div>
-            <script type="text/javascript" src="assets/scripts/valid.js"></script>
+            
     </div>
 </div>

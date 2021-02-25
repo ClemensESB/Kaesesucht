@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function() {
     var btnSubmit = document.getElementById('signupbutton');
     var inputEmail = document.getElementById('email');
