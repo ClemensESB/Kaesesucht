@@ -85,8 +85,9 @@
         *Amine : Controllers, Javascript<br>
         > Lösung : Lernen im Internet (Tutorials)<br><br>
         *Clemens : Javascript<br>
-        > Lösung : Stackoverflow,youtube tutorials,ein Pakt mit dem Teufel <br>
-        *Antonio :
+        > Lösung : Stackoverflow,youtube tutorials,ein Pakt mit dem Teufel <br><br>
+        *Antonio : MVC, CSS Struktur <br>
+        > Lösung : Kommunikation mit Gruppenmitglieder, Unterteilung in Unterdateien
         <br><br>
     </p>
     <h1>Projekt Management und Dokumentation </h1><br><br>
@@ -102,7 +103,17 @@
         -Controllers : Filter Controller, Home Controller <br>
         -Styles : Styles für Home and Shop pages (die wir geändert haben)<br><br>
         -Aufwand : Hoch <br><br>
-        Antonio :<br>
+        Antonio :
+        <ul>
+            <li>Seitenlayout, Farbschema</li>
+            <li>HTML:Navbar, Login, Logout, Signup</li>
+            <li>generelle CSS styling außer für Profile, Kasse und Warenkorb</li>
+            <li>Javascript: Validierung in Signup von Namen, Straße ,PLZ, Stadt</li>
+            <li>PHP: registrattionController für Login, Logout, Signup</li>
+            <li>Anpassungen an den Views</li>
+            <li>Zeitaufwand ca. 60h</li>
+        </ul>
+        <br><br>
 
         Clemens :
         <ul type="disc">
