@@ -13,7 +13,7 @@ class ErrorsController extends \kae\core\Controller
 
 	public function actionError404()
 	{
-        $errorMessage = 'Unknown error, please check your code!';
+        $errorMessage = '¯\_(ツ)_/¯ Unbekanter Fehler !';
 
 
         if(isset($_GET['error']))

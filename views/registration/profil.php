@@ -10,11 +10,11 @@
 
 <div class="panel" >
     <div class="button marg-20 content-align-mid btn--size">
-        <a href="index.php?c=registration&a=logout">Logout</a>
+        <a href="index.php?c=registration&a=logout">abmelden</a>
     </div>
     <div id="id">
         <div class ="button marg-20 content-align-mid btn--size">
-        <a href="javascript:toggle('dataid')">Nutzerdaten ändern</a>
+        <a href="javascript:toggle('dataid')">Nutzerdaten</a>
         </div>
         <div id="dataid" class="popout content-align-mid registration" style="">
             <form method="POST" class="" id="editUser" action="">
@@ -24,7 +24,7 @@
                 <input type="text" value="<?echo($this->currentUser['street']);?>" id="street" name="street" placeholder="Straße" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Straße'" class="inputtext">
                 <input type="text" value="<?echo($this->currentUser['strNo']);?>" id="strNo" name="strNo" placeholder="Straßennummer" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Straßennummer'" class="inputtext">
                 <input type="text" value="<?echo($this->currentUser['zipCode']);?>" id="zipCode" name="zipCode" placeholder="PLZ" onfocus="this.placeholder = ''" onblur="this.placeholder = 'PLZ'" class="inputtext">
-                <input type="submit" name="submit" id="editUser" value="editUser" class="button">
+                <input type="submit" name="submit" id="editUser" value="Nutzerdaten ändern" class="button">
             </form>
             <div class="filler"></div>
         </div>

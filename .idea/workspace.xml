@@ -19,18 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="Anpassung post-&gt;get">
-      <change afterPath="$PROJECT_DIR$/assets/images/Datenfluss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/Navigationstruktur.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/SeitenLayout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/rmDB.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/website1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/website2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/documentation.php" afterDir="false" />
+    <list default="true" id="7f34085e-adf6-484c-89aa-42d7617d33c1" name="Default Changelist" comment="kleine änderung">
+      <change afterPath="$PROJECT_DIR$/assets/images/c_home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/c_kasse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/c_login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/c_product.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/c_profil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/c_shop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/c_signup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/c_warenkorb.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/stylesheets/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/stylesheets/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/pagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/pagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/impressum.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/impressum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/documentation.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/documentation.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,10 +67,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Second_Chance" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\KS\assets\images" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -106,6 +110,7 @@
       <workItem from="1613727520634" duration="21175000" />
       <workItem from="1613815285400" duration="26899000" />
       <workItem from="1613992174969" duration="28619000" />
+      <workItem from="1614188325857" duration="10271000" />
     </task>
     <task id="LOCAL-00001" summary="profil logout pages">
       <created>1610640841456</created>
@@ -163,7 +168,21 @@
       <option name="project" value="LOCAL" />
       <updated>1613840020436</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="kleine änderung">
+      <created>1614194025038</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1614194025038</updated>
+    </task>
+    <task id="LOCAL-00010" summary="kleine änderung">
+      <created>1614207019782</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1614207019782</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +208,7 @@
     <MESSAGE value="home Page" />
     <MESSAGE value="Anpassung post-&gt;get" />
     <MESSAGE value="need help guys.. :P" />
-    <option name="LAST_COMMIT_MESSAGE" value="need help guys.. :P" />
+    <MESSAGE value="kleine änderung" />
+    <option name="LAST_COMMIT_MESSAGE" value="kleine änderung" />
   </component>
 </project>

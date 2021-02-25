@@ -43,7 +43,7 @@ class Controller
 		if(!file_exists($viewPath))
 		{
 			// redirect to error page 404 because not found
-			redirect('index.php?c=errors&a=error404&error=viewpath');
+			$this->redirect('index.php?c=errors&a=error404&error=viewpath');
 			exit(0);
 		}
 		

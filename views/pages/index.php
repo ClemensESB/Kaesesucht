@@ -1,7 +1,7 @@
 <div class="home_top">
    <p class ="home_text">Entdecken Sie unser Angebot aus Feinkost und ausgesuchten Käsevariationen!<p>
    <div class ="home_text">
-    <a class = "home_linkbutton" href="index.php?c=pages&a=shop">Zum Shop</a>
+    <a class = "home_linkbutton" href="index.php?c=pages&a=shop">Alle Produkte</a>
    </div>
 </div>
 <div>

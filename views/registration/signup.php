@@ -2,7 +2,7 @@
 <div class="background">   
     <div class="registration content-align-mid">
         <form method="POST" id="signupform" action="">
-            <p class="head">Signup</p>
+            <p class="head">Registrierung</p>
             <input type="text" value="<?echo(isset($_POST['firstName']) ? $_POST['firstName'] : '');?>" id="firstName" name="firstName" placeholder="Vorname" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Vorname'" class="inputtext">
             <div><?echo (isset($errors['firstName']) ? $this->params['errors']['firstName'] : '');?></div>
             <input type="text" value="<?echo(isset($_POST['lastName']) ? $_POST['lastName'] : '');?>" id="lastName" name="lastName" placeholder="Nachname" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nachname'" class="inputtext">
@@ -21,7 +21,7 @@
             <div><?echo(isset($errors['password']) ? $this->params['errors']['password'] : '' );?></div>
             <input type="password" id="password1" name="password1" placeholder="Passwort wiederholen" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Passwort wiederholen'" class="inputtext">
             
-            <input type="submit" name="submit" id="signupbutton" value="Signup" class="button">
+            <input type="submit" name="submit" id="signupbutton" value="registrieren" class="button">
         </form>
             <div class="filler"></div>
             <script type="text/javascript" src="assets/scripts/valid.js"></script>
