@@ -19,27 +19,36 @@ document.addEventListener('DOMContentLoaded', function() {
             const zipRegex = /^[0-9]{5}$/m;
 
             if (!inputEmail || !inputEmail.value.match(emailRegex)) {
+                console.log(inputEmail.value);
                 valid = false;
             }
             if (!inputPassword || !inputPassword1 || !(inputPassword.value.match(passRegex) && inputPassword.value == inputPassword1.value)) {
+                //console.log(inputPassword.value);
                 valid = false;
             }
-            if (!inputFirstName.length >= 2 && !inputFirstName.length <= 45) {
+            if (!inputFirstName.value.length >= 2 && !inputFirstName.value.length <= 45) {
+                console.log(inputFirstName.value);
                 valid = false;
             }
-            if (!inputLastName.length >= 2 && !inputLastName.length <= 45) {
+            if (!inputLastName.value.length >= 2 && !inputLastName.value.length <= 45) {
+                console.log(inputLastName.value);
                 valid = false;
             }
-            if (!inputZipCode || !inputZipCode.value.match(emailRegex)) {
+            if (!inputZipCode.value || !inputZipCode.value.match(zipRegex)) {
+                console.log(inputZipCode.value);
                 valid = false;
             }
-            if (!inputStrNo.length >= 1 && !inputStrNo.length <= 5) {
+            if (!inputStrNo.value.length > 0 && !inputStrNo.value.length < 6) {
+                console.log(inputStrNo.value.length);
+                console.log(inputStrNo.value);
                 valid = false;
             }
-            if (!inputStreet.length >= 2 && !inputStreet.length <= 100) {
+            if (!inputStreet.value.length >= 2 && !inputStreet.value.length <= 100) {
+                console.log(inputStreet.value);
                 valid = false;
             }
-            if (!inputCity.length >= 1 && !inputCity.length <= 50) {
+            if (!inputCity.value.length >= 1 && !inputCity.value.length <= 50) {
+                console.log(inputCity.value);
                 valid = false;
             }
             if (valid == false) {
