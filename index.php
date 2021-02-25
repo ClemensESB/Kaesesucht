@@ -21,10 +21,8 @@ if($isJSON === true)
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
         $data = json_decode(file_get_contents('php://input'),true);
-        //$update = handleSubmit($data);
-        //pre_r($update);
         $data = handleSubmit($data);
-        //pre_r($_SESSION);
+
         
     }
     if($_SERVER['REQUEST_METHOD'] == 'GET')

@@ -127,7 +127,7 @@
         <li>etwas: css</li>
         <li>Seiten: checkout,shoppingCart,profil,shop,error,impressum</li>
         <li>js: signup validierung,endless scroll</li>
-        <li>Zeitaufwand ca. 80 Stunden</li>
+        <li>Zeitaufwand ca. 100 Stunden</li>
         </ul>
     </p>
 </div>

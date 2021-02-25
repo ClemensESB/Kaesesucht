@@ -99,11 +99,8 @@ class RegistrationController extends \kae\core\Controller
                     }   
                 }
             }
-            //array_walk_recursive($errors, function($a) use (&$return) { $return[] = $a; });
-            //pre_r($errors);
             if(count($errors) == 0)
             {
-                // TODO: save to database
                 $sql = ' zipCode = "'.$address->zipCode.'" and city = "'.$address->city.'" and street = "'.$address->street.'" and strNo = "'.$address->strNo.'"';
                 $temp = Address::findone($sql);
                 if(!empty($temp))
@@ -202,7 +199,6 @@ class RegistrationController extends \kae\core\Controller
 
         if($GLOBALS['isJSON'])
         {
-           //pre_r($errors);
             exit();
         }
     }
