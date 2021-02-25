@@ -22,24 +22,8 @@ if($isJSON === true)
     {
         $data = json_decode(file_get_contents('php://input'),true);
         $data = handleSubmit($data);
+    }
 
-        
-    }
-    if($_SERVER['REQUEST_METHOD'] == 'GET')
-    {
-        echo '{"data":'.json_encode(),'}';
-    }
-    if($_SERVER['REQUEST_METHOD'] == 'DELETE')
-    {
-        if(isset($_GET['id']) === true)
-        {
-            echo handleDestroy(interval($_GET['id']));
-        }
-        else
-        {
-            echo 'no id exists';
-        }
-    }
 }
 
 require_once COREPATH.'controller.class.php';
