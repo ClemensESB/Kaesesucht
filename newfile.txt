@@ -1,8 +1,0 @@
-c:registration
-a:profil
-json:true
-email:admin@testmail.de
-city:Erfurt
-street:Teststr.
-strNo:5
-zipCode:99045
