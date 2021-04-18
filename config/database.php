@@ -1,6 +1,6 @@
 <?php
 
-
+/*test*/
 $dbName = 'kaeseshop';
 
 $dns   = 'mysql:dbname='.$dbName.';host=localhost';
